@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../images/css/xadmin.css">
+    <link rel="stylesheet" href="../../images/css/style.css" />
+    <link rel="stylesheet" href="../../images/css/animate.min.css">
+    <link rel="stylesheet" href="../../images/css/font.css" />
+    <title>会员统计</title>
+    <style>
+        body{min-width: 1200px;}
+    </style>
+</head>
+<body>
+    <div class="member">
+        <div class="unite">
+            <div class="header">
+                <div class="top">
+                    <div class="datetime">
+                        <span class="y">
+                            <div class="tag year">0000</div>
+                            <div class="text">月</div>
+                            <div class="tag">00</div>
+                            <div class="text">月</div>
+                            <div class="tag">00</div>
+                            <div class="text">日</div>
+                        </span>
+                        <span class="h">
+                            <div class="tag">00</div>
+                            <div class="text">时</div>
+                            <div class="tag">00</div>
+                            <div class="text">分</div>
+                            <div class="tag">00</div>
+                            <div class="text">秒</div>
+                        </span>
+                    </div>
+                    <div class="title">
+                        <div class="center"><span class="all">全部分店<i class="iconfont">&#xe6a6;</i></span></div>
+                        <div class="list">
+                            <div class="item">
+                                <p>分组</p>
+                                <div class="scroll">
+                                    <ul>
+                                        <li><a href="#">A经理分组</a></li>
+                                        <li><a href="#">B经理分组</a></li>
+                                        <li><a href="#">C经理分组</a></li>
+                                        <li><a href="#">D经理分组</a></li>
+                                        <li><a href="#">E经理分组</a></li>
+                                        <li><a href="#">F经理分组</a></li>
+                                        <li><a href="#">A经理分组</a></li>
+                                        <li><a href="#">B经理分组</a></li>
+                                        <li><a href="#">C经理分组</a></li>
+                                        <li><a href="#">D经理分组</a></li>
+                                        <li><a href="#">E经理分组</a></li>
+                                        <li><a href="#">F经理分组</a></li>
+                                    </ul>
+                                </div>
+                                <i class="layui-icon">&#xe65a;</i>
+                            </div>
+                            <div class="item">
+                                <p>店铺</p>
+                                <div class="scroll">
+                                    <ul>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                        <li><a href="#">南头店</a></li>
+                                    </ul>
+                                </div>
+                                <i class="layui-icon">&#xe65a;</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-title wow fadeInDown">统计概览</div>
+            <div class="content probably">
+                <div class="list">
+                    <div class="item wow fadeInUp">
+                        <div class="picture">
+                            <img src="../../images/unite-icon.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <span>12345678</span>
+                            <p>会员总数</p>
+                        </div>
+                    </div>
+                    <div class="item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="picture">
+                            <img src="../../images/unite-icon2.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>日客单价</p>
+                        </div>
+                    </div>
+                    <div class="item circle wow fadeInUp" data-wow-delay="0.2s">
+                        <canvas id="circleA" width="120" height="120"></canvas>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>日活跃会员数</p>
+                        </div> 
+                    </div>
+                    <div class="item circle wow fadeInUp" data-wow-delay="0.3s">
+                        <canvas id="circleB" width="120" height="120"></canvas>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>消费会员总数</p>
+                        </div> 
+                    </div>
+                    <div class="item circle wow fadeInUp" data-wow-delay="0.4s">
+                        <canvas id="circleC" width="120" height="120"></canvas>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>日增消费会员数</p>
+                        </div> 
+                    </div>
+                    <div class="item circle wow fadeInUp" data-wow-delay="0.5s">
+                        <canvas id="circleD" width="120" height="120"></canvas>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>日活跃消费会员数</p>
+                        </div> 
+                    </div>
+                    <div class="item circle wow fadeInUp" data-wow-delay="0.6s">
+                        <canvas id="circleE" width="120" height="120"></canvas>
+                        <div class="desc">
+                            <span>12345</span>
+                            <p>日新增会员数</p>
+                        </div> 
+                    </div>
+                </div>
+                <div class="drop">
+                    <i class="layui-icon">&#xe65a;</i>
+                    <img src="../../images/drop-icon.png" alt="">
+                </div>
+            </div>
+            <div class="page-title wow fadeInDown">趋势分析</div>
+            <div class="content wow fadeInUp">
+                <div class="header">
+                    <div class="control">
+                        <div class="left">
+                            <div class="layui-btn-group">
+                                <button type="button" class="layui-btn layui-btn-normal">会员趋势</button>
+                                <button type="button" class="layui-btn layui-btn-primary">消费会员趋势</button>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <span>时间：</span>
+                            <div class="layui-btn-group">
+                                <button type="button" class="layui-btn layui-btn-normal">近7天</button>
+                                <button type="button" class="layui-btn layui-btn-primary">近30天</button>
+                            </div>
+                            <span>选择时间：</span>
+                            <input type="text" placeholder="请选择时间段筛选" class="layui-input" id="datetime">
+                            <button type="button" class="layui-btn danger"><i class="layui-icon">&#xe615;</i>搜索</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="echarts"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../images/lib/layui/layui.all.js"></script>
+    <script src="../../images/js/progressbar.min.js"></script>
+    <script src="../../images/js/echarts.min.js"></script>
+    <script src="../../images/js/jquery.min.js"></script>
+    <script src="../../images/js/wow.min.js"></script>
+    <script src="../../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        new WOW().init();
+
+        $(window).ready(function (){
+            //指定图标的配置和数据
+            var option = {
+                title:{
+                    text:''
+                },
+                tooltip:{
+                    trigger: 'axis',
+                    formatter: function (params){
+                        // console.log(params);
+                        //此处完成时间  2019/4/24 21:00:00  lz
+                        if (params.length > 1) {
+                            for (var i = 0; i <= params.length; i++) {
+                                return  params[i].axisValue + '<br/> ' + params[i].marker + params[i].seriesName + ' : ' + params[i].value + '人 <br/> '+ params[i+1].marker + params[i+1].seriesName + ' : ' + params[i+1].value + '人';
+                            }
+                        }else{
+                            return params[0].axisValue + '<br/> ' + params[0].marker + params[0].seriesName + ' : ' + params[0].value + '人';
+                        }
+                    },
+                },
+                legend:{
+                    data: ['活跃会员','消费会员']
+                },
+                xAxis:{
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2019-07-11','2019-07-12','2019-07-13','2019-07-14','2019-07-15','2019-07-16','2019-07-17'],
+                    //注释适应显示X轴信息
+                    axisLabel:{
+                        interval:0,//横轴信息全部显示
+                        rotate:45 //-15度角倾斜显示
+                    }
+                },
+                yAxis:{
+                    type: 'value'
+                },
+                series:[
+                    {
+                        name: '活跃会员',
+                        type:'line',
+                        stack: '总量',
+                        data: [1,2,3,4,5,6,7,8],
+                        unit:"人数",
+                    },
+                    {
+                        name: '消费会员',
+                        type:'line',
+                        stack: '总量',
+                        data: [1,2,3,4,5,6,7,8],
+                        unit:"人数",
+                    }
+                ]
+            };
+            //初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echarts'));
+            //使用制定的配置项和数据显示图表
+            myChart.setOption(option);
+        });
+
+        new Progress().renderOne('circleA',120,5,55.5,{start: '#F7781B', end: '#FE2C03', bg: '#FFD5CD'});
+        new Progress().renderOne('circleB',120,5,70.8,{start: '#EA32E8', end: '#8400FF', bg: '#F9D5FB'});
+        new Progress().renderOne('circleC',120,5,55.2,{start: '#FFCB15', end: '#FFCB15', bg: '#FFE1CC'});
+        new Progress().renderOne('circleD',120,5,70.6,{start: '#0CD5DC', end: '#0161FF', bg: '#D0F6FF'});
+        new Progress().renderOne('circleE',120,5,40.4,{start: '#D4F306', end: '#09D704', bg: '#CEF7CD'});
+    
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                range: true,
+                type: 'datetime',
+                elem: '#datetime'
+            });
+        });
+
+        // 趋势分析切换
+        $('.layui-btn-group button').each(function (){
+            $(this).on('click', function (){
+                $(this).addClass('layui-btn-normal').removeClass('layui-btn-primary').siblings().addClass('layui-btn-primary').removeClass('layui-btn-normal');
+            });
+        });
+
+        setTime();
+        function setTime() {
+            var t = new Date();
+            var y = t.getFullYear();
+            var m = t.getMonth() + 1;
+            var d = t.getDate();
+            var h = t.getHours();
+            var n = t.getMinutes();
+            var s = t.getSeconds();
+
+            $('.datetime .tag').eq(0).text(y < 10 ? '0'+y : y);
+            $('.datetime .tag').eq(1).text(m < 10 ? '0'+m : m);
+            $('.datetime .tag').eq(2).text(d < 10 ? '0'+d : d);
+            $('.datetime .tag').eq(3).text(h < 10 ? '0'+h : h);
+            $('.datetime .tag').eq(4).text(n < 10 ? '0'+n : n);
+            $('.datetime .tag').eq(5).text(s < 10 ? '0'+s : s);
+        }
+        setInterval(setTime, 1000);
+
+        var list = $('.header .list');
+        $('.header .all').on('click', function (e){
+            if ($(list).css('display') == 'none'){
+                $(list).slideDown();
+            } else {
+                $(list).stop().slideUp();
+            }
+        });
+        $('body').on('click', function (e){
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            if (target.nodeName == 'BODY') {
+                $(list).stop().slideUp();
+            }
+        });
+        let iNow = [0, 0];
+        $('.header .layui-icon').each(function (index){
+            $(this).on('click', function (){
+                iNow[index] +=42;
+                $('.member .list ul').eq(index).animate({
+                    scrollTop: iNow[index]
+                });
+            });
+        });
+        $(list).find('ul').each(function (index){
+            $(this).scroll(function (){
+                iNow[index] = $(this).scrollTop();
+            });
+        });
+
+        var dropIcon = $('.unite .drop i');
+        var content = $('.unite .content .list');
+        $('.unite .drop').on('click', function (){
+            if ($(content).css('height') == '286px') {
+                $(content).css('height','288px');
+                $(dropIcon).css({
+                    'webkitTransform': 'translate3d(-50%, -50%, 0) rotate(-270deg)',
+                    'msTransform': 'translate3d(-50%, -50%, 0) rotate(-270deg)',
+                    'transform': 'translate3d(-50%, -50%, 0) rotate(-270deg)'
+                });
+            } else {
+                $(content).css('height','286px');
+                $(dropIcon).css({
+                    'webkitTransform': 'translate3d(-50%, -50%, 0) rotate(-90deg)',
+                    'msTransform': 'translate3d(-50%, -50%, 0) rotate(-90deg)',
+                    'transform': 'translate3d(-50%, -50%, 0) rotate(-90deg)'
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

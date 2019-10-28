@@ -1,0 +1,421 @@
+@charset "utf-8";
+
+body{
+    color: #333;
+    background: #eee;
+    padding: 0 0 50px;
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.page-content{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: calc(100% - 240px);
+    margin: 0 0 70px;
+    padding: 0 20px;
+    min-width: 1300px;
+}
+.container .layui-nav i{
+    font-size: 18px;
+    vertical-align: middle;
+}
+.container a span{
+    font-size: 18px;
+}
+.layui-btn.primary{
+    color: #5FABF1;
+    background: transparent;
+    border: 1px solid #5FABF1;
+}
+.layui-table-cell .layui-icon, .layui-table-cell .icon{
+    margin: 0 3px;
+    color: #5FABF1;
+    cursor: pointer;
+}
+.layui-table-cell .layui-icon:hover, .layui-table-cell .icon:hover{
+    color: #F0A400;
+}
+.layui-table-cell img{
+    width: 34px;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.layui-table td, .layui-table th{
+    text-align: center;
+}
+.main>.address{
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.main .content{
+    padding: 20px;
+    background: #fff;
+}
+.main .content #pages, .customer.deta .pages{
+    margin: 50px 0;
+    text-align: center;
+}
+.admin .layui-form-label{
+    width: 96px;
+} 
+.layui-form-label{
+    padding: 7px 12px;
+}
+.main .layui-form-item{
+    margin: 0;
+    display: inline-block;
+}
+.common .form{
+    margin: 0 0 20px;
+    padding: 15px 20px;
+    background: #fff;
+}
+.main.admin{
+    min-width: 1300px;
+}
+.common .form .layui-form-item:last-child:not(.btn){
+    float: right;
+    text-align: right;
+}
+.common .form .layui-input-block{
+    margin: 0;
+}
+.main.admin>.form .layui-input-inline{
+    width: 175px;
+    margin-right: 0;
+}
+.alert{
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    display: none;
+    z-index: 1001;
+    position: fixed;
+    border-radius: 8px;
+    background: #fff;
+    -webkit-transform: translate3d(-50%,-200px,0);
+    -ms-transform: translate3d(-50%,-200px,0);
+    transform: translate3d(-50%,-200px,0);
+}
+.alert.confirm{
+    height: 260px;
+}
+.alert.confirm .content{
+    font-size: 24px;
+    padding: 60px 20px;
+    text-align: center;
+}
+.alert .header{
+    height: 56px;
+    font-size: 18px;
+    padding: 0 20px;
+    overflow: hidden;
+    line-height: 56px;
+    border-bottom: 1px solid #ccc;
+}
+.alert .header span{
+    float: left;
+}
+.alert .header i{
+    color: #666;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.alert .main{
+    padding: 24px 20px 0;
+}
+.alert .main .layui-form-item{
+    margin: 0 0 30px;
+}
+.alert .main .select{
+    float: left;
+    color: #72B5F3;
+    font-size: 14px;
+    line-height: 34px;
+    cursor: pointer;
+    margin: 0 0 0 10px;
+}
+.alert .footer{
+    padding: 20px 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.alert .footer button{
+    margin: 0 20px;
+}
+.mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+    background: rgba(0, 0, 0, .1);
+}
+.memberDeta .form{
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+.memberDeta .form .title{
+    float: left;
+    font-size: 18px;
+    height: 34px;
+    line-height: 34px;
+    font-weight: bold;
+    display: inline-block;
+}
+.common .layui-form-label{
+    width: auto;
+}
+.user-info{
+    background: #fff;
+    margin: 0 0 20px;
+    padding: 0 0 45px;
+}
+.main .sub-title{
+    height: 55px;
+    font-size: 18px;
+    line-height: 55px;
+    text-indent: 20px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.user-info .content{
+    padding: 40px 80px 0;
+    overflow: hidden;
+}
+.user-info .content .avatar{
+    width: 200px;
+    float: left;
+}
+.user-info .avatar img{
+    width: 100%;
+}
+.user-info .info{
+    float: left;
+}
+.user-info .info ul{
+    float: left;
+    margin: 0 0 0 80px;
+}
+.user-info .info ul li{
+    font-size: 16px;
+    margin: 0 0 22px;
+}
+.user-info .info ul i{
+    color: #5FABF1;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+.user-info .info ul i:hover{
+    color: #F0A400;
+}
+.common .layui-form-item .layui-input-inline{
+    margin: 0;
+    width: auto;
+}
+.common .form .layui-form-item:last-child .layui-input-inline{
+    margin: 0 0 0 20px;
+}
+.sale .alert .layui-form-item:last-child .layui-input-inline{
+    width: 50%;
+}
+.sale .alert .layui-form-label{
+    width: 80px;
+}
+.order .statistic{
+    height: 55px;
+    background: #fff;
+    overflow: hidden;
+    line-height: 55px;
+    text-indent: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.order .statistic li{
+    float: left;
+    margin: 0 40px 0 0;
+}
+.order .statistic li span{
+    color: #72B5F3;
+}
+.customer .layui-form-radio{
+    margin: 4px 8px 0 0;
+}
+.customer .layui-table td, .customer .layui-table th{
+    width: 33.333%;
+}
+.customer .content .layui-input-inline{
+    width: auto;
+}
+.customer .content>.layui-form, .customer.add .form{
+    margin: 0 0 20px;
+}
+.customer.add .form .layui-form{
+    padding: 20px 0 0;
+    min-width: 1300px;
+    background: #fff;
+}
+.customer.add .form .layui-form-item{
+    width: 33%;
+    margin: 0 0 25px;
+}
+.customer.add .form .layui-form-label{
+    width: 96px;
+}
+.customer.add .form .select{
+    float: left;
+    color: #72B5F3;
+    font-size: 14px;
+    line-height: 34px;
+    cursor: pointer;
+}
+.customer.add .form .layui-input-inline{
+    width: 242px;
+}
+.customer.add .content .layui-input{
+    width: 200px;
+    margin: 0 auto
+}
+.customer.add .layui-table-cell{
+    height: 34px;
+}
+.customer.add .btns{
+    margin: 60px 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.customer.add .btns button{
+    margin: 0 20px;
+}
+.customer .dis{
+    display: none;
+}
+.customer.add .dis td span{
+    position: absolute;
+    right: 10%;
+    top: 0;
+    line-height: 34px;
+    display: block;
+}
+.customer.deta .tabs-box{
+    position: relative;
+}
+.customer.deta .tabs{
+    height: 57px;
+    cursor: pointer;
+    background: #fff;
+    line-height: 57px;
+    margin: 0 0 20px;
+    text-align: center;
+}
+.customer.deta .tabs li{
+    width: 55px;
+    float: left;
+    font-size: 18px;
+    padding: 0 15px;
+    -webkit-transition: .2s all;
+    -ms-transition: .2s all;
+    transition: .2s all;
+    border-bottom: 2px solid #fff;
+}
+.customer.deta .tabs .active{
+    color: #5FABF1;
+    border-bottom: 2px solid #5FABF1;
+}
+.customer.deta .detail{
+    background: #fff;
+    margin: 0 0 20px;
+    padding: 20px 0 0;
+}
+.customer.deta .detail ul{
+    width: 90%;
+    overflow: hidden;
+}
+.customer.deta .detail li{
+    float: left;
+    height: 25px;
+    width: 33.333%;
+    padding: 0 22px;
+    margin: 0 0 22px;
+    line-height: 23px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.customer.deta .detail li .text{
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.customer.deta .detail li i{
+    color: #5FABF1;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.customer.deta .detail li input{
+    width: 120px;
+    height: 22px;
+    display: inline-block;
+}
+.roomInfo td input{
+    width: 220px;
+    height: 25px;
+    display: inline-block;
+}
+.customer.deta .tabs-con>ul>li{
+    display: none;
+}
+.customer.deta .tabs-con .active{
+    display: block;
+}
+.level .address button{
+    margin: 0 0 0 40px;
+}
+.level .layui-form-item{
+    position: relative;   
+}
+.level .alert .layui-form-label{
+    width: 102px;
+}
+.level .alert .tip{
+    top: 36px;
+    left: 125px;
+    /* display: none; */
+    font-size: 12px;
+    color: #F02200;
+    position: absolute;
+}
+.level .layui-table td, .layui-table th{
+    width: 25%;
+}

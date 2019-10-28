@@ -1,0 +1,67 @@
+{
+    "code": 0, 
+    "msg": "", 
+    "count": 1000, 
+    "data": [
+        {
+            "id": 10000, 
+            "avatar": "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg", 
+            "username": "悟空悟空", 
+            "phone": "13333333333", 
+            "level": "普通", 
+            "sale": "悟空", 
+            "order_num": 8, 
+            "create_time": "2019/07/21  08:08", 
+            "last_time": "2019/07/21  08:08", 
+            "score": 57
+        },
+        {
+            "id": 10001, 
+            "avatar": "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg", 
+            "username": "悟空悟空", 
+            "phone": "13333333333", 
+            "level": "普通", 
+            "sale": "悟空", 
+            "order_num": 8, 
+            "create_time": "2019/07/21  08:08", 
+            "last_time": "2019/07/21  08:08", 
+            "score": 57
+        },
+        {
+            "id": 10002, 
+            "avatar": "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg", 
+            "username": "悟空悟空", 
+            "phone": "13333333333", 
+            "level": "普通", 
+            "sale": "悟空", 
+            "order_num": 8, 
+            "create_time": "2019/07/21  08:08", 
+            "last_time": "2019/07/21  08:08", 
+            "score": 57
+        },
+        {
+            "id": 10003, 
+            "avatar": "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg", 
+            "username": "悟空悟空", 
+            "phone": "13333333333", 
+            "level": "普通", 
+            "sale": "悟空", 
+            "order_num": 8, 
+            "create_time": "2019/07/21  08:08", 
+            "last_time": "2019/07/21  08:08", 
+            "score": 57
+        },
+        {
+            "id": 10004, 
+            "avatar": "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg", 
+            "username": "悟空悟空", 
+            "phone": "13333333333", 
+            "level": "普通", 
+            "sale": "悟空", 
+            "order_num": 8, 
+            "create_time": "2019/07/21  08:08", 
+            "last_time": "2019/07/21  08:08", 
+            "score": 57
+        }
+    ]
+}

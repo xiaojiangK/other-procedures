@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=1440,user-scalable=yes, minimum-scale=0.4, initial-scale=1.0,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/pms_style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 房间管理</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="date">2019/7/10</span> <span class="class">晚班</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./roomState.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>实时房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./forwardRoom.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>远期房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./guestReserveing.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>宾客管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./roomInfo.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>房间维护</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./finance.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>财务</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../CRM/memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+        
+        <!-- page-content start -->
+        <div class="page-content">
+            <div class="address">房态管理-房间管理</div>
+            <div class="main roomAdmin">
+                <div class="tabs">
+                    <ul>
+                        <li class="active"><a href="roomInfo.html">房间信息</a></li>
+                        <li><a href="roomTypeInfo.html">房型信息</a></li>
+                        <li><a href="floorInfo.html">楼层信息</a></li>
+                    </ul>
+                </div>
+                <div class="form-box">
+                    <form class="layui-form">
+                        <div class="left">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">楼层：</label>
+                                <div class="layui-input-inline">
+                                    <select name="floor">
+                                        <option value="">全部</option>
+                                        <option value="1">1楼</option>
+                                        <option value="2">2楼</option>
+                                        <option value="3">3楼</option>
+                                        <option value="4">4楼</option>
+                                        <option value="5">5楼</option>
+                                        <option value="6">6楼</option>
+                                        <option value="7">7楼</option>
+                                        <option value="8">8楼</option>
+                                        <option value="9">9楼</option>
+                                        <option value="10">10楼</option>
+                                    </select>
+                                </div>
+                                <label class="layui-form-label">房间号：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="room_num" placeholder="请输入房间号" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="button" lay-submit lay-filter="search" class="layui-btn primary">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <button type="button" class="layui-btn primary">添加房间</button>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="button" class="layui-btn cheek">批量添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <table class="layui-hide" id="roomList" lay-filter="roomList"></table>
+
+                    <script type="text/html" id="switch">
+                        <input type="checkbox" name="lock" value="{{d.id}}" lay-skin="switch" lay-filter="status" {{ d.id == 10001 ? 'checked' : '' }}>
+                    </script>
+                    <script type="text/html" id="edit">
+                        <i class="layui-icon" lay-event="edit">&#xe642;</i>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+
+        <!-- popup-group start -->
+        <div class="popup-group">
+            <div class="mask"></div>
+            <!-- 添加/修改房型 -->
+            <div class="popup add other">
+                <div class="head">
+                    <div class="title">添加房型</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">楼层：</label>
+                            <div class="layui-input-block">
+                                <select name="floor">
+                                    <option value="">全部</option>
+                                    <option value="1">1楼</option>
+                                    <option value="2">2楼</option>
+                                    <option value="3">3楼</option>
+                                    <option value="4">4楼</option>
+                                    <option value="5">5楼</option>
+                                    <option value="6">6楼</option>
+                                    <option value="7">7楼</option>
+                                    <option value="8">8楼</option>
+                                    <option value="9">9楼</option>
+                                    <option value="10">10楼</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房间号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="room_num" placeholder="请输入房间号" class="layui-input" />
+                                <p class="tip">此房间已存在</p>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房型：</label>
+                            <div class="layui-input-block">
+                                <select name="room_type">
+                                    <option value="">(多选）特价大床房</option>
+                                    <option value="1">商务大床房</option>
+                                    <option value="2">行政大床房</option>
+                                    <option value="3">行政标准房</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房间特征：</label>
+                            <div class="layui-input-block">
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="安静" />
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="无烟房" />
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="无窗" />
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="有窗" />
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="安静" />
+                                <input type="checkbox" name="aspect[]" lay-skin="primary" title="无窗" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态：</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" title="启用" />
+                                <input type="radio" name="status" value="0" title="停用" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek">关闭</button>
+                        <button type="button" lay-submit lay-filter="add" class="layui-btn primary">保存</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 批量添加房型 -->
+            <div class="popup muitAdd other">
+                <div class="head">
+                    <div class="title">批量添加房型</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">楼层：</label>
+                            <div class="layui-input-block">
+                                <select name="floor">
+                                    <option value="">全部</option>
+                                    <option value="1">1楼</option>
+                                    <option value="2">2楼</option>
+                                    <option value="3">3楼</option>
+                                    <option value="4">4楼</option>
+                                    <option value="5">5楼</option>
+                                    <option value="6">6楼</option>
+                                    <option value="7">7楼</option>
+                                    <option value="8">8楼</option>
+                                    <option value="9">9楼</option>
+                                    <option value="10">10楼</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房型：</label>
+                            <div class="layui-input-block">
+                                <select name="room_type">
+                                    <option value="">(多选）特价大床房</option>
+                                    <option value="1">商务大床房</option>
+                                    <option value="2">行政大床房</option>
+                                    <option value="3">行政标准房</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房间前缀：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="room_prefix" value="1" placeholder="请输入房间前缀" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房间数量：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="room_num" value="1" placeholder="请输入房间数量" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">尾号过滤：</label>
+                            <div class="layui-input-block">
+                                <input type="checkbox" name="filter[]" lay-skin="primary" title="4" />
+                                <input type="checkbox" name="filter[]" lay-skin="primary" title="7" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态：</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" title="启用" />
+                                <input type="radio" name="status" value="0" title="停用" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">预览：</label>
+                            <div class="layui-input-block preview">
+                                <span>101</span>
+                                <span>102</span>
+                                <span>103</span>
+                                <span>104</span>
+                                <span>105</span>
+                                <span>106</span>
+                                <span>107</span>
+                                <span>108</span>
+                                <span>109</span>
+                                <span>110</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek">关闭</button>
+                        <button type="button" lay-submit lay-filter="muitAdd" class="layui-btn primary">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- popup-group end -->
+        
+    </div>
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['form', 'table', 'layer'], function(){
+            var form = layui.form
+            ,table = layui.table
+            ,layer = layui.layer;
+            
+            // 查询提交
+            form.on('submit(search)', function(data){
+                // api
+                console.log(data.field);
+            });
+
+            //监听开关
+            form.on('switch(status)', function(data){
+                // api
+                console.log(data.elem.checked, data);
+                layer.msg('修改成功!',{icon:1, time:1000});
+            });
+
+            //监听头工具栏事件；操作
+            table.on('tool(roomList)', function(obj){
+                if (obj.event == 'edit') {
+                    $('.popup.add .title').text('修改房型');
+                    $('.popup.add').fadeIn('fast');
+                    $('.mask').fadeIn();
+                }
+            });
+
+            // 添加房间提交
+            form.on('submit(muitAdd)', function(data){
+                // api
+                var arr = [];
+                for (let i of $('.preview span')) {
+                    arr.push($(i).text());
+                }
+                data.field.preview = arr;
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('保存成功!',{icon:1, time:1000});
+            });
+
+            // 批量添加房间提交
+            form.on('submit(add)', function(data){
+                var title = $('.popup.add .title').text();
+                if (title == '修改房型') {
+                    // edit api
+                } else {
+                    // add api
+                }
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('保存成功!',{icon:1, time:1000});
+                console.log(data.field);
+            });
+
+            // 房间信息表格
+            table.render({
+                elem: '#roomList'
+                ,url:'../images/js/data.json'
+                ,cols: [[
+                    {field:'room_type', title: '楼层名称'}
+                    ,{field:'room_num',title: '房间号'}
+                    ,{field:'order_num', title: '房型名称'}
+                    ,{field:'name', title: '房间特征'}
+                    ,{field:'total_room', title: '状态', toolbar: '#switch'}
+                    ,{field:'status', title: '操作', toolbar: '#edit'}
+                ]]
+            });
+
+            // 各种弹窗关闭
+            $('.popup .close, .popup .cheek, .mask').on('click', function (){
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+            });
+            
+            $('.form-box .right button').eq(0).on('click', function (){
+                $('.popup.add .title').text('添加房型');
+                $('.popup.add').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+
+            $('.form-box .right button').eq(1).on('click', function (){
+                $('.popup.muitAdd').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+
+        });
+    </script>
+</body>
+</html>

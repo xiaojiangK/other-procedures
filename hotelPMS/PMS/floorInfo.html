@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=1440,user-scalable=yes, minimum-scale=0.4, initial-scale=1.0,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/pms_style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 房间管理</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="date">2019/7/10</span> <span class="class">晚班</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./roomState.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>实时房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./forwardRoom.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>远期房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./guestReserveing.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>宾客管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./roomInfo.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>房间维护</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./finance.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>财务</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../CRM/memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+        
+        <!-- page-content start -->
+        <div class="page-content">
+            <div class="address">房态管理-房间管理</div>
+            <div class="main roomAdmin">
+                <div class="tabs">
+                    <ul>
+                        <li><a href="roomInfo.html">房间信息</a></li>
+                        <li><a href="roomTypeInfo.html">房型信息</a></li>
+                        <li class="active"><a href="floorInfo.html">楼层信息</a></li>
+                    </ul>
+                </div>
+                <div class="form-box">
+                    <form class="layui-form">
+                        <div class="left">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">楼层名称：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="floor_num" placeholder="请输入楼层名称" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button type="button" lay-submit lay-filter="search" class="layui-btn primary">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <button type="button" class="layui-btn primary">添加楼层</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <table class="layui-hide" id="floorList" lay-filter="floorList"></table>
+
+                    <script type="text/html" id="sort">
+                        <i class="layui-icon sort" lay-event="sortAdd">&#xe619;</i>
+                        <i class="layui-icon" lay-event="sortCut">&#xe61a;</i>
+                    </script>
+                    <script type="text/html" id="switch">
+                        <input type="checkbox" name="lock" value="{{d.id}}" lay-skin="switch" lay-filter="status" {{ d.id == 10001 ? 'checked' : '' }}>
+                    </script>
+                    <script type="text/html" id="edit">
+                        <i class="layui-icon" lay-event="edit">&#xe642;</i>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+
+        <!-- popup-group start -->
+        <div class="popup-group">
+            <div class="mask"></div>
+            <!-- 添加/修改楼层 -->
+            <div class="popup add other">
+                <div class="head">
+                    <div class="title">添加楼层</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">楼层名称：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="floor_name" placeholder="请输入楼层名称" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">描述：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="describe" placeholder="请输入楼层名称" class="layui-input" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek">关闭</button>
+                        <button type="button" lay-submit lay-filter="add" class="layui-btn primary">添加</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- popup-group end -->
+               
+    </div> 
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['form', 'table', 'layer'], function(){
+            var form = layui.form
+            ,table = layui.table
+            ,layer = layui.layer;
+            
+            // 查询提交
+            form.on('submit(search)', function(data){
+                // api
+                console.log(data.field);
+            });
+
+            //监听开关
+            form.on('switch(status)', function(data){
+                // api
+                console.log(data.elem.checked, data);
+                layer.msg('修改成功!',{icon:1, time:1000});
+            });
+
+            //监听头工具栏事件；操作
+            table.on('tool(floorList)', function(obj){
+                if (obj.event == 'edit') {
+                    $('.popup.add .title').text('修改楼层');
+                    $('.popup.add').fadeIn('fast');
+                    $('.mask').fadeIn();
+                } else if (obj.event == 'sortAdd') {
+                    // 排序上 api
+                } else if (obj.event == 'sortCut') {
+                    // 排序下 api
+                }
+            });
+
+            // 楼层信息表格
+            table.render({
+                elem: '#floorList'
+                ,url:'../images/js/data.json'
+                ,cols: [[
+                    {field:'room_type', title: '楼层名称'}
+                    ,{field:'room_num',title: '楼层名称'}
+                    ,{field:'order_num', title: '排序', toolbar: '#sort'}
+                    ,{field:'total_room', title: '状态', toolbar: '#switch'}
+                    ,{field:'status', title: '操作', toolbar: '#edit'}
+                ]]
+            });
+
+            // 添加房间提交
+            form.on('submit(add)', function(data){
+                var title = $('.popup.add .title').text();
+                if (title == '修改楼层') {
+                    // edit api
+                } else {
+                    // add api
+                }
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('保存成功!',{icon:1, time:1000});
+            });
+
+            $('.form-box .right button').eq(0).on('click', function (){
+                $('.popup.add .title').text('添加楼层');
+                $('.popup.add').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+            
+            // 各种弹窗关闭
+            $('.popup .close, .popup .cheek, .mask').on('click', function (){
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>

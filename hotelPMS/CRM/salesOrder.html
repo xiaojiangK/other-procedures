@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 销售员订单</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">2019/7/10  晚班</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+
+        <!-- page-content -->
+        <div class="page-content common">
+            <div class="main order">
+                <div class="address">当前位置：<a href="./salesperson.html">销售员</a> - 销售员订单</div>
+                <div class="form">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">公司客户：</label>
+                            <div class="layui-input-inline">
+                                <select name="company">
+                                    <option value="">全部</option>
+                                    <option value="0">普通会员</option>
+                                    <option value="1">超级会员</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">订单状态：</label>
+                            <div class="layui-input-inline">
+                                <select name="status">
+                                    <option value="">全部</option>
+                                    <option value="0">普通会员</option>
+                                    <option value="1">超级会员</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">下单时间：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="create_time" class="layui-input" id="create" placeholder="请选择注册时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn" lay-submit lay-filter="search">查询</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="statistic">
+                    <ul>
+                        <li>订单量：<span>100</span></li>
+                        <li>订单金额：<span>188888.00</span></li>
+                        <li>实付金额：<span>188888.00</span></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <table class="layui-hide" id="data" lay-filter="data"></table>
+                    <div id="pages"></div>
+                    <script type="text/html" id="avatar">
+                        <img src="{{d.avatar}}" alt="" />
+                    </script>
+                    <script type="text/html" id="control">
+                        <a title="详情" href="./salesOrder.html?{{d.id}}">
+                            <i class="layui-icon">&#xe615;</i> 
+                        </a>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- page-content -->
+    </div>
+
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['laydate', 'table', 'laypage', 'form'], function(){
+            var laydate = layui.laydate;
+            var form = layui.form;
+            var table = layui.table;        //表格
+            var laypage = layui.laypage;    // 分页
+
+            // 查询提交
+            form.on('submit(search)', function(data){
+                // api
+                console.log(data.field);
+            });
+
+            // 日期范围
+            laydate.render({
+                elem: '#create'
+                ,range: true
+            });
+            
+            // page
+            laypage.render({
+                elem: 'pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            //执行一个 table 实例
+            table.render({
+                elem: '#data'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '订单号'}
+                    ,{field: 'phone', title: '下单时间'}
+                    ,{field: 'level', title: '公司客户名称'}
+                    ,{field: 'sale', title: '房型'}
+                    ,{field: 'order_num', title: '门市价'}
+                    ,{field: 'create_time', title: '优惠价'}
+                    ,{field: 'last_time', title: '订房数量'}
+                    ,{field: 'last_time', title: '实付金额'}
+                    ,{field: 'last_time', title: '订单状态'}
+                    ,{field: 'score', title: '操作', toolbar: '#control'}
+                ]]
+            });
+        });
+    </script>
+</body>
+</html>

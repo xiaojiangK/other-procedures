@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../images/css/xadmin.css">   
+    <link rel="stylesheet" href="../../images/css/style.css" />
+    <link rel="stylesheet" href="../../images/css/animate.min.css">
+    <link rel="stylesheet" href="../../images/css/font.css" />
+    <title>会员筛选</title>
+</head>
+<body>
+    <div class="pages screen">
+        <div class="header">
+            <div class="select">
+                <div class="page-title">会员筛选</div>
+            </div>
+            <div class="right">
+                <button type="button" class="layui-btn refresh"><a href="javascript:location.reload()">刷新</a></button>
+            </div>
+        </div>
+        <div class="content wow fadeInUp">
+            <div class="menu">
+                <div class="layui-tab">
+                    <div class="top">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">消费行为</li>
+                            <li>会员资产</li>
+                            <li>基础数据</li>
+                            <li>标签筛选</li>
+                        </ul>
+                        <div class="right">
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">近期消费门店：</label>
+                                        <div class="layui-input-inline">
+                                            <select lay-filter="aihao">
+                                                <option value=""></option>
+                                                <option value="0">写作</option>
+                                                <option value="1">阅读</option>
+                                                <option value="2">游戏</option>
+                                                <option value="3">音乐</option>
+                                                <option value="4">旅行</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <button type="button" class="layui-btn danger">给筛选出的会员发送消息</button>
+                                        <button type="submit" class="layui-btn layui-btn-normal">查询</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="layui-tab-content main">
+                        <div class="layui-tab-item layui-show">
+                            <ul>
+                                <li class="title">最近消费：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="3">三日内</li>
+                                <li class="item" data-num="7">一周内</li>
+                                <li class="item" data-num="14">两周内</li>
+                                <li>
+                                    自定义: <input type="text" placeholder="请选择时间段筛选" class="layui-input datetime" id="datetime" />
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="title">消费次数：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="3">三日内</li>
+                                <li class="item" data-num="7">一周内</li>
+                                <li class="item" data-num="14">两周内</li>
+                                <li>
+                                    自定义: <input type="text" /><span> - </span><input type="text" />
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="title">消费总额：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="3">三日内</li>
+                                <li class="item" data-num="7">一周内</li>
+                                <li class="item" data-num="14">两周内</li>
+                                <li>
+                                    自定义: <input type="text" /><span> - </span><input type="text" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul>
+                                <li class="title">积分余额：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="0">0</li>
+                                <li class="item" data-num="0,100">0-100</li>
+                                <li class="item" data-num="100,500">100-500</li>
+                                <li class="item" data-num="500,1000">500-1000</li>
+                                <li class="item" data-num="1000,3000">1000-3000</li>
+                                <li class="item" data-num="3000,5000">3000-5000</li>
+                                <li class="item" data-num="5000,10000">5000-10000</li>
+                                <li class="item" data-num="10000">10000+</li>
+                                <li>
+                                    自定义: <input type="text" /><span> - </span><input type="text" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="form">
+                                <form class="layui-form" action="">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">昵称：</label>
+                                        <div class="layui-input-inline">
+                                            <input class="layui-input" name="user" />
+                                        </div>
+                                        <label class="layui-form-label">姓名：</label>
+                                        <div class="layui-input-inline">
+                                            <input class="layui-input" name="name" />
+                                        </div>
+                                        <label class="layui-form-label">手机号：</label>
+                                        <div class="layui-input-inline">
+                                            <input class="layui-input" name="phone" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <ul>
+                                <li class="title">性别：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="1">男</li>
+                                <li class="item" data-num="2">女</li>
+                            </ul>
+                            <ul>
+                                <li class="title">关注时间：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="3">三日内</li>
+                                <li class="item" data-num="7">一周内</li>
+                                <li class="item" data-num="14">两周内</li>
+                                <li class="item" data-num="30">一月内</li>
+                                <li>自定义：<input type="text" placeholder="请选择时间段筛选" class="layui-input datetime" id="datetime2" /></li>
+                            </ul>
+                            <ul>
+                                <li class="title">最近活跃时间：</li>
+                                <li class="item active" data-num="0">不限</li>
+                                <li class="item" data-num="3">三日内</li>
+                                <li class="item" data-num="7">一周内</li>
+                                <li class="item" data-num="14">两周内</li>
+                                <li class="item" data-num="30">一月内</li>
+                                <li>自定义：<input type="text" placeholder="请选择时间段筛选" class="layui-input datetime" id="datetime3" /></li>
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul>
+                                <li class="title">标签分类：</li>
+                                <li class="item" data-num="1">商城店主</li>
+                                <li class="item" data-num="2">自动</li>
+                                <li class="item" data-num="3">男装</li>
+                                <li class="item" data-num="4">女装</li>
+                                <li class="item" data-num="5">童装</li>
+                                <li class="item" data-num="6">鞋子</li>
+                                <li class="item" data-num="7">食品</li>
+                                <li class="item" data-num="8">电子产品</li>
+                                <li class="item" data-num="9">家电</li>
+                                <li class="item" data-num="10">珠宝手饰品</li>
+                                <li class="item" data-num="11">帽子</li>
+                                <li class="item" data-num="12">电器</li>
+                                <li class="item" data-num="13">电器</li>
+                                <li class="item" data-num="14">电器</li>
+                                <li class="item" data-num="15">裤子</li>
+                                <li class="item" data-num="16">衣服</li>
+                            </ul>
+                            <ul>
+                                <!-- <li class="title">选择标签：</li>
+                                <li class="item" data-num="1">顾客店主</li>
+                                <li class="item" data-num="2">公司店主</li>
+                                <li class="item" data-num="3">门店店主</li>
+                                <li class="item" data-num="4">导购店主</li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-box">
+                    <span class="num">总人数：0人</span>
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <button type="button" class="layui-btn danger">批量添加标签</button>
+                            </div>
+                            <div class="layui-inline">
+                                <select>
+                                    <option value=""></option>
+                                    <option value="0">写作</option>
+                                    <option value="1">阅读</option>
+                                    <option value="2">游戏</option>
+                                    <option value="3">音乐</option>
+                                    <option value="4">旅行</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="table data">
+                <table class="layui-hide" id="data"></table>
+                <script type="text/html" id="control">
+                    <a title="查看" class="blue" id="see" href="javascript:;">
+                        <i class="layui-icon">&#xe615;</i>
+                    </a>
+                </script>
+                <div class="total">共有数据：100条</div>
+                <div id="pages"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../images/lib/layui/layui.all.js"></script>
+    <script src="../../images/js/jquery.min.js"></script>
+    <script src="../../images/js/wow.min.js"></script>
+    <script src="../../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+		new WOW().init();
+        
+        $(function (){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                $('.layui-table-body #see').each(function (){
+                    $(this).on('click', function (){
+                        layer.open({
+                            type: 2,
+                            title: ' ',
+                            offset: 'auto',
+                            area: ['95%','95%'],
+                            content: './detail.html?id=1'
+                        });
+                    });
+                });
+            });
+        });
+
+        const menuItem = $('.main .item');
+        $(menuItem).each(function (){
+            $(this).on('click', function (){
+                console.log($(this).attr('data-num'));
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+
+        layui.use(['laydate','table', 'laypage'], function(){
+            var laydate = layui.laydate;
+            var table = layui.table;
+            var laypage = layui.laypage;
+
+            // 会员列表
+            table.render({
+                elem: '#data'
+                ,url: '../../images/js/data.json' //数据接口
+                ,title: '会员表'
+                ,cols: [[ //表头
+                {type: 'checkbox'}
+                ,{field: 'id', title: '头像'}
+                ,{field: 'username', title: '昵称'}
+                ,{field: 'experience', title: '性别'}
+                ,{field: 'sex', title: '成为会员时间'}
+                ,{field: 'score', title: '最后消费时间'}
+                ,{field: 'classify', title: '消费次数'}
+                ,{field: 'experience', title: '消费均价'}
+                ,{field: 'wealth', title: '年龄'}
+                ,{field: 'logins', title: '消费总价'}
+                ,{field: 'sign', title: '操作', toolbar: '#control'}
+                ]]
+                ,done: function (){
+                    $('.table').fadeIn();
+                }
+            });
+            // page
+            laypage.render({
+                elem: 'pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                range: true,
+                type: 'datetime',
+                elem: '#datetime'
+            });
+            laydate.render({
+                range: true,
+                type: 'datetime',
+                elem: '#datetime2'
+            });
+            laydate.render({
+                range: true,
+                type: 'datetime',
+                elem: '#datetime3'
+            });
+        });
+
+    </script>
+</body>
+</html>

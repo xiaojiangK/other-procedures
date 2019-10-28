@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 公司客户详情</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">2019/7/10  晚班</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+
+        <!-- page-content -->
+        <div class="page-content common">
+            <div class="main customer deta">
+                <div class="address">当前位置：<a href="./customer.html">公司客户</a> - 详情</div>
+                <div class="tabs-box">
+                    <div class="tabs">
+                        <ul>
+                            <li class="active">详情</li>
+                            <li>订单</li>
+                            <li>成员</li>
+                        </ul>
+                    </div>
+                    <div class="tabs-con">
+                        <ul>
+                            <li class="active">
+                                <div class="sub-title">基本信息</div>
+                                <div class="detail">
+                                    <ul>
+                                        <li>
+                                            <span>公司客户名称：<span class="text">xx旅游公司</span></span>
+                                            <i class="layui-icon edit" data-id="info-1">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>所属业务员：<span class="text">小明</span></span>
+                                            <i class="layui-icon edit" data-id="info-2">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>关联用户：<span class="text">悟空</span></span>
+                                            <i class="layui-icon edit" data-id="info-3">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>联系人：<span class="text">悟空</span></span>
+                                            <i class="layui-icon edit" data-id="info-4">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>公司成员：50</span>
+                                        </li>
+                                        <li>
+                                            <span>创建时间：2019/07/02  12:12:02</span>
+                                        </li>
+                                        <li>
+                                            <span>手机号：<span class="text">12333333333</span></span>
+                                            <i class="layui-icon edit" data-id="info-4">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>全部订单数：10</span>
+                                        </li>
+                                        <li>
+                                            <span>营业执照编号：<span class="text">5646564645</span></span>
+                                            <i class="layui-icon edit" data-id="info-5">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>联系地址：<span class="text">广州天河区天河路88号</span></span>
+                                            <i class="layui-icon edit" data-id="info-6">&#xe642;</i>
+                                        </li>
+                                        <li>
+                                            <span>已完成订单：5</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sub-title">协议房型信息</div>
+                                <div class="content roomInfo">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">协议类型：</label>
+                                            <div class="layui-input-inline">
+                                                <input type="radio" name="type" lay-filter="type" value="0" title="底价模式" checked="" />
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="radio" name="type" lay-filter="type" value="1" title="折扣模式" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="min">
+                                        <table class="layui-hide" id="min" lay-filter="data"></table>
+                                        <div id="min_pages" class="pages"></div>
+                                    </div>
+                                    <div class="dis">
+                                        <table class="layui-hide" id="dis" lay-filter="data"></table>
+                                        <div id="dis_pages" class="pages"></div>
+                                    </div>
+                                    <script type="text/html" id="price">
+                                        <span class="text">{{d.score}}</span>
+                                        <i class="layui-icon edit" data-id="{{d.id}}">&#xe642;</i>
+                                    </script>
+
+                                    <script type="text/html" id="discount">
+                                        <span class="text">{{d.score}}%</span>
+                                        <i class="layui-icon edit" data-id="{{d.id}}">&#xe642;</i>
+                                    </script>
+                                </div>
+                            </li>
+                            <li class="order">
+                                <div class="form">
+                                    <form class="layui-form" action="">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">公司客户：</label>
+                                            <div class="layui-input-inline">
+                                                <select name="company">
+                                                    <option value="">全部</option>
+                                                    <option value="0">普通会员</option>
+                                                    <option value="1">超级会员</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">订单状态：</label>
+                                            <div class="layui-input-inline">
+                                                <select name="status">
+                                                    <option value="">全部</option>
+                                                    <option value="0">普通会员</option>
+                                                    <option value="1">超级会员</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">下单时间：</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="create_time" class="layui-input" id="create" placeholder="请选择注册时间" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-block">
+                                                <button type="button" class="layui-btn" lay-submit lay-filter="search">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="statistic">
+                                    <ul>
+                                        <li>订单量：<span>100</span></li>
+                                        <li>订单金额：<span>188888.00</span></li>
+                                        <li>实付金额：<span>188888.00</span></li>
+                                    </ul>
+                                </div>
+                                <div class="content">
+                                    <table class="layui-hide" id="order" lay-filter="data"></table>
+                                    <div id="order_pages" class="pages"></div>
+                                    <script type="text/html" id="control">
+                                        <a title="详情" href="./salesOrder.html?id={{d.id}}">
+                                            <i class="layui-icon">&#xe615;</i> 
+                                        </a>
+                                    </script>
+                                </div>
+                            </li>
+                            <li class="order">
+                                <div class="form">
+                                    <form class="layui-form" action="">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">关键字：</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="keyword" class="layui-input" placeholder="昵称/手机号" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">状态：</label>
+                                            <div class="layui-input-inline">
+                                                <select name="status">
+                                                    <option value="">全部</option>
+                                                    <option value="0">普通会员</option>
+                                                    <option value="1">超级会员</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">加入时间：</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="create_time" class="layui-input" id="create" placeholder="请选择注册时间" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-block">
+                                                <button type="button" class="layui-btn" lay-submit lay-filter="search">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="statistic">
+                                    <ul>
+                                        <li>成员数量：<span>100</span></li>
+                                    </ul>
+                                </div>
+                                <div class="content">
+                                    <table class="layui-hide" id="member" lay-filter="data"></table>
+                                    <div id="member_pages" class="pages"></div>
+                                    <script type="text/html" id="switch">
+                                        <input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-filter="status" {{ d.id == 10000 ? 'checked' : '' }} />
+                                    </script>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page-content -->
+    </div>
+
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        var layer = '';
+        // init tabs
+        function GetQuery(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        var type = GetQuery('type');
+        if (type && type >= 0) {
+            $('.tabs li').eq(type).addClass('active').siblings().removeClass('active');
+            $('.tabs-con>ul>li').eq(type).addClass('active').siblings().removeClass('active');
+        }
+
+        // 编辑关闭
+        function close(obj) {
+            var input = $(obj+' .layui-input');
+            $(obj+' .edit').show();
+            $(obj+' .control').remove();
+            $(input).wrapAll('<span class="text">'+ $(input).attr('data-val') +'</span>').remove();
+        }
+        // 点击编辑
+        function edit(that, obj, id) {
+            var span = '';
+            var input = $(obj+' .layui-input');
+            if (obj == '.detail') {
+                span = $(that).parent().find('.text');
+            } else {
+                span = $(that).siblings();
+            }
+
+            // init
+            $(obj+' .edit').show();
+            $(obj+' .control').remove();
+            $(input).wrapAll('<span class="text">'+ $(input).val() +'</span>').remove();
+
+            $(span).wrapAll('<input type="text" class="layui-input" data-val="'+ $(span).text() +'" value="'+ $(span).text() +'" />').remove();
+            $(that).parent().append('<span class="control"><i class="layui-icon ok" data-id="'+ id +'">&#xe605;</i> <i class="layui-icon close">&#x1006;</i></span>');
+            $(that).hide();
+        }
+        // 编辑确认
+        function comfirm(obj, id) {
+            var input = $(obj+' .layui-input');
+            var text = $(input).val();
+            if (!text) {
+                layer.msg('内容不能为空!',{icon:1, time:1000});
+                return;
+            }
+
+            // api
+            console.log({id: id, text: text});
+
+            $(obj+' .edit').show();
+            $(obj+' .control').remove();
+            $(input).wrapAll('<span class="text">'+ text +'</span>').remove();
+        }
+
+        // 基本信息点击编辑
+        $('.detail .edit').each(function (){
+            $(this).on('click', function (){
+                edit(this, '.detail', $(this).attr('data-id'));
+            });
+        });
+        $('.detail').on('click', '.ok', function (){
+            comfirm('.detail', $(this).attr('data-id'));
+        });
+        $('.detail').on('click', '.close', function (){
+            close('.detail');
+        });
+
+        // 协议房型信息点击编辑
+        $('.roomInfo').on('click', '.edit', function (){
+            edit(this, '.roomInfo', $(this).attr('data-id'));
+        });
+        $('.roomInfo').on('click', '.ok', function (){
+            comfirm('.roomInfo', $(this).attr('data-id'));
+        });
+        $('.roomInfo').on('click', '.close', function (){
+            close('.roomInfo');
+        });
+        
+        $('.tabs li').each(function (index){
+            $(this).on('click', function (){
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.tabs-con>ul>li').eq(index).addClass('active').siblings().removeClass('active');
+            });
+        });
+
+        layui.use(['table', 'laypage', 'form', 'layer'], function(){
+            layer = layui.layer;
+            var form = layui.form;
+            var table = layui.table;
+            var laypage = layui.laypage;
+
+            // 协议类型切换
+            form.on('radio(type)', function(data){
+                if (data.value == 0) {
+                    $('.tabs-con .min').show();
+                    $('.tabs-con .dis').hide();
+                } else {
+                    $('.tabs-con .min').hide();
+                    $('.tabs-con .dis').show();
+                }
+            });
+
+            // 订单查询提交
+            form.on('submit(search)', function(data){
+                // api
+                console.log(data.field);
+            });
+
+            //监听开关
+            form.on('switch(status)', function(data){
+                if (this.checked) {
+                    layer.confirm('确定启用此成员吗？',function() {
+                        // api
+                        layer.msg('已启用!',{icon:1, time:1000});
+                    });
+                } else {
+                    layer.confirm('确定停用此成员吗？',function() {
+                        // api
+                        layer.msg('已停用!',{icon:1, time:1000});
+                    });
+                }
+                console.log(this.checked, data.value);
+            });
+
+            // 底价模式
+            table.render({
+                elem: '#min'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '房型名称'}
+                    ,{field: 'phone', title: '默认价'}
+                    ,{field: 'score', title: '协议底价', toolbar: '#price'}
+                ]]
+            });
+            // page
+            laypage.render({
+                elem: 'min_pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            // 折扣模式
+            table.render({
+                elem: '#dis'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '房型名称'}
+                    ,{field: 'phone', title: '默认价'}
+                    ,{field: 'score', title: '折扣', toolbar: '#discount'}
+                    ,{field: 'level', title: '折扣价'}
+                ]]
+            });
+            // page
+            laypage.render({
+                elem: 'dis_pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            // 订单列表
+            table.render({
+                elem: '#order'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '订单号'}
+                    ,{field: 'phone', title: '下单时间'}
+                    ,{field: 'level', title: '成员昵称'}
+                    ,{field: 'sale', title: '联系人'}
+                    ,{field: 'order_num', title: '联系人电话'}
+                    ,{field: 'create_time', title: '房型'}
+                    ,{field: 'last_time', title: '实付金额'}
+                    ,{field: 'last_time', title: '订房数量'}
+                    ,{field: 'last_time', title: '状态'}
+                    ,{field: 'id', title: '操作', toolbar: '#control'}
+                ]]
+            });
+            // page
+            laypage.render({
+                elem: 'order_pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            // 成员列表
+            table.render({
+                elem: '#member'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '成员昵称'}
+                    ,{field: 'phone', title: '手机号'}
+                    ,{field: 'order_num', title: '订房数量'}
+                    ,{field: 'level', title: '实付金额'}
+                    ,{field: 'create_time', title: '加入时间'}
+                    ,{field: 'score', title: '操作', toolbar: '#switch'}
+                ]]
+            });
+            // page
+            laypage.render({
+                elem: 'member_pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

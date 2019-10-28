@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "zh_jdgjb/pages/hotel_list/hotel_info",
+    "zh_jdgjb/pages/hotel_list/hotel_in",
+    "zh_jdgjb/pages/hotel_list/room_info",
+    "zh_jdgjb/pages/hotel_list/all_comment",
+    "zh_jdgjb/pages/place_order/place_order",
+    "zh_jdgjb/pages/order/orderinfo",
+    "zh_jdgjb/pages/order/evaluate",
+    "zh_jdgjb/pages/order/order",
+    "zh_jdgjb/pages/service/service",
+    "zh_jdgjb/pages/logs/logs"
+  ],
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "将根据您的位置给您推荐更多便宜的好酒店"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

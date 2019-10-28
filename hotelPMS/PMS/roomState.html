@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=1440,user-scalable=yes, minimum-scale=0.4, initial-scale=1.0,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/pms_style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 实时房态</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="date">2019/7/10</span> <span class="class">晚班</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./roomState.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>实时房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./forwardRoom.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>远期房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./guestReserveing.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>宾客管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./roomInfo.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>房间维护</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./finance.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>财务</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../CRM/memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+
+        <!-- page-content start -->
+        <div class="page-content">
+            <div class="address">房态管理-房态图</div>
+            <div class="main">
+                <div class="leftnav">
+                    <form class="layui-form">
+                        <div class="search">
+                            <input type="text" class="layui-input" name="search" placeholder="房间号、姓名" />
+                            <button type="button" class="layui-btn" lay-submit lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                        </div>
+                        <div class="left-item">
+                            <div class="title">数据统计</div>
+                            <div class="item"><span>出租率</span> <span class="num">10.00%</span></div>
+                            <div class="item"><span>今日入住</span> <span class="num">10</span></div>
+                            <div class="item"><span>今日预抵</span> <span class="num">10</span></div>
+                            <div class="item"><span>今日离店</span> <span class="num">10</span></div>
+                        </div>
+                        <div class="left-item">
+                            <div class="title">楼层查询</div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="floor[]" lay-filter="Allfloor" value="全部" lay-skin="primary" checked title="全部" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="1楼" lay-skin="primary" title="1楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="2楼" lay-skin="primary" title="2楼" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="floor[]" class="floor" value="3楼" lay-skin="primary" title="3楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="4楼" lay-skin="primary" title="4楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="5楼" lay-skin="primary" title="5楼" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="floor[]" class="floor" value="6楼" lay-skin="primary" title="6楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="7楼" lay-skin="primary" title="7楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="8楼" lay-skin="primary" title="8楼" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="floor[]" class="floor" value="9楼" lay-skin="primary" title="9楼" />
+                                    <input type="checkbox" name="floor[]" class="floor" value="10楼" lay-skin="primary" title="10楼" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div class="title">房型查询（可租/总房数)</div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="roomType[]" lay-filter="AllroomType" value="全部 50/200" checked lay-skin="primary" title="全部 50/200" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="roomType[]" class="roomType" value="商务大床房 20/50" lay-skin="primary" title="商务大床房 20/50" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="roomType[]" class="roomType" value="商务标准间 20/50" lay-skin="primary" title="商务标准间 20/50" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="roomType[]" class="roomType" value="行政大床房 20/50" lay-skin="primary" title="行政大床房 20/50" />
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" name="roomType[]" class="roomType" value="行政标准房 20/50" lay-skin="primary" title="行政标准房 20/50" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="rightcon">
+                    <div class="formGroup">
+                        <div class="left">
+                            <button type="button" class="layui-btn primary" onclick="location.href='newGuestReserve.html'">预订</button>
+                            <button type="button" class="layui-btn cheek" onclick="location.href='checkIn.html'">入住</button>
+                            <button type="button" class="layui-btn cheek">联房</button>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="layui-btn primary"><a href="javascript:location.reload()">刷新</a></button>
+                        </div>
+                    </div>
+                    <div class="content state">
+                        <div class="tags">
+                            <div class="allState">房态：<span>全部200</span></div>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <span class="color"><i></i></span>
+                                        <span class="text">空净100</span>
+                                    </li>
+                                    <li class="now2">
+                                        <span class="color"><i></i></span>
+                                        <span class="text">空脏50</span>
+                                    </li>
+                                    <li class="now3">
+                                        <span class="color"><i></i></span>
+                                        <span class="text">住净50</span>
+                                    </li>
+                                    <li class="now4">
+                                        <span class="color"><i></i></span>
+                                        <span class="text">住脏50</span>
+                                    </li>
+                                    <li class="now5">
+                                        <span class="color"><i></i></span>
+                                        <span class="text">维修50</span>
+                                    </li>
+                                    <li>
+                                        <span class="icon"></span>
+                                        <span class="text">钟点50</span>
+                                    </li>
+                                    <li>
+                                        <span class="tag"><i>抵</i></span>
+                                        <span class="text">预抵10</span>
+                                    </li>
+                                    <li>
+                                        <span class="tag"><i>离</i></span>
+                                        <span class="text">预离10</span>
+                                    </li>
+                                    <li>
+                                        <span class="icon lock"></span>
+                                        <span class="text">锁房20</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="room">
+                            <!-- 
+                                房态类型Class：
+                                pop：有弹窗
+                                state-0：空净-未预定
+                                state-1：空净-预定中
+                                state-2：空脏
+                                state-3：住净
+                                state-4：住脏
+                                state-5：维修
+                                state-6：钟点
+                                state-7：预抵
+                                state-8：预离
+                                state-9：锁房
+                             -->
+                            <div class="room-item pop state-0">
+                                <div class="head">
+                                    <div class="num">100</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-1">
+                                <div class="head">
+                                    <div class="num">101</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag">抵</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-2">
+                                <div class="head">
+                                    <div class="num">102</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag">抵</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-3">
+                                <div class="head">
+                                    <div class="num">103</div>
+                                    <div class="tags">
+                                        <span class="tag">欠</span>
+                                        <span class="tag">押</span>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag orange">醒</span>
+                                    <img src="../images/clock-icon.png" alt="" />
+                                    <span class="date">3日离</span>
+                                </div>
+                            </div>
+                            <div class="room-item state-4">
+                                <div class="head">
+                                    <div class="num">104</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-5">
+                                <div class="head">
+                                    <div class="num">105</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-9">
+                                <div class="head">
+                                    <div class="num">106</div>
+                                    <div class="fixed"><img src="../images/lock-icon.png" alt=""/></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-1">
+                                <div class="head">
+                                    <div class="num">107</div>
+                                    <div class="tags">
+                                        <span class="tag">欠</span>
+                                        <span class="tag">押</span>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag orange">醒</span>
+                                    <span class="tag">抵</span>
+                                    <span class="tag orange">离</span>
+                                    <span class="tag gray">全</span>
+                                    <img src="../images/clock-icon.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="room-item pop state-3">
+                                <div class="head">
+                                    <div class="num">108</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag gray">全</span>
+                                    <span class="date">8日离</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-9">
+                                <div class="head">
+                                    <div class="num">109</div>
+                                    <div class="fixed"><img src="../images/lock-icon.png" alt=""/></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item state-4">
+                                <div class="head">
+                                    <div class="num">110</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-3">
+                                <div class="head">
+                                    <div class="num">201</div>
+                                    <div class="tags">
+                                        <span class="tag">欠</span>
+                                        <span class="tag">押</span>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag orange">醒</span>
+                                    <img src="../images/clock-icon.png" alt="" />
+                                    <span class="date">3日离</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-1">
+                                <div class="head">
+                                    <div class="num">202</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag">抵</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-3">
+                                <div class="head">
+                                    <div class="num">203</div>
+                                    <div class="tags">
+                                        <span class="tag">欠</span>
+                                        <span class="tag">押</span>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag orange">醒</span>
+                                    <img src="../images/clock-icon.png" alt="" />
+                                    <span class="date">3日离</span>
+                                </div>
+                            </div>
+                            <div class="room-item state-4">
+                                <div class="head">
+                                    <div class="num">204</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-5">
+                                <div class="head">
+                                    <div class="num">205</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-9">
+                                <div class="head">
+                                    <div class="num">206</div>
+                                    <div class="fixed"><img src="../images/lock-icon.png" alt=""/></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item state-4">
+                                <div class="head">
+                                    <div class="num">207</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-3">
+                                <div class="head">
+                                    <div class="num">208</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag gray">全</span>
+                                    <span class="date">8日离</span>
+                                </div>
+                            </div>
+                            <div class="room-item pop state-9">
+                                <div class="head">
+                                    <div class="num">209</div>
+                                    <div class="fixed"><img src="../images/lock-icon.png" alt=""/></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-2">
+                                <div class="head">
+                                    <div class="num">210</div>
+                                    <div class="tags">
+                                        <span class="tag">欠</span>
+                                        <span class="tag">押</span>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot">
+                                    <span class="tag orange">醒</span>
+                                    <span class="tag">抵</span>
+                                    <span class="tag orange">离</span>
+                                    <span class="tag gray">全</span>
+                                    <img src="../images/clock-icon.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="room-item state-4">
+                                <div class="head">
+                                    <div class="num">211</div>
+                                    <div class="fixed"><span>联03</span></div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                            <div class="room-item pop state-5">
+                                <div class="head">
+                                    <div class="num">212</div>
+                                </div>
+                                <div class="desc">
+                                    <p class="title">豪华双人房</p>
+                                    <p class="name">张三</p>
+                                </div>
+                                <div class="foot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+
+        <!-- click-menu start -->
+        <div class="click-group">
+            <!-- 
+                data-type => 弹窗类型
+                data-event => 事件类型
+             -->
+            <!-- 空净-未预定 右击菜单 -->
+            <div class="click-menu">
+                <ul>
+                    <li><a href="checkIn.html">入住</a></li>
+                    <li><a href="newGuestReserve.html">预订</a></li>
+                    <li data-event="lay">置脏/置干净</li>
+                    <li data-type="repair">置维修</li>
+                    <li data-type="lock">锁房</li>
+                </ul>
+            </div>
+            <!-- 空净-预定中 / 空脏-预定中 右击菜单 -->
+            <div class="click-menu">
+                <ul>
+                    <li data-event="toCheckin">预订转入住</li>
+                    <li data-event="reserveDetail">预订详单</li>
+                    <li data-event="lay">置脏</li>
+                </ul>
+                <ul class="info">
+                    <li>预订人：小明</li>
+                    <li>电话：13888888888</li>
+                    <li>订单号：88888888</li>
+                    <li>预抵：07-10 12:12</li>
+                    <li>预抵：07-15 12:12</li>
+                </ul>
+            </div>
+            <!-- 住净右击菜单 -->
+            <div class="click-menu">
+                <ul>
+                    <li><a href="checkInStay.html">详单</a></li>
+                    <li><a href="checkInFinance.html">财务</a></li>
+                    <li><a href="checkInLog.html">日志</a></li>
+                    <li data-event="lay">置脏/置干净</li>
+                    <li data-type="renew">续住</li>
+                    <li data-type="barter">换房</li>
+                    <li data-type="enter">入账</li>
+                    <li data-type="settle">结账</li>
+                    <li data-type="join">联房/取消联房</li>
+                </ul>
+                <ul class="info">
+                    <li>预订人：小明</li>
+                    <li>预抵：07-10 12:12</li>
+                    <li class="solid">预抵：07-15 12:12</li>
+                    <li>房价：12000.00元</li>
+                    <li>押金：1000.00元</li>
+                    <li>消费：1200.00元</li>
+                    <li>余额：-200.00元</li>
+                </ul>
+            </div>
+            <!-- 维修右击菜单 -->
+            <div class="click-menu">
+                <ul>
+                    <li data-event="repair">完成维修</li>
+                </ul>
+                <ul class="info">
+                    <li>维修开始时间：07-10 12:12</li>
+                    <li>维修结束时间：07-10 12:12</li>
+                    <li>维修原因：</li>
+                    <li>水龙头坏了</li>
+                </ul>
+            </div>
+            <!-- 锁房右击菜单 -->
+            <div class="click-menu">
+                <ul>
+                    <li data-event="lock">解锁房间</li>
+                </ul>
+                <ul class="info">
+                    <li>锁房时间：07-10 12:12</li>
+                    <li>维修原因：</li>
+                    <li>老板订了</li>
+                </ul>
+            </div>
+        </div>
+        <!-- click-menu end -->
+
+        <!-- popup-group start -->
+        <div class="popup-group">
+            <div class="mask"></div>
+            <!-- 登录后选择早中晚班 -->
+            <div class="popup shift">
+                <div class="title">当前工作日期：2019-07-22</div>
+                <div class="info">
+                    <div class="item">早班：08:01-15:00</div>
+                    <div class="item">中班：15:01-23:00</div>
+                    <div class="item">晚班：23:01-06:00</div>
+                </div>
+                <div class="foot">
+                    <button type="button" class="layui-btn cheek">退出登录</button>
+                </div>
+            </div>
+            <!-- 叫醒服务通知 -->
+            <div class="popup wake">
+                <div class="head">
+                    <div class="title">叫醒服务通知</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <div class="info">
+                    <table class="layui-hide" id="wake" lay-filter="wake"></table>
+                    <script type="text/html" id="isWake">
+                        <!-- is_wake == 1 则已叫醒 -->
+                        <button type="button" data-id="{{d.room_num}}" lay-event="onSake" class="layui-btn primary {{d.is_wake == 1 ? 'active' : ''}}">已叫醒</button>
+                    </script>
+                </div>
+                <div class="foot">
+                    <button type="button" class="layui-btn primary confirm">确定</button>
+                </div>
+            </div>
+            <!-- 联房弹窗 -->
+            <div class="popup join other">
+                <div class="head">
+                    <div class="title">联房</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <div class="info">
+                    <div class="search">
+                        <form class="layui-form">
+                            <input type="text" class="layui-input" name="search" placeholder="联系人/联系电话/房号">
+                            <button type="button" class="layui-btn" lay-submit lay-filter="join-search"><i class="layui-icon"></i></button>
+                        </form>
+                    </div>
+                    <table class="layui-hide" id="join"></table>
+                </div>
+                <div class="foot">
+                    <button type="button" class="layui-btn cheek">关闭</button>
+                    <button type="button" class="layui-btn primary confirm">确定</button>
+                </div>
+            </div>
+            <!-- 置维修弹窗 -->
+            <div class="popup repair other">
+                <div class="head">
+                    <div class="title">置维修</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开始日期：</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" name="repairStart" id="repairStart" placeholder="请选择开始日期" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">结束日期：</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" name="repairEnd" id="repairEnd" placeholder="请选择结束日期" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">维修原因：</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="必填内容" name="reason" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek cancel">关闭</button>
+                        <button type="button" lay-submit lay-filter="repair" class="layui-btn primary confirm">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 提前续住弹窗 -->
+            <div class="popup renew other">
+                <div class="head">
+                    <div class="title">提前续住</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房间价格：</label>
+                            <div class="layui-input-block">￥888.00</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">入住时间：</label>
+                            <div class="layui-input-block">2019/07/13  12:00</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">预离时间：</label>
+                            <div class="layui-input-block">2019/07/13  12:00</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">预离时间变更：</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" name="leaveTime" id="leaveTime" placeholder="请选择预离时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">续住天数：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input" name="number" value="1" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">天</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">备注：</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="必填内容" name="remark" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek cancel">关闭</button>
+                        <button type="button" lay-submit lay-filter="renew" class="layui-btn primary confirm">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!--换房弹窗 -->
+            <div class="popup barter other">
+                <div class="head">
+                    <div class="title">换房</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">选择房间：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input" name="room" value="3002" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">选房</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">换房原因：</label>
+                            <div class="layui-input-block">
+                                <select name="reason">
+                                    <option value="">请选择</option>
+                                    <option value="0">不舒适</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block">
+                                <input type="checkbox" name="printing" lay-skin="primary" title="是否打印换房登记单？" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek cancel">关闭</button>
+                        <button type="button" lay-submit lay-filter="barter" class="layui-btn primary confirm">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!--锁房弹窗 -->
+            <div class="popup lock other">
+                <div class="head">
+                    <div class="title">锁房</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">锁房原因：</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="必填内容" name="reason" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek cancel">关闭</button>
+                        <button type="button" lay-submit lay-filter="lock" class="layui-btn primary confirm">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 入账 -->
+            <div class="popup enter other">
+                <div class="head">
+                    <div class="title">入账</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">类型：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="type" placeholder="商品" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">消费金额：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="monetary" placeholder="请输入金额" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付金额：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="pay_money" placeholder="请输入金额" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付方式：</label>
+                            <div class="layui-input-block">
+                                <select name="method">
+                                    <option value="0">现金</option>
+                                    <option value="1">微信</option>
+                                    <option value="2">支付宝</option>
+                                    <option value="3">信用卡</option>
+                                    <option value="4">银行卡</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">押金余额：</label>
+                            <div class="layui-input-block">￥88.88</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">备注：</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="请输入相关内容" name="remark" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek">取消</button>
+                        <button type="button" lay-submit lay-filter="add" class="layui-btn primary">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 结账退房 -->
+            <div class="popup settle other">
+                <div class="head">
+                    <div class="title">结账退房</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <form class="layui-form">
+                    <div class="info">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">选择房间：</label>
+                            <div class="layui-input-block">
+                                <ul>
+                                    <li><input type="radio" name="room_num" value="" title="全部"/></li>
+                                    <li><input type="radio" name="room_num" value="1" title="1001-小明"/></li>
+                                    <li><input type="radio" name="room_num" value="2" title="1002-小明"/></li>
+                                    <li><input type="radio" name="room_num" value="3" title="1003-小明"/></li>
+                                    <li><input type="radio" name="room_num" value="4" title="1004-小明"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">房费：</label>
+                            <div class="layui-input-block">￥600</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">消费：</label>
+                            <div class="layui-input-block">￥600</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">押金：</label>
+                            <div class="layui-input-block">￥600</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">押金余额：</label>
+                            <div class="layui-input-block">￥88.88</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付金额：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="money" placeholder="请输入金额" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付方式：</label>
+                            <div class="layui-input-block">
+                                <select name="method">
+                                    <option value="0">现金</option>
+                                    <option value="1">微信</option>
+                                    <option value="2">支付宝</option>
+                                    <option value="3">信用卡</option>
+                                    <option value="4">银行卡</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <button type="button" class="layui-btn cheek">取消</button>
+                        <button type="button" lay-submit lay-filter="settle" class="layui-btn primary">确定</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 排房弹窗 -->
+            <div class="popup row other">
+                <div class="head">
+                    <div class="title">排房</div>
+                    <div class="close"><i class="layui-icon close">&#x1006;</i></div>
+                </div>
+                <div class="content">
+                    <div class="roomType select">
+                        <ul>
+                            <li class="title">房型：</li>
+                            <li>朝南海别墅房 <i class="layui-icon">&#xe605;</i></li>
+                            <li>标准大床房 <i class="layui-icon">&#xe605;</i></li>
+                            <li>标准大床房 <i class="layui-icon">&#xe605;</i></li>
+                            <li>标准大床房 <i class="layui-icon">&#xe605;</i></li>
+                            <li>标准大床房 <i class="layui-icon">&#xe605;</i></li>
+                        </ul>
+                    </div>
+                    <div class="already">
+                        <div class="title">已排房<span>0</span>间：</div>
+                        <ul></ul>
+                    </div>
+                    <div class="roomNum select">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="foot">
+                    <button type="button" class="layui-btn cheek cancel">关闭</button>
+                    <button type="button" class="layui-btn primary confirm">确定</button>
+                </div>
+            </div>
+        </div>
+        <!-- popup-group end -->
+    </div>
+
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['form', 'table', 'layer', 'laydate'], function(){
+            var form = layui.form
+            ,table = layui.table
+            ,layer = layui.layer
+            ,laydate = layui.laydate
+
+            // 监听楼层全部
+            form.on('checkbox(Allfloor)', function(data){
+                if (data.elem.checked) {    //是否被选中
+                    $(".floor").prop("checked", true);
+                } else {
+                    $(".floor").prop("checked", false);
+                }
+                form.render('checkbox');
+            });      
+
+            // 监听房型全部
+            form.on('checkbox(AllroomType)', function(data){
+                if (data.elem.checked) {    //是否被选中
+                    $(".roomType").prop("checked", true);
+                } else {
+                    $(".roomType").prop("checked", false);
+                }
+                form.render('checkbox');
+            });      
+
+            //监听侧边栏搜索提交
+            form.on('submit(search)', function(data){
+                console.log(data.field);
+                return false;
+            });
+
+            // 联房按钮点击
+            $('.formGroup button').eq(2).on('click', function (){
+                $('.popup.join').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+
+            // 维修开始时间
+            laydate.render({
+                elem: '#repairStart'
+                ,type: 'datetime'
+            });
+            // 维修结束时间
+            laydate.render({
+                elem: '#repairEnd'
+                ,type: 'datetime'
+            });
+            // 续住预离时间变更
+            laydate.render({
+                elem: '#leaveTime'
+                ,type: 'datetime'
+            });
+
+            // 叫醒服务表格
+            table.render({
+                elem: '#wake'
+                ,url:'../images/js/data.json'           // 接口
+                ,cols: [[
+                    {field:'room_num', title: '房间号'}
+                    ,{field:'name',title: '客户姓名'}
+                    ,{field:'wake_time', title: '叫醒时间'}
+                    ,{field:'is_wake', title: '操作', toolbar: "#isWake"}
+                ]]
+            });
+
+            // 监听叫醒按钮
+            table.on('tool(wake)', function(obj){
+                if (obj.event) {
+                    // 行数据 api
+                    console.log(obj.data);
+                    layer.msg('叫醒成功!',{icon:1, time:1000});
+                    // 按钮变激活状态
+                    $(obj.tr).find('.layui-btn').addClass('active')
+                }
+            });
+
+            // 各种弹窗关闭
+            $('.popup .close, .popup .cancel, .mask').on('click', function (){
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+            });
+            
+            // 联房表格
+            table.render({
+                elem: '#join'
+                ,page: {
+                    layout: ['prev', 'page', 'next'] //自定义分页布局
+                    ,groups: 8 //只显示 1 个连续页码
+                    ,first: false //不显示首页
+                    ,last: false //不显示尾页
+                }
+                ,url:'../images/js/data.json'
+                ,cols: [[
+                    {type: 'checkbox'}
+                    ,{field:'order_num', title: '订单号'}
+                    ,{field:'name', title: '姓名'}
+                    ,{field:'room_num', title: '房号'}
+                    ,{field:'status', title: '状态'}
+                    ,{field:'room_type', title: '房型'}
+                    ,{field:'live_time', title: '入住/离店日期'}
+                ]]
+            });
+
+            // 联房确定提交
+            $('.popup.join .confirm').on('click', function (){
+                // 选择的数据
+                var selectData = layui.table.checkStatus('join').data;
+                console.log(selectData);
+                // api
+                layer.msg('联房成功!',{icon:1, time:1000});
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+            });
+            // 联房关闭
+            $('.popup.join .cheek').on('click', function (){
+                layer.confirm('确定取消该联房吗？', {'btn': ['确定取消', '考虑一下']}, function() {
+                    layer.msg('已取消!',{icon:1, time:1000});
+                    $('.popup.join').fadeOut('fast');
+                    $('.mask').fadeOut();
+                });
+            });
+            // 联房搜索提交
+            form.on('submit(join-search)', function(data){
+                // api
+                console.log(data.field);
+            });
+            // 置维修提交
+            form.on('submit(repair)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('维修保存成功!',{icon:1, time:1000});
+            });
+            // 提前续住提交
+            form.on('submit(renew)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('续住保存成功!',{icon:1, time:1000});
+            });
+            // 换房弹窗提交
+            form.on('submit(barter)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('换房保存成功!',{icon:1, time:1000});
+            });
+            // 锁房弹窗提交
+            form.on('submit(lock)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('锁房保存成功!',{icon:1, time:1000});
+            });
+            // 入账弹窗提交
+            form.on('submit(add)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('入账保存成功!',{icon:1, time:1000});
+            });
+            // 结账弹窗提交
+            form.on('submit(settle)', function(data){
+                // api
+                console.log(data.field);
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                layer.msg('结账保存成功!',{icon:1, time:1000});
+            });
+
+            /**
+            * 登录后选择早中晚班
+            * index=0 早班
+            * index=1 中班
+            * index=2 晚班
+            */
+            $('.popup.shift .item').each(function (index){
+                $(this).on('click', function (){
+                    console.log(index);
+                    layer.msg('切换成功!',{icon:1, time:1000});
+                    $('.popup').fadeOut('fast');
+                    $('.container .class').text($(this).text().split('：')[0]);
+                    $('.mask').fadeOut();
+                });
+            });
+            // 选择早中晚班退出登录
+            $('.popup.shift .cheek').on('click', function (){
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+                // remove cookie
+                location.href = "../login.html";    // 登录页
+            });
+            // 点击头部选择早中晚班
+            $('.container .date').text(new Date().toLocaleDateString());
+            $('.container .layui-nav-item').eq(0).on('click', function (){
+                $('.popup.shift').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+
+            // 房态类型选择
+            $('.tags li').each(function (index){
+                $(this).on('click', function (){
+                    // api
+                    console.log(index);
+                });
+            });
+            // 房态全部选择
+            $('.tags .allState').on('click', function (){
+                // api
+                console.log('房态全部选择');
+            });
+            // 换房弹窗点击选房
+            $('.barter .layui-word-aux').on('click', function (){
+                $('.popup.row').fadeIn('fast');
+                $('.mask').fadeIn();
+            });
+
+            // 自定义右击菜单
+            $(document).on('click', '.click-menu li', function (){
+                var type = $(this).attr('data-type');       // 弹窗类型
+                var event = $(this).attr('data-event');     // 事件类型
+                if (type) {
+                    $(`.popup.${type}`).fadeIn('fast');
+                    $('.mask').fadeIn();
+                }
+                if (event) {
+                    console.log(event);
+                    // api
+                }
+            });
+
+            // 排房-房型选择；选择后列表下方对应房号
+            $('.popup.row .roomType li').each(function (){
+                $(this).on('click', function (){
+                    $('.roomNum ul li').remove();
+                    $(this).addClass('active').siblings().removeClass('active');
+
+                    // api； 房号数据；获取当前房型的房号
+                    var arr = [
+                        '<li data-price="285" data-type="朝南海别墅房">8028 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="286" data-type="朝南海别墅房">8029 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="288" data-type="朝南海别墅房">8030 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="255" data-type="朝南海别墅房">8031 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="258" data-type="朝南海别墅房">8032 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="295" data-type="朝南海别墅房">8033 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="355" data-type="朝南海别墅房">8034 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="355" data-type="朝南海别墅房">8035 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="365" data-type="朝南海别墅房">8036 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="455" data-type="朝南海别墅房">8037 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="575" data-type="朝南海别墅房">8038 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="545" data-type="朝南海别墅房">8039 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="612" data-type="朝南海别墅房">8040 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="524" data-type="朝南海别墅房">8041 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="585" data-type="朝南海别墅房">8042 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="455" data-type="朝南海别墅房">8043 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="885" data-type="朝南海别墅房">8044 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="255" data-type="朝南海别墅房">8045 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="225" data-type="朝南海别墅房">8046 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="525" data-type="朝南海别墅房">8047 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="355" data-type="朝南海别墅房">8048 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="435" data-type="朝南海别墅房">8049 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="285" data-type="朝南海别墅房">8050 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="365" data-type="朝南海别墅房">8051 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="455" data-type="朝南海别墅房">8052 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="655" data-type="朝南海别墅房">8053 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="785" data-type="朝南海别墅房">8054 <i class="layui-icon">&#xe605;</i></li>',
+                        '<li data-price="225" data-type="朝南海别墅房">8055 <i class="layui-icon">&#xe605;</i></li>'
+                    ];
+                    for (let i of arr) {
+                        $('.roomNum ul').append(i);
+                    }
+                });
+            });
+            // 排房-房号选择；选择后已排房列表对应显示
+            $('.popup.row .roomNum').on('click', 'li', function (){
+                var text = Number.parseInt($(this).text());
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    for (let i of $('.already li')) {
+                        if (Number.parseInt($(i).text()) == text) {
+                            $(i).remove();
+                        }
+                    }
+                } else {
+                    $(this).addClass('active');
+                    $('.already ul').append(`<li data-price="${$(this).attr('data-price')}" data-type="${$(this).attr('data-type')}">
+                        ${text} <i class="layui-icon">&#x1006;</i>
+                    </li>`);
+                }
+                $('.already span').text($('.already li').length);
+            });
+            // 排房-已排房点击关闭房号
+            $('.popup.row .already').on('click', 'i', function (){
+                var title = Number.parseInt($(this).parent().text());
+                for (let i of $('.roomNum li')) {
+                    if (title == Number.parseInt($(i).text())) {
+                        $(i).removeClass('active');
+                    }
+                }
+                $(this).parent().remove();
+                $('.already span').text($('.already li').length);
+            });
+            // 排房确定
+            $('.popup.row .confirm').on('click', function (){
+                var arr = [];
+                for (let i of $('.already li')) {
+                    arr.push({
+                        roomNum: Number.parseInt($(i).text()),
+                        price: $(i).attr('data-price'),
+                        type: $(i).attr('data-type')
+                    });
+                }
+                console.log(arr);
+                // 添加房间
+                layer.msg('排房成功!',{icon:1, time:1000});
+                $('.popup').fadeOut('fast');
+                $('.mask').fadeOut();
+            });
+
+
+            $(document).contextmenu(function (e){
+                var index = -99;
+                var t = e.target;
+                var p = $(t).parents();
+                var isRoom = $(t).hasClass('pop');
+                var parentRoom = $(p).hasClass('pop');
+                if ($(t).hasClass('state-0') || $(p).hasClass('state-0')) {
+                    index = 0;
+                } else if (($(t).hasClass('state-1') || $(p).hasClass('state-1')) || ($(t).hasClass('state-2') || $(p).hasClass('state-2'))) {
+                    index = 1;
+                } else if ($(t).hasClass('state-3') || $(p).hasClass('state-3')) {
+                    index = 2;
+                } else if ($(t).hasClass('state-5') || $(p).hasClass('state-5')) {
+                    index = 3;
+                } else if ($(t).hasClass('state-9') || $(p).hasClass('state-9')) {
+                    index = 4;
+                }
+                if (isRoom || parentRoom) {
+                    $('.room-item .mask').remove();
+                    $('.click-menu').eq(index).css({
+                        display: 'flex',
+                        left: e.pageX,
+                        top: e.pageY
+                    }).siblings().hide();
+                    // 添加遮罩
+                    if (isRoom) {
+                        $(t).append('<div class="mask"><i class="layui-icon">&#xe605;</i></div>');
+                    } else if (parentRoom) {
+                        $(t).parents('.room-item').append('<div class="mask"><i class="layui-icon">&#xe605;</i></div>');
+                    }
+                    return false;
+                } else {
+                    $('.click-menu').hide();
+                    $('.room-item .mask').remove();
+                }
+            });
+            $(document).on('click', function (){
+                $('.click-menu').hide();
+                $('.room-item .mask').remove();
+            });
+
+        });
+            
+    </script>
+</body>
+</html>

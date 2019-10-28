@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../images/css/xadmin.css">   
+    <link rel="stylesheet" href="../../images/css/style.css" />
+    <link rel="stylesheet" href="../../images/css/animate.min.css">
+    <link rel="stylesheet" href="../../images/css/font.css" />
+    <title>智能发券</title>
+    <style>
+        .selected{
+            margin: 0 0 10px;
+            background: #f2f2f2;
+            padding: 15px 15px 20px;
+        }
+        .selects{
+            background: #f2f2f2;
+            padding: 15px 15px 50px;
+        }
+        .selected p{
+            margin: 0 0 10px;
+        }
+        .selected ul{
+            overflow: hidden;
+        }
+        .selected li{
+            float: left;
+            color: #333;
+            padding: 5px 6px;
+            background: #ccc;
+            margin: 0 12px 12px 0;
+        }
+        .selected li i{
+            cursor: pointer;
+        }
+        .selects .title{
+            overflow: hidden;
+            margin: 0 0 10px;
+        }
+        .selects .title .blue{
+            color:#0eb2f3;
+            margin: 0 0 0 15px;
+            cursor: pointer;
+        }
+        .selects .list{
+            overflow: hidden;
+        }
+        .selects .list li{
+            float: left;
+            margin: 0 0 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pages voucher">
+
+
+
+
+
+
+        <div class="selected">
+            <p>已选择：10个</p> 
+            <ul></ul>
+        </div>
+
+        <div class="selects">
+            <div class="title">
+                <span>选择商户</span>
+                <span class="blue all">全选</span>
+                <span class="blue invert">反选</span>
+            </div>
+            <div class="list">
+                <form class="layui-form">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="like1[write]" value="111" lay-filter="select" lay-skin="primary" title="写作">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="like1[read]" value="222" lay-filter="select" lay-skin="primary" title="阅读">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="like1[game]" value="333" lay-filter="select" lay-skin="primary" title="游戏">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="header">
+            <div class="v-nav wow fadeInDown">
+                <div class="select">
+                    <div class="page-title">导航</div>
+                </div>
+                <div class="right">
+                    <button type="button" class="layui-btn refresh"><a href="javascript:location.reload()">刷新</a></button>
+                </div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li class="item-1 wow fadeInRight">
+                        <div class="box">
+                            <div class="pic">
+                                <img src="../../images/coupon-icon.png" alt=""/>
+                            </div>
+                            <span>生日送券</span>
+                            <i></i>
+                        </div>
+                    </li>
+                    <li class="item-2 wow fadeInRight" data-wow-delay="0.1s">
+                        <div class="box">
+                            <div class="pic">
+                                <img src="../../images/coupon-icon2.png" alt=""/>
+                            </div>
+                            <span>优惠劵包</span>
+                            <i></i>
+                        </div>
+                    </li>
+                    <li class="item-3 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="box">
+                            <div class="pic">
+                                <img src="../../images/coupon-icon3.png" alt=""/>
+                            </div>
+                            <span>沉睡送券</span>
+                            <i></i>
+                        </div>
+                    </li>
+                    <li class="item-4 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="box">
+                            <div class="pic">
+                                <img src="../../images/coupon-icon4.png" alt=""/>
+                            </div>
+                            <span>注册送券</span>
+                            <i></i>
+                        </div>
+                    </li>
+                    <li class="item-5 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="box">
+                            <div class="pic">
+                                <img src="../../images/coupon-icon5.png" alt=""/>
+                            </div>
+                            <span>消费送券</span>
+                            <i></i>
+                        </div>
+                    </li>
+                </ul>
+                <div class="drop">
+                    <i class="layui-icon">&#xe65a;</i>
+                    <img src="../../images/drop-icon.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="voucher-con">
+            <div class="page-title wow fadeInDown">生日送券</div>
+            <div class="content">
+                <div class="item active">
+                    <form class="layui-form" action="">
+                        <div class="form-item wow fadeInUp">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠劵类别</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">商城劵</option>
+                                        <option value="1">微信券</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">优惠劵1</option>
+                                        <option value="1">优惠劵2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">日</div>
+                                <div class="tip">即在会员生日前几天推送优惠劵</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群：</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用人群：</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">通知内容设置</div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block selTemp">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                    </select>
+                                </div>
+                                <div class="preview">
+                                    <div class="form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">头部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容1</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容2</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容3</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容4</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">尾部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="template">
+                                        <div class="title">预览区域</div>
+                                        <div class="main">
+                                            <div class="tip">
+                                                <i class="layui-icon">&#xe63a;</i>
+                                                <span>咨询回复消息提醒</span>
+                                            </div>
+                                            <div class="info">
+                                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                            </div>
+                                            <button type="button" class="layui-btn danger">详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">高级设置</div>
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item btns">
+                                    <button class="layui-btn danger" lay-submit lay-filter="formDemo">创建任务</button>
+                                    <button type="reset" class="layui-btn layui-btn-normal">重置页面</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="item">
+                    <form class="layui-form" action="">
+                        <div class="form-item wow fadeInUp">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠劵类别</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">商城劵</option>
+                                        <option value="1">微信券</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">优惠劵1</option>
+                                        <option value="1">优惠劵2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">日</div>
+                                <div class="tip">即在会员生日前几天推送优惠劵</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群：</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用人群：</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">通知内容设置</div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block selTemp">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                    </select>
+                                </div>
+                                <div class="preview">
+                                    <div class="form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">头部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容1</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容2</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容3</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容4</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">尾部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="template">
+                                        <div class="title">预览区域</div>
+                                        <div class="main">
+                                            <div class="tip">
+                                                <i class="layui-icon">&#xe63a;</i>
+                                                <span>咨询回复消息提醒</span>
+                                            </div>
+                                            <div class="info">
+                                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                            </div>
+                                            <button type="button" class="layui-btn danger">详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">高级设置</div>
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item btns">
+                                    <button class="layui-btn danger" lay-submit lay-filter="formDemo">创建任务</button>
+                                    <button type="reset" class="layui-btn layui-btn-normal">重置页面</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="item">
+                    <form class="layui-form" action="">
+                        <div class="form-item wow fadeInUp">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠劵类别</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">商城劵</option>
+                                        <option value="1">微信券</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">优惠劵1</option>
+                                        <option value="1">优惠劵2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">日</div>
+                                <div class="tip">即在会员生日前几天推送优惠劵</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群：</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用人群：</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">通知内容设置</div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block selTemp">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                    </select>
+                                </div>
+                                <div class="preview">
+                                    <div class="form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">头部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容1</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容2</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容3</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容4</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">尾部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="template">
+                                        <div class="title">预览区域</div>
+                                        <div class="main">
+                                            <div class="tip">
+                                                <i class="layui-icon">&#xe63a;</i>
+                                                <span>咨询回复消息提醒</span>
+                                            </div>
+                                            <div class="info">
+                                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                            </div>
+                                            <button type="button" class="layui-btn danger">详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">高级设置</div>
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item btns">
+                                    <button class="layui-btn danger" lay-submit lay-filter="formDemo">创建任务</button>
+                                    <button type="reset" class="layui-btn layui-btn-normal">重置页面</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="item">
+                    <form class="layui-form" action="">
+                        <div class="form-item wow fadeInUp">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠劵类别</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">商城劵</option>
+                                        <option value="1">微信券</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">优惠劵1</option>
+                                        <option value="1">优惠劵2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">日</div>
+                                <div class="tip">即在会员生日前几天推送优惠劵</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群：</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用人群：</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">通知内容设置</div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block selTemp">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                    </select>
+                                </div>
+                                <div class="preview">
+                                    <div class="form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">头部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容1</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容2</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容3</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容4</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">尾部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="template">
+                                        <div class="title">预览区域</div>
+                                        <div class="main">
+                                            <div class="tip">
+                                                <i class="layui-icon">&#xe63a;</i>
+                                                <span>咨询回复消息提醒</span>
+                                            </div>
+                                            <div class="info">
+                                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                            </div>
+                                            <button type="button" class="layui-btn danger">详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">高级设置</div>
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item btns">
+                                    <button class="layui-btn danger" lay-submit lay-filter="formDemo">创建任务</button>
+                                    <button type="reset" class="layui-btn layui-btn-normal">重置页面</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="item">
+                    <form class="layui-form" action="">
+                        <div class="form-item wow fadeInUp">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠劵类别</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">商城劵</option>
+                                        <option value="1">微信券</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">优惠劵1</option>
+                                        <option value="1">优惠劵2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">日</div>
+                                <div class="tip">即在会员生日前几天推送优惠劵</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群：</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用人群：</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                            <input type="checkbox" name="" lay-skin="primary" title="门店A" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">通知内容设置</div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block selTemp">
+                                    <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                    </select>
+                                </div>
+                                <div class="preview">
+                                    <div class="form">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">头部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容1</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容2</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容3</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">内容4</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">尾部提示</label>
+                                            <div class="layui-input-block">
+                                                <input class="layui-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="template">
+                                        <div class="title">预览区域</div>
+                                        <div class="main">
+                                            <div class="tip">
+                                                <i class="layui-icon">&#xe63a;</i>
+                                                <span>咨询回复消息提醒</span>
+                                            </div>
+                                            <div class="info">
+                                                <p>xxxxxxxxxxxxxxxxxxxxxx</p>
+                                            </div>
+                                            <button type="button" class="layui-btn danger">详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item wow fadeInUp">
+                            <div class="form-title">高级设置</div>
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item btns">
+                                    <button class="layui-btn danger" lay-submit lay-filter="formDemo">创建任务</button>
+                                    <button type="reset" class="layui-btn layui-btn-normal">重置页面</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../images/lib/layui/layui.all.js"></script>
+    <script src="../../images/js/jquery.min.js"></script>
+    <script src="../../images/js/wow.min.js"></script>
+    <script src="../../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        
+        layui.use(['form'], function(){
+            var form = layui.form;
+            form.on('checkbox(select)', function(data){
+                var title = $(data.elem).attr('title');
+                var value = $(data.elem).val();
+                if (data.elem.checked) {
+                    for (let i of $('.selected li')) {
+                        if (value == $('i', i).attr('data-id')) {
+                            return;
+                        }
+                    }
+                    $('.selected ul').append(`
+                    <li>
+                        <span>${title}</span>
+                        <i class="layui-icon" data-id="${value}">&#x1006;</i>
+                    </li>`);
+                } else {
+                    for (let i of $('.selected li')) {
+                        if (value == $('i', i).attr('data-id')) {
+                            $(i).remove();
+                        }
+                    }
+                }
+            });
+            $('.selected').on('click', 'i', function (){
+                $(this).parent().remove();
+            });
+            $('.selects .all').on('click', function (){
+                $(".selects .list input").prop("checked", true);
+                form.render('checkbox');
+            });
+            $('.selects .invert').on('click', function (){
+                $(".selects .list input").prop("checked", false);
+                form.render('checkbox');
+            });
+        });
+
+
+
+
+
+
+
+
+
+		new WOW().init();
+
+        const content = $('.header .content');
+        const dropIcon = $('.voucher .drop i');
+        $('.voucher .drop').on('click', function (){
+            if($(content).css('height') == '146px') {
+                $(content).css('height', 'auto');
+                $(dropIcon).css({
+                    'webkitTransform': 'translate3d(-50%, -50%, 0) rotate(-270deg)',
+                    'msTransform': 'translate3d(-50%, -50%, 0) rotate(-270deg)',
+                    'transform': 'translate3d(-50%, -50%, 0) rotate(-270deg)'
+                });
+            } else {
+                $(content).css('height', '146px');
+                $(dropIcon).css({
+                    'webkitTransform': 'translate3d(-50%, -50%, 0) rotate(-90deg)',
+                    'msTransform': 'translate3d(-50%, -50%, 0) rotate(-90deg)',
+                    'transform': 'translate3d(-50%, -50%, 0) rotate(-90deg)'
+                });
+            }
+        });
+
+        $('.header li').each(function (index){
+            $(this).on('click', function (){
+                $('.voucher-con .content .item').eq(index).addClass('active').siblings().removeClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

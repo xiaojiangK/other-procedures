@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 会员等级</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">2019/7/10  晚班</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+
+        <!-- page-content -->
+        <div class="page-content">
+            <div class="main level">
+                <div class="address">当前位置：会员等级 <button type="button" class="layui-btn primary">添加等级</button></div>
+                <div class="content">
+                    <table class="layui-hide" id="data" lay-filter="data"></table>
+                    <div id="pages"></div>
+                    <script type="text/html" id="switch">
+                        <input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-filter="status" {{ d.id == 10000 ? 'checked' : '' }} />
+                    </script>
+                    <script type="text/html" id="control">
+                        <a title="编辑" href="javascript:;" lay-event="edit">
+                            <i class="layui-icon">&#xe642;</i>
+                        </a>
+                    </script>
+                </div>
+
+                <!-- 添加会员等级 -->
+                <div class="alert add">
+                    <div class="header">
+                        <span>添加会员等级</span>
+                        <i class="layui-icon">&#x1006;</i>
+                    </div>
+                    <form class="layui-form" action="">
+                        <div class="main">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">会员等级名称:</label>
+                                <div class="layui-input-inline">
+                                    <select name="level">
+                                        <option value="0">普通会员</option>
+                                        <option value="1">超级会员</option>
+                                    </select>
+                                </div>
+                                <div class="tip">此会员等级已存在</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">会员折扣：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="discount" class="layui-input" />
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">%</div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button type="button" class="layui-btn layui-btn-primary cancel">取消</button>
+                            <button type="button" class="layui-btn" lay-submit lay-filter="addSubmit">保存</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 询问框 -->
+                <div class="alert confirm">
+                    <div class="content">确定停用此销售员吗？</div>
+                    <div class="footer">
+                        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+                        <button type="button" class="layui-btn">保存</button>
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </div>
+        <!-- page-content -->
+    </div>
+
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        // 状态
+        var isChecked = { id: 0, value: true };
+
+        // 点击遮罩/关闭按钮 隐藏
+        $('.mask, .alert .layui-icon').on('click', function (){
+            $('.alert').fadeOut('fast');
+            $('.mask').fadeOut();
+        });
+
+        // 询问框取消
+        $('.alert.confirm button').eq(0).on('click', function (){
+            $('.mask').fadeOut();
+            $('.alert.confirm').fadeOut();
+        });
+        // 询问框确认
+        $('.alert.confirm button').eq(1).on('click', function (){
+            console.log(isChecked);
+            // 开启，否则关闭
+            if (isChecked.value) {
+                // api
+            } else {
+
+            }
+            $('.mask').fadeOut();
+            $('.alert.confirm').fadeOut();
+        });
+
+        // 添加会员等级
+        $('.address button').on('click', function (){
+            $('.alert.add').fadeIn();
+            $('.mask').fadeIn();
+        });
+
+        layui.use(['table', 'laypage', 'form', 'layer'], function(){
+            var form = layui.form;
+            var layer = layui.layer;
+            var table = layui.table;        //表格
+            var laypage = layui.laypage;    // 分页
+
+            //监听头工具栏事件
+            table.on('tool(data)', function(obj){
+                // 点击编辑
+                if (obj.event == 'edit') {
+                    // code...
+                    console.log('this is edit');
+                }
+            });
+
+            // 添加提交
+            form.on('submit(addSubmit)', function(data){
+                // api
+                console.log(data.field);
+                $('.alert.add').fadeOut();
+                $('.mask').fadeOut();
+                layer.msg('添加成功!',{icon:1, time:1000});
+            });
+
+            // 编辑
+            $('.alert .cancel').on('click', function (){
+                layer.confirm('确认要取消吗？',function() {
+                    $('.alert').fadeOut('fast');
+                    $('.mask').fadeOut();
+                    layer.msg('已取消!',{icon:1, time:1000});
+                });
+            });
+
+            //监听开关
+            form.on('switch(status)', function(data){
+                if (this.checked) {
+                    $('.alert.confirm .content').text('确定启用此会员等级吗？');
+                } else {
+                    $('.alert.confirm .content').text('停用会员等级后，关联的用户将失去会员身份，确定停用吗？');
+                }
+                isChecked = {
+                    id: data.value,
+                    value: this.checked
+                };
+                $('.mask').fadeIn();
+                $('.alert.confirm').fadeIn();
+            });
+
+            // page
+            laypage.render({
+                elem: 'pages'
+                ,groups: 2
+                ,count: 1000
+                ,layout: ['prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+                jump: function(obj){
+                    console.log(obj)
+                }
+            });
+
+            //执行一个 table 实例
+            table.render({
+                elem: '#data'
+                ,url: '../images/js/data.json' //数据接口
+                ,title: '用户表'
+                ,cols: [[
+                    ,{field: 'username', title: '会员等级'}
+                    ,{field: 'phone', title: '优惠折扣'}
+                    ,{field: 'id', title: '状态', toolbar: '#switch'}
+                    ,{field: 'score', title: '操作', toolbar: '#control'}
+                ]]
+            });
+        });
+    </script>
+</body>
+</html>

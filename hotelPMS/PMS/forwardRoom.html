@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=1440,user-scalable=yes, minimum-scale=0.4, initial-scale=1.0,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/pms_style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 远期房态</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="date">2019/7/10</span> <span class="class">晚班</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./roomState.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>实时房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./forwardRoom.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>远期房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./guestReserveing.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>宾客管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./roomInfo.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>房间维护</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./finance.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>财务</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../CRM/memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+        
+        <!-- page-content start -->
+        <div class="page-content">
+            <div class="address">房态管理-远期房态</div>
+            <div class="main forward">
+                <div class="tip">占用房/可售房</div>
+                <table class="layui-hide" id="forwardRoom"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['table'], function(){
+            var table = layui.table;
+            
+            // 远期房态表格
+            table.render({
+                elem: '#forwardRoom'
+                ,url:'../images/js/data.json'
+                ,cols: [[
+                    {field:'room_type', title: '房型'}
+                    ,{field:'total_room',title: '总房数'}
+                    ,{field:'room_item', title: '07/08 周一'}
+                    ,{field:'room_item', title: '07/09 周二'}
+                    ,{field:'room_item', title: '07/10 周三'}
+                    ,{field:'room_item', title: '07/11 周四'}
+                    ,{field:'room_item', title: '07/12 周五'}
+                    ,{field:'room_item', title: '07/13 周六'}
+                    ,{field:'room_item', title: '07/14 周日'}
+                    ,{field:'room_item', title: '07/15 周一'}
+                    ,{field:'room_item', title: '07/16 周二'}
+                    ,{field:'room_item', title: '07/17 周三'}
+                    ,{field:'room_item', title: '07/18 周四'}
+                    ,{field:'room_item', title: '07/19 周五'}
+                    ,{field:'room_item', title: '07/20 周六'}
+                    ,{field:'room_item', title: '07/21 周日'}
+                    ,{field:'room_item', title: '07/22 周一'}
+                    ,{field:'room_item', title: '07/23 周二'}
+                    ,{field:'room_item', title: '07/24 周三'}
+                    ,{field:'room_item', title: '07/25 周四'}
+                    ,{field:'room_item', title: '07/26 周五'}
+                    ,{field:'room_item', title: '07/27 周六'}
+                    ,{field:'room_item', title: '07/28 周日'}
+                    ,{field:'room_item', title: '07/29 周一'}
+                    ,{field:'room_item', title: '07/30 周二'}
+                    ,{field:'room_item', title: '07/31 周三'}
+                    ,{field:'room_item', title: '07/32 周四'}
+                    ,{field:'room_item', title: '07/33 周五'}
+                    ,{field:'room_item', title: '07/34 周六'}
+                    ,{field:'room_item', title: '07/35 周日'}
+                    ,{field:'room_item', title: '07/36 周一'}
+                    ,{field:'room_item', title: '07/37 周二'}
+                    ,{field:'room_item', title: '07/38 周三'}
+                    ,{field:'room_item', title: '07/39 周四'}
+                ]]
+            });
+        });
+    </script>
+</body>
+</html>

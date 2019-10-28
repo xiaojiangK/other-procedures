@@ -1,0 +1,68 @@
+<view class="home">
+    <button wx:if="{{!isAuthorizeNumber}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+    <view class="lheader rel flex_center" style="background:{{color}}">
+        <view style="width:50rpx;"></view>
+        <view class="logsimg">
+            <open-data class="logsimg" type="userAvatarUrl"></open-data>
+        </view>
+        <view bindtap="user_zhuce">
+            <view>
+                <open-data type="userNickName"></open-data>
+            </view>
+            <view class="hydj">
+                <image src="../img/vipfill.png"></image>
+                <text>{{level_name}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="lorder">
+        <view bindtap="mine_order" class="flex3" data-index="0">
+            <image class="lorderimg" src="../img/dindan@2x.png"></image>
+            <view>全部订单</view>
+        </view>
+        <view bindtap="mine_order" class="flex3" data-index="1">
+            <image class="lorderimg" src="../img/daifukuan@2x.png"></image>
+            <view>待付款</view>
+        </view>
+        <view bindtap="mine_order" class="flex3" data-index="2">
+            <image class="lorderimg" src="../img/daifuzhu@2x.png"></image>
+            <view>待入住</view>
+        </view>
+    </view>
+    <view class="lbanner">
+        <view bindtap="service" class="lbanlist">
+            <view>联系客服</view>
+            <image class="lbannerimg" src="../img/acright.png"></image>
+        </view>
+        <view class="lbanlist rel" style="margin-bottom:100rpx;">
+            <view>授权设置</view>
+            <image class="lbannerimg" src="../img/acright.png"></image>
+            <button class="ab ud" openType="openSetting" wx:if="{{users==true}}"></button>
+            <button bindgetuserinfo="bindGetUserInfo" class="ab ud" openType="getUserInfo" wx:else></button>
+        </view>
+    </view>
+    <view bindtap="copyright" class="copyright">
+        <image mode="aspectFill" src="{{url}}{{platform.bq_logo}}"></image>
+    {{platform.bq_name}}
+  </view>
+    <view class="foot">
+        <view bindtap="home" class="footbox flex3">
+            <image src="../img/yudingg@2x.png"></image>
+            <view>预订</view>
+        </view>
+        <view class="footbox flex3">
+            <image src="../img/wode@2x.png"></image>
+            <view class="footfont1">我的</view>
+        </view>
+    </view>
+</view>
+<view class="authorization fixed" wx:if="{{users==false}}">
+    <view class="ab"></view>
+    <view class="ab udlr">
+        <view class="hydl">
+            <icon size="50" type="success"></icon>
+            <view>欢迎登录</view>
+        </view>
+        <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo">+微信登录</button>
+    </view>
+</view>

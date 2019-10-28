@@ -1,0 +1,107 @@
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+    <view class="container">
+        <view class="hotel">
+            <view class="hotel_name">{{hotel.name}}</view>
+            <view class="hotel_info">
+                <image class="iconaddress" src="../img/didian.png"></image>
+                <view class="gobyndsingle">{{hotel.address}}</view>
+            </view>
+            <view class="hotel_info">
+                <image class="iconaddress" src="../img/fangxing.png"></image>
+                <view>
+                    <text>房型：{{room.name}}</text>
+                </view>
+            </view>
+            <view class="hotel_info">
+                <image class="iconaddress" src="../img/chuang.png"></image>
+                <view>
+                    <text>床型：{{room.size}} </text>
+                    <text wx:if="{{room.breakfast==1}}"> 早餐：有</text>
+                    <text wx:if="{{room.breakfast==2}}"> 早餐：无</text>
+                </view>
+            </view>
+            <view class="hotel_info">
+                <image class="iconaddress" src="../img/ruzhu.png"></image>
+                <view class="hotel_time">
+                    <view>入住：
+            <text style="color:{{color}}">{{day1}}</text>
+                    </view>
+                    <view>离店：
+            <text style="color:{{color}}">{{day2}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="form_info">
+            <view class="form_info_child">
+                <view>房间数</view>
+                <view class="home_num">
+                    <view bindtap="reduce_num">
+                        <image mode="aspectFill" src="../img/jian.png"></image>
+                    </view>
+                    <view>{{num}}间</view>
+                    <view bindtap="add_num">
+                        <image mode="aspectFill" src="../img/jia.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="form_info_child">
+                <view>入住人</view>
+                <view>
+                    <input name="people" maxlength="4" placeholder="请填写入住人姓名" value="{{userInfo.zs_name}}"></input>
+                </view>
+            </view>
+            <view class="form_info_child">
+                <view>手机号</view>
+                <view>
+                    <input name="tel" maxlength="11" placeholder="请填写联系电话" type="number" value="{{userInfo.tel}}"></input>
+                </view>
+            </view>
+            <view class="form_info_child" wx:if="{{platform.is_sfz==1}}">
+                <view>身份证号</view>
+                <view>
+                    <input name="code" maxlength="18" placeholder="请填写您的身份证号"></input>
+                </view>
+            </view>
+            <view class="form_info_child">
+                <view>选择到店时间</view>
+                <view class="picker">
+                    <picker bindchange="bindTimeChange" mode="time" value="{{time}}">
+                        <text>{{time}}</text>
+                        <text>〉</text>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="bottom_price">
+            <view bindtap="see_price" class="rel heji">
+                <view>
+                    <view> 合计</view>
+                </view>
+                <view>￥{{price}}</view>
+                <view class="ab ud" style="right:20rpx;">
+                    <text>明细</text>
+                    <text style="transform:rotateX(90deg)">></text>
+                </view>
+            </view>
+            <view>
+                <button class="button1" formType="submit" style="background:{{color}}">提交订单</button>
+            </view>
+        </view>
+    </view>
+    <view class="see_more udlr" wx:if="{{see_price==true}}">
+        <view wx:for="{{price_infos}}" wx:key="*this">
+            <view>{{item.dateday}}房费</view>
+            <view>{{item.mprice}}元</view>
+        </view>
+        <view>
+            <view>应付金额</view>
+            <view>+{{price}}</view>
+        </view>
+        <view>
+            <view>实付房费</view>
+            <view>￥{{price}}</view>
+        </view>
+    </view>
+    <view bindtap="see_price" class="back" wx:if="{{see_price==true}}"></view>
+</form>

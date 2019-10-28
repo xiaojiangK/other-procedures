@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=1440,user-scalable=yes, minimum-scale=0.4, initial-scale=1.0,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../images/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../images/css/xadmin.css" />
+    <link rel="stylesheet" href="../images/css/pms_style.css" />
+    <link rel="stylesheet" href="../images/css/font.css" />
+    <title>酒店管理后台 - 宾客管理</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- top start -->
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">酒店管理后台</a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><span class="date">2019/7/10</span> <span class="class">晚班</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <i class="layui-icon">&#xe66f;</i>
+                        <span>yy234555</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" title="退出"><i class="layui-icon">&#xe66b;</i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+        
+        <!-- left start -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home left-nav-li" lay-tips="酒店首页"></i>
+                            <cite>酒店首页</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-template-1 left-nav-li" lay-tips="房态管理"></i>
+                            <cite>房态管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="./roomState.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>实时房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./forwardRoom.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>远期房态</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./guestReserveing.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>宾客管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./roomInfo.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>房间维护</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./finance.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>财务</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-group left-nav-li" lay-tips="店员管理"></i>
+                            <cite>CRM</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../CRM/memberAdmin.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员管理</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/memberLevel.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>会员等级</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/salesperson.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>销售员</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../CRM/customer.html">
+                                    <i class="iconfont">&#xe70b;</i>
+                                    <cite>公司客户</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- left end -->
+        
+        <!-- page-content start -->
+        <div class="page-content">
+            <div class="address">房态管理-宾客管理</div>
+            <div class="main guest">
+                <div class="tabs">
+                    <ul>
+                        <li><a href="guestReserveing.html">预订中</a></li>
+                        <li><a href="guestCheckedIn.html">在住</a></li>
+                        <li><a href="guestCheckedOut.html">已退房</a></li>
+                        <li class="active"><a href="guestCancel.html">取消</a></li>
+                    </ul>
+                    <div class="right">
+                        <span>今日预定：888</span>
+                        <span>今日入住：888</span>
+                        <span>今日离店：888</span>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <form class="layui-form">
+                        <div class="left">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">关键字：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="keyword" placeholder="请输入关键字" class="layui-input"/>
+                                </div>
+                                <label class="layui-form-label">入住日期：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="inDate" id="inDate" placeholder="请输入入住日期" class="layui-input"/>
+                                </div>
+                                <label class="layui-form-label">离店日期</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="outDate" id="outDate" placeholder="请输入离店日期" class="layui-input"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline">
+                                    <button type="button" lay-submit lay-filter="search" class="layui-btn primary">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="content">
+                    <table class="layui-hide" id="checkedIn" lay-filter="checkedIn"></table>
+
+                    <script type="text/html" id="control">
+                        <a href="./checkInStay.html?id={{d.id}}" class="layui-icon">&#xe615;</a>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+    </div>
+    <script src="../images/lib/layui/layui.all.js"></script>
+    <script src="../images/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        layui.use(['form', 'table', 'laydate'], function(){
+            var form = layui.form
+            ,table = layui.table
+            ,layer = layui.layer
+            laydate = layui.laydate;
+            
+            // 查询提交
+            form.on('submit(search)', function(data){
+                // api
+                console.log(data.field);
+            });
+
+            // 宾客管理表格
+            table.render({
+                elem: '#checkedIn'
+                ,url:'../images/js/data.json'
+                ,cols: [[
+                    {field:'room_type', title: '姓名/电话'}
+                    ,{field:'room_num',title: '客源类别'}
+                    ,{field:'order_num', title: '入住类别'}
+                    ,{field:'name', title: '房型'}
+                    ,{field:'room_item', title: '房号'}
+                    ,{field:'is_wake', title: '房价'}
+                    ,{field:'live_time', title: '预抵'}
+                    ,{field:'live_time', title: '预离'}
+                    ,{field:'room_num', title: '押金'}
+                    ,{field:'total_room', title: '余额'}
+                    ,{field:'status', title: '操作', toolbar: '#control'}
+                ]]
+            });
+
+            // 入住时间日期
+            laydate.render({
+                elem: '#inDate'
+                ,type: 'datetime'
+                ,range: true
+                ,done: function (e){
+                    if (e) {
+                        $('.form-box #outDate').attr('disabled', true);
+                    } else {
+                        $('.form-box #outDate').removeAttr('disabled');
+                    }
+                }
+            });
+
+            // 离店时间日期
+            laydate.render({
+                elem: '#outDate'
+                ,type: 'datetime'
+                ,range: true
+                ,done: function (e){
+                    if (e) {
+                        $('.form-box #inDate').attr('disabled', true);
+                    } else {
+                        $('.form-box #inDate').removeAttr('disabled');
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
