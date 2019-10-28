@@ -1,0 +1,12 @@
+<view class="c-package" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx {{style.marginbottom * 2}}rpx;">
+    <navigator url="/pages/goods/index/index" hover-class="none" class="title" style="color: {{style.textcolor}}">
+        <view class="left">相关套餐</view>
+        <view class="right">更多套餐<text class="iconfont icon-more2"></text></view>
+    </navigator>
+    <view class="list">
+        <navigator url="/pages/goods/detail/index?id={{item.id}}" hover-class="none" class="item" wx:for="{{list}}" wx:key="index">
+            <image class="img" mode="aspectFill" src="{{item.thumb}}" />
+            <view class="title">{{item.title}}</view>
+        </navigator>
+    </view>
+</view>

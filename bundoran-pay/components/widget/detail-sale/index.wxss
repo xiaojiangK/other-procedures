@@ -1,0 +1,85 @@
+@import '/static/iconfont/iconfont';
+
+.c-sale{
+    padding: 0 20rpx;
+    background: #fff;
+}
+.c-sale .sale-item{
+    font-size: 24rpx;
+    padding: 16rpx 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+.sale-item .title{
+    width: 90rpx;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    padding: 0 20rpx 0 0;
+    display: table-cell;
+    text-align: center;
+}
+.sale-item .desc{
+    width: 570rpx;
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+}
+.sale-item .iconfont{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 24rpx;
+    color: #888;
+    transform: translateY(-50%);
+}
+.coupon .tag{
+    float: left;
+    color: #fff;
+    margin: 0 8rpx 0 0;
+    padding: 4rpx 8rpx;
+    background: #ff5555;
+}
+.sale-item .border-tag{
+    float: left;
+    height: 32rpx;
+    line-height: 32rpx;
+    padding: 0 8rpx;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 8rpx;
+    margin: 6rpx 8rpx 0 0;
+    border: 1rpx solid #ff5555;
+}
+.sale-item .text{
+    float: left;
+    line-height:50rpx;
+}
+.sale-item .price{
+    color: #eb6060;
+}
+.sale-item .item{
+    display: flex;
+}
+.service {
+    display: flex;
+    padding: 10rpx 0;
+    margin: 0 0 20rpx;
+    background: #FAFAFA;
+}
+.service .tag{
+    color: #fff;
+    font-weight: 600;
+    font-size: 24rpx;
+    padding: 6rpx 8rpx;
+    margin: 0 10rpx 0 0;
+    background: #eb6060;
+    border-radius: 10rpx;
+}
+.address{
+    border-top: 1rpx solid #f1f1f1;
+}
+.address .desc{
+    color: #333;
+    font-size: 28rpx;
+}

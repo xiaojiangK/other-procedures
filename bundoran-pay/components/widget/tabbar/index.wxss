@@ -1,0 +1,21 @@
+.c-tabbar{
+    overflow: hidden;
+}
+.c-tabbar .list{
+    overflow: hidden;
+    border-bottom: 2rpx solid #D0D0D0;
+}
+.c-tabbar .list .item{
+    width: 20%;
+    float: left;
+    height: 80rpx;
+    color: #666;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    text-align: center;
+    transition: .2s all;
+    border-bottom: 2rpx solid #fff;
+}
+.c-tabbar .list.col-3 .item{
+    width: 25%;
+}

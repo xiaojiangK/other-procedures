@@ -1,0 +1,23 @@
+<view class="c-navbar" style="background: {{style.background}};">
+    <view class="group-menu {{params.hidecartbtn == '1' ? 'flex2': ''}}">
+        <view class="item {{isfavorite ? 'active' : ''}}" bindtap="favorite">
+            <text class="iconfont {{isfavorite ? 'icon-like1' : 'icon-like'}}" style="color: {{style.iconcolor}}"></text>
+            <view class="title" style="color: {{style.textcolor}}">关注</view>
+        </view>
+        <navigator url="/pages/index/index?merchid={{goods.merchid}}" open-type="switchTab" class="item">
+            <text class="iconfont icon-shop" style="color: {{style.iconcolor}}"></text>
+            <view class="title" style="color: {{style.textcolor}}">店铺</view>
+        </navigator>
+        <navigator url="/pages/member/cart/index" open-type="switchTab" class="item">
+            <view class="icon">
+                <text class="iconfont icon-gouwuche" style="color: {{style.iconcolor}}"></text>
+                <view class="dot" style="background: {{style.dotcolor}}" wx:if="{{goods.cartcount}}">{{goods.cartcount}}</view>
+            </view>
+            <view class="title" style="color: {{style.textcolor}}">购物车</view>
+        </navigator>
+    </view>
+    <view class="group-btn">
+        <view class="addCar" bindtap="goBuy" data-type="cart" style="background: {{style.cartcolor}}" wx:if="{{params.hidecartbtn == '0'}}">加入购物车</view>
+        <view class="goBuy" bindtap="goBuy" data-type="buy" style="background: {{style.buycolor}}">{{params.textbuy ? params.textbuy : '立即购买'}}</view>
+    </view>
+</view>

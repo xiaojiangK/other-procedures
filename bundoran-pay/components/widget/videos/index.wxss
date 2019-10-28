@@ -1,0 +1,15 @@
+.c-video{
+    width: 750rpx;
+    height: 450rpx;
+    overflow: hidden;
+}
+.c-video .video{
+    width: 750rpx;
+    height: 100%;
+}
+.c-video.ratio1{
+    height: 600rpx;
+}
+.c-video.ratio2{
+    height: 750rpx;
+}

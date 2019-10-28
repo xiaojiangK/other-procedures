@@ -1,0 +1,58 @@
+@import '/static/iconfont/iconfont';
+
+.c-fixedS{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 16rpx;
+    overflow: hidden;
+    background: #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-fixedS .main{
+    display: flex;
+    height: 56rpx;
+    align-items: center;
+}
+.c-fixedS .main .img{
+    width: 100%;
+    height: 100%;
+}
+.c-fixedS .center .round{
+    border-radius: 56rpx;
+}
+.c-fixedS .center .circle{
+    border-radius: 8rpx;
+}
+.c-fixedS .left{
+    flex: 1;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+}
+.c-fixedS .iconfont{
+    color: #fff;
+    font-size: 36rpx;
+}
+.c-fixedS .center{
+    flex: 8;
+    height: 56rpx;
+    padding: 0 10rpx;
+}
+.c-fixedS .center .input{
+    width: 100%;
+    height: 56rpx;
+    color: #666;
+    font-size: 28rpx;
+    text-indent: 16rpx;
+    background: #fff;
+}
+.c-fixedS .right{
+    flex: 1;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+}

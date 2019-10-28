@@ -1,0 +1,31 @@
+.c-times{
+    height: 112rpx;
+    background: #fff;
+}
+.c-times .list{
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+}
+.c-times .list .item{
+    min-width: 140rpx;
+    text-align: center;
+    transition: .2s all;
+    padding: 8rpx 0;
+}
+.c-times .list .active{
+    background: #ffeded;
+}
+.c-times .list .item .time{
+    font-size: 36rpx;
+    height: 48rpx;
+    color: #333;
+    line-height: 48rpx;
+}
+.c-times .list .item .status{
+    color: #b3b3b3;
+    font-size: 24rpx;
+}
+.c-times .list .active .time, .c-times .list .active .status{
+    color: #ff3300;
+}

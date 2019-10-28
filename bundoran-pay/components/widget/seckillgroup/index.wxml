@@ -1,0 +1,62 @@
+<view class="c-seckill {{params.hideborder == '0' ? 'border' : ''}}" style="margin: {{style.margintop * 2}}rpx 0 0">
+    <view class="head" style="color: {{style.titlecolor}}">
+        <view class="title">
+            <image class="img" mode="aspectFill" src="{{params.iconurl}}" />
+            <text class="text">10点场 距结束</text>
+            <view class="time">
+                <text class="num" style="background: {{style.titlecolor}}">{{time[0]}}</text>
+                <text class="dot">:</text>
+                <text class="num" style="background: {{style.titlecolor}}">{{time[1]}}</text>
+                <text class="dot">:</text>
+                <text class="num" style="background: {{style.titlecolor}}">{{time[2]}}</text>
+            </view>
+        </view>
+        <navigator url="" hover-class="none" class="more">
+            更多<text class="iconfont icon-more2"></text>
+        </navigator>
+    </view>
+    <view class="content">
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/iphone6.jpg" class="img" mode="aspectFill" />
+            <view class="price-box">
+                <view class="cost" style="color: {{style.marketpricecolor}}">￥199</view>
+                <view class="old-cost" style="color: {{style.productpricecolor}}">￥599</view>
+            </view>
+        </navigator>
+    </view>
+</view>

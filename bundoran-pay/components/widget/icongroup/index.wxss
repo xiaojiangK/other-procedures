@@ -1,0 +1,48 @@
+@import '/static/iconfont/iconfont';
+
+.c-icongroup{
+    overflow: hidden;
+    padding: 20rpx;
+}
+.c-icongroup .list{
+    overflow: hidden;
+}
+.c-icongroup .list .item{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.c-icongroup .item .icon{
+    width: 70rpx;
+    height: 70rpx;
+    position: relative;
+    margin: 0 auto 10rpx;
+}
+.c-icongroup .item .icon .iconfont{
+    font-size: 64rpx;
+    color: #666;
+}
+.c-icongroup .icon .dot{
+    top: 0;
+    right: -15rpx;
+    width: 30rpx;
+    height: 30rpx;
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 50%;
+    position: absolute;
+    background: #800040;
+}
+.c-icongroup .rownum3 .item{
+    width: 33.333%;
+}
+.c-icongroup .rownum5 .item{
+    width: 20%;
+}
+.c-icongroup .item .title{
+    color: #777;
+    font-size: 24rpx;
+    line-height: 50rpx;
+}

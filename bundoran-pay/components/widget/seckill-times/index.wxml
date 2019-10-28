@@ -1,0 +1,8 @@
+<view class="c-times" style="background: {{style.background}};">
+    <view class="list">
+        <view wx:for="{{list}}" wx:key="index" class="item {{index == active ? 'active' : ''}}" data-idx="{{index}}" bind:tap="timerSelect">
+            <view class="time">{{item.time}}</view>
+            <view class="status">{{item.status}}</view>
+        </view>
+    </view>
+</view>

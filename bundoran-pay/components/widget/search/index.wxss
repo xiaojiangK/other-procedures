@@ -1,0 +1,41 @@
+@import '/static/iconfont/iconfont';
+
+.c-search{
+    overflow: hidden;
+    padding: 10rpx;
+    background: #f1f1f2;
+}
+.c-search .main{
+    padding: 4rpx 20rpx;
+    overflow: hidden;
+    background: #fff;
+}
+.c-search .main.radius{
+    border-radius: 10rpx;
+}
+.c-search .main.round{
+    border-radius: 60rpx;
+}
+.c-search .icon{
+    width: 8%;
+    float: left;
+    height: 56rpx;
+    line-height: 56rpx;
+    vertical-align: middle;
+}
+.c-search .icon .iconfont{
+    font-size: 32rpx;
+}
+.c-search .form{
+    width: 92%;
+    float: left;
+    height: 56rpx;
+}
+.c-search .form .input{
+    width: 90%;
+    color: #999;
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 26rpx;
+    background: none;
+}

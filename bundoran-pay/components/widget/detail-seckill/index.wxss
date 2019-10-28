@@ -1,0 +1,139 @@
+.c-seckill{
+    height: 100rpx;
+    display: flex;
+    background: #ff5555;
+}
+.c-seckill.blue{
+    background: #4e87ee;
+}
+.c-seckill.purple{
+    background: #a839fa;
+}
+.c-seckill.pink{
+    background: #ff7e95;
+}
+.c-seckill.orange{
+    background: #ff8c1e;
+}
+.c-seckill .price{
+    flex: 4;
+    color: #fff;
+    padding: 0 12rpx;
+    line-height: 100rpx;
+}
+.c-seckill .price .cost{
+    float: left;
+    font-size: 46rpx;
+    margin: 0 8rpx 0 0;
+    font-weight: bold;
+}
+.c-seckill .cost text{
+    font-size: 24rpx;
+}
+.c-seckill .price .old-cost{
+    float: left;
+    font-size: 24rpx;
+    color: #ffc1c1;
+    text-decoration: line-through;
+}
+.c-seckill .sold{
+    flex: 2;
+    padding: 0 12rpx;
+    color: #fff;
+    text-emphasis: center;
+}
+.c-seckill .sold .sold-num{
+    font-size: 24rpx;
+    margin: 16rpx 0 4rpx;
+}
+.c-seckill .sold .progress{
+    width: 120rpx;
+    height: 18rpx;
+    position: relative;
+    margin: 10rpx 0 0;
+    background: #fff;
+    border-radius: 20rpx;
+}
+.c-seckill .progress .active{
+    width: 20%;
+    height: 18rpx;
+    background: #e92525;
+    border-radius: 20rpx;
+}
+.c-seckill .time{
+    flex: 2;
+    color: #ff4c4c;
+    text-align: center;
+    background: #ffc1c1;
+}
+.c-seckill .time .title{
+    line-height: 40rpx;
+    font-size: 24rpx;
+}
+.c-seckill .count .num{
+    padding: 4rpx;
+    color: #fff;
+    font-size: 22rpx;
+    border-radius: 4rpx;
+    background: #ff5555;
+    display: inline-block;
+}
+.c-seckill .count .dot{
+    margin: 0 4rpx;
+}
+
+.blue .old-cost{
+    color: #afcbff;
+}
+.blue .progress .active{
+    background: #1f60d6;
+} 
+.blue .time{
+    color: #4e87ee;
+    background: #afcbff;
+}
+.blue .time .num{
+    background: #4e87ee;
+}
+
+.purple .old-cost{
+    color: #e0b7ff;
+}
+.purple .progress .active{
+    background: #8609e3;
+} 
+.purple .time{
+    color: #a839fa;
+    background: #e0b7ff;
+}
+.purple .time .num{
+    background: #a839fa;
+}
+
+.pink .old-cost{
+    color: #ffc8d2;
+}
+.pink .progress .active{
+    background: #f84666;
+} 
+.pink .time{
+    color: #ff7e95;
+    background: #ffc8d2;
+}
+.pink .time .num{
+    background: #ff7e95;
+}
+
+.orange .old-cost{
+    color: #ffcb9a;
+}
+.orange .progress .active{
+    background: #f56e00;
+} 
+.orange .time{
+    color: #ff8c1e;
+    background: #ffcb9a;
+}
+.orange .time .num{
+    background: #ff8c1e;
+}

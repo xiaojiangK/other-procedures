@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0; }
+        ul,li{ list-style: none; }
+        .page-select{
+            width: 80%;
+            height: 38px;
+            margin: 10px auto;
+            position: relative;
+        }
+        .page-select::before, .page-select::after{
+            display: inline-block;
+            vertical-align: middle;
+            background: #ccc;
+            position: absolute;
+            content: '';
+            width: 40%;
+            height: 1px;
+            left: 0;
+            top: 50%;
+        }
+        .page-select::after{
+            left: auto;
+            right: 0;
+        }
+        .page-select .select-title{
+            width: 120px;
+            height: 38px;
+            margin: 0 auto;
+            font-size: 16px;
+            cursor: pointer;
+            line-height: 38px;
+            text-align: center;
+            background: #f2f2f2;
+        }
+        .page-select .menu{
+            position: absolute;
+            display: none;
+            left: 480px;
+            width: 240px;
+        }
+        .page-select .item{
+            width: 120px;
+            width: 50%;
+            float: left;
+            border-right: 1px solid #ddd;
+        }
+        .page-select .item:last-child{
+            width: 119px;
+            border: none;
+        }
+        .page-select ul li{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+            font-size: 14px;
+            cursor: pointer;
+            background: #f2f2f2;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-select">
+        <div class="select-title">全部门店</div>
+        <div class="menu">
+            <ul class="item">
+                <li>A经理分组</li>
+                <li>B经理分组</li>
+                <li>C经理分组</li>
+                <li>D经理分组
+                </li>
+            </ul>
+            <ul class="item">
+                <li>吉大店</li>
+                <li>吉大店</li>
+                <li>吉大店</li>
+                <li>吉大店</li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var flag = true;
+        $('.select-title').on('click', function (){
+            if (flag) {
+                $(this).siblings('.menu').slideDown();
+            } else {
+                $(this).siblings('.menu').stop().slideUp();
+            }
+            flag = !flag;
+        });
+        $('.menu li').on('click', function (){
+            alert($(this).text());
+        });
+    </script>
+</body>
+</html>

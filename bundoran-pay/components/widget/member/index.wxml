@@ -1,0 +1,33 @@
+<view class="c-member {{params.style == 'default1' ? 'radius' : ''}}" style="background: {{style.background}}; color: {{style.textcolor}}">
+    <view class="item balance" wx:if="{{params.style == 'default1'}}">
+        <view class="title">{{member.moneytext}}</view>
+        <view class="num" style="color: {{style.textlight}}">{{member.credit2}}</view>
+        <navigator url="{{params.leftnavlink}}" wx:if="{{member.open_recharge}}" hover-class="none" class="btn" style="border-color: {{style.textcolor}}">{{params.leftnav}}</navigator>
+    </view>
+    <view class="user {{params.style == 'default2' ? 'user-2' : ''}}">
+        <navigator url="{{params.levellink}}" hover-class="none" class="avatar">
+            <image class="{{style.headstyle}} img" src="{{member.avatar || '/static/images/noface.png'}}" />
+        </navigator>
+        <view class="content">
+            <navigator url="{{params.levellink}}" hover-class="none" class="name">
+                <view class="text">{{member.nickname ? member.nickname : '未更新用户信息'}}</view>
+                <view class="text">[{{member.levelname}}]<navigator url="{{params.levellink}}" hover-class="none" class="iconfont icon-wenhao"></navigator></view>
+            </navigator>
+            <view class="info" wx:if="{{params.style == 'default2'}}">
+                <view class="item">
+                    <view class="title">{{member.moneytext}}：</view>
+                    <view class="num" style="color: {{style.textlight}}">{{member.credit2}}</view>
+                </view>
+                <view class="item">
+                    <view class="title">{{member.credittext}}：</view>
+                    <view class="num" style="color: {{style.textlight}}">{{member.credit1}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="item integral" wx:if="{{params.style == 'default1'}}">
+        <view class="title">{{member.credittext}}</view>
+        <view class="num" style="color: {{style.textlight}}">{{member.credit1}}</view>
+        <navigator url="{{params.rightnavlink}}" hover-class="none" class="btn" style="border-color: {{style.textcolor}}">{{params.rightnav}}</navigator>
+    </view>
+</view>

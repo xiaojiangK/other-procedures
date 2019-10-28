@@ -1,0 +1,21 @@
+<view class="c-picturew" style="background: {{style.background}};">
+    <view wx:if="{{params.row == '1'}}" class="list win">
+        <view class="box">
+            <navigator class="item" url="{{list[0].linkurl}}" hover-class="none" style="padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx">
+                <image src="{{list[0].imgurl}}" mode="aspectFill" style="height: {{376 - style.paddingleft * 4}}rpx" class="img" />
+            </navigator>
+        </view>
+        <view class="box last">
+            <block wx:for="{{list}}" wx:key="{{item.imgurl}}">
+                <navigator class="item" wx:if="{{index > 0 && index < 4}}" url="{{item.linkurl}}" hover-class="none" style="padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx 0 0">
+                    <image src="{{item.imgurl}}" mode="aspectFill" style="height: {{188 - style.paddingleft * 3 }}rpx" class="img" />
+                </navigator>
+            </block>
+        </view>
+    </view>
+    <view wx:else class="list row{{params.row}}">
+        <navigator class="item" wx:for="{{list}}" wx:key="{{item.imgurl}}" url="{{item.linkurl}}" hover-class="none" style="padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx">
+            <image src="{{item.imgurl}}" mode="aspectFill" style="height: {{imgHeight}}rpx" class="img" />
+        </navigator>
+    </view>
+</view>

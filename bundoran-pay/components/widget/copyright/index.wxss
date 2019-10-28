@@ -1,0 +1,30 @@
+.c-copyright{
+    overflow: hidden;
+    padding: 20rpx;
+    text-align: center;
+    background: #f3f3f3;
+}
+.c-copyright .logo{
+    width: 80rpx;
+    margin: 0 auto;
+}
+.c-copyright .logo .img{
+    width: 100%;
+    height: 80rpx;
+}
+.c-copyright .title{
+    color: #cecece;
+    font-size: 24rpx;
+    line-height: 48rpx;
+}
+.c-copyright.trans{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.c-copyright.trans .logo{
+    margin: 0 10rpx 0 0;
+}

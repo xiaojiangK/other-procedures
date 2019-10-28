@@ -1,0 +1,50 @@
+@import '/static/iconfont/iconfont';
+
+.c-notice{
+    width: 100%;
+    color: #999;
+    height: 50rpx;
+    padding: 10rpx 0;
+    margin: 0 0 10rpx;
+    overflow: hidden;
+    border: 1rpx solid #E2E2E2;
+}
+.c-notice .title{
+    width: 16%;
+    float: left;
+    height: 50rpx;
+    text-align: center;
+    margin: 0 20rpx 0 0;
+    border-right: 1rpx solid #E2E2E2;
+}
+.c-notice .title .img{
+    width: 93rpx;
+    height: 38rpx;
+}
+.c-notice .content{
+    width: 75%;
+    float: left;
+    height: 50rpx;
+}
+.c-notice .content .icon{
+    width: 38rpx;
+    line-height: 28rpx;
+    padding: 0 14rpx 0 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-notice .content .iconfont{
+    font-size: 40rpx;
+}
+.c-notice .content .list{
+    width: 600rpx;
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-notice .swiper{
+    height: 50rpx;
+}
+.c-notice .swiper .item{
+    font-size: 26rpx;
+    line-height: 50rpx;
+}

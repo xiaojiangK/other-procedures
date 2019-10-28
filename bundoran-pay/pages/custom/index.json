@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "自定义页面",
+    "usingComponents": {
+      "widget": "../../components/widget/index"
+    }
+}

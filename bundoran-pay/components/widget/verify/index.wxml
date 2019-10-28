@@ -1,0 +1,34 @@
+<view class="c-verify {{params.style}}" style="background: {{style.background}};">
+    <view class="title" style="background: {{style.titlebg}}">
+        <view class="left">
+            <text class="iconfont icon-tuwenliebiao"></text>
+            <text class="text" style="color: {{style.titlecolor}}">{{params.title}}</text>
+        </view>
+        <navigator url="" hover-class="none" class="right">
+            <view class="tip" style="color: {{style.remarkcolor}}">{{params.remark}}</view>
+            <text class="iconfont icon-more2"></text>
+        </navigator>
+    </view>
+    <view class="list">
+        <navigator url="" hover-class="none" class="item">
+            <view class="box box1">
+                <view class="square"></view>
+                <view class="tip">待使用</view>
+                <view class="content">
+                    <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-1.jpg" class="img" mode="aspectFill" />
+                    <view class="title">测试核销商品</view>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="" hover-class="none" class="item">
+            <view class="box box2">
+                <view class="square"></view>
+                <view class="tip">待使用</view>
+                <view class="content">
+                    <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-2.jpg" class="img" mode="aspectFill" />
+                    <view class="title">测试核销商品</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

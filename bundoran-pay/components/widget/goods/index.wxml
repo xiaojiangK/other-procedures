@@ -1,0 +1,51 @@
+<view class="c-goods" style="background: {{style.background}}">
+    <view class="list {{params.goodsscroll == '1' ? 'line' : ''}} {{style.liststyle ? style.liststyle : 'list-2'}}">
+        <view class="item" wx:for="{{list}}" wx:key="{{item.title}}" data-id="{{item.gid}}" bind:tap="goBuy">
+            <view class="picture">
+                <view wx:if="{{params.saleout >= '0'}}" class="saleout saleout{{style.saleoutstyle}}"></view>
+                <image mode="aspectFill" src="{{item.thumb}}" class="img" />
+                <block wx:if="{{params.showicon > '0'}}">
+                    <block wx:if="{{params.showicon == '1'}}">
+                        <view class="reco bgColor {{style.iconstyle}}">
+                            <text class="t" wx:if="{{style.goodsicon == 'recommand'}}">推荐</text>
+                            <text class="t" wx:if="{{style.goodsicon == 'hotsale'}}">热销</text>
+                            <text class="t" wx:if="{{style.goodsicon == 'isnew'}}">新上</text>
+                            <text class="t" wx:if="{{style.goodsicon == 'sendfree'}}">包邮</text>
+                            <text class="t" wx:if="{{style.goodsicon == 'istime'}}">限时卖</text>
+                            <text class="t" wx:if="{{style.goodsicon == 'bigsale'}}">促销</text>
+                        </view>
+                    </block>
+                    <view class="custom" wx:else style="background: url('{{params.goodsiconsrc}}') {{params.iconposition}} no-repeat; background-size: {{style.iconzoom}}% auto; margin: {{style.iconpaddingtop * 2}}rpx 0 0 {{style.iconpaddingleft * 2}}rpx;"></view>
+                </block>
+            </view>
+            <view class="desc">
+                <view class="title" wx:if="{{params.showtitle == '1'}}" style="color: {{style.titlecolor}}">{{item.title}}</view>
+                <block wx:if="{{params.showprice == '1'}}">
+                    <view class="cost-sales">
+                        <text class="cost-price {{params.productpriceline == '0' ? 'noLine' : ''}}" wx:if="{{params.showproductprice == '1'}}" style="color: {{style.productpricecolor}}">{{params.productpricetext}}:￥{{item.productprice}}</text>
+                        <text class="sales" wx:if="{{params.showsales == '1'}}" style="color: {{style.salescolor}}">{{params.salestext}}:{{item.sales}}</text>
+                    </view>
+                    <view class="price-btn">
+                        <view class="price" style="color: {{style.pricecolor}}">￥{{item.marketprice ? item.marketprice : item.price}}</view>
+                        <block wx:if="{{style.buystyle}}">
+                            <view class="buy" style="color: {{style.buybtncolor}}; border-color: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-1'}}">购买</view>
+                            <view class="buy noBor" style="color: #fff; background: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-2'}}">购买</view>
+                            <view class="buy icon icon1" style="background: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-3'}}">
+                                <view class="iconfont icon-cart_fill"></view>
+                            </view>
+                            <view class="buy icon" style="border-color: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-4'}}">
+                                <view class="iconfont icon-gouwuche" style="color: {{style.buybtncolor}}"></view>
+                            </view>
+                            <view class="buy icon" style="border-color: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-5'}}">
+                                <view class="iconfont icon-add" style="color: {{style.buybtncolor}}"></view>
+                            </view>
+                            <view class="buy icon noBor" style="background: {{style.buybtncolor}}" wx:if="{{style.buystyle == 'buybtn-6'}}">
+                                <view class="iconfont icon-add"></view>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

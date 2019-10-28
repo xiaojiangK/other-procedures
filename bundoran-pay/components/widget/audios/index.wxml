@@ -1,0 +1,23 @@
+<view class="c-audio" style="background: {{style.background}};">
+    <view class="audio" wx:if="{{params.playerstyle == '0'}}" bind:tap="play">
+        <view class="poster">
+            <view class="headImg">
+                <image src="{{params.headurl ? params.headurl : params.audiodefaultimg}}" mode="aspectFill" class="img" />
+            </view>
+            <view class="desc">
+                <view class="title" style="color: {{style.textcolor}}">{{params.title}}</view>
+                <view class="subtitle" style="color: {{style.subtitlecolor}}">{{params.subtitle}}</view>
+            </view>
+        </view>
+        <view class="time" style="color: {{style.timecolor}}">{{currentTime}}</view>
+    </view>
+    <view class="audio trans" bind:tap="play" wx:else>
+        <view class="desc">
+            <text style="color: {{style.textcolor}}" class="text">{{params.title}}</text>
+            <text style="color: {{style.subtitlecolor}}" class="text">{{params.subtitle}}</text>
+        </view>
+        <view class="icon">
+            <view class="iconfont icon-{{iconClass}}"></view>
+        </view>
+    </view>
+</view>

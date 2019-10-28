@@ -1,0 +1,5 @@
+<view class="c-picture" style="background: {{style.background}}; padding: 0 0 {{style.paddingleft * 2}}rpx">
+    <navigator wx:for="{{list}}" hover-class="none" wx:key="{{item.imgurl}}" url="{{item.linkurl}}" class="item" style="padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx 0">
+        <image src="{{item.imgurl}}" mode="aspectFill" style="height: {{440 - style.paddingleft * 2}}rpx" class="img" />
+    </navigator>
+</view>

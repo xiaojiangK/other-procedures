@@ -1,0 +1,61 @@
+<view class="c-sale" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0 0; color: {{style.textcolor}}">
+    <view class="sale-item coupon" wx:if="{{goods.coupons.length > 0}}">
+        <view class="title">优惠券</view>
+        <view class="desc">
+            <view class="tag" style="background: {{style.textcolorhigh}}" wx:for="{{goods.coupons}}" wx:key="index">¥{{item.money}}</view>
+        </view>
+        <text class="iconfont icon-more2"></text>
+    </view>
+    <view class="sale-item" wx:if="{{goods.discounts.default_pay}}">
+        <view class="title">会员</view>
+        <view class="desc">
+            <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">VIP</view>
+            <text class="text">可享受<text class="price" style="color: {{style.textcolorhigh}}">¥{{goods.discounts.default_pay}}</text>的价格</text>
+        </view>
+    </view>
+    <view class="sale-item" wx:if="{{goods.activity.enough.length > 0 || goods.activity.postfree.enoughfree || goods.activity.credit.give || goods.activity.buyagain.discount || goods.activity.fullback.all_enjoy}}">
+        <view class="title">活动</view>
+        <view class="desc">
+            <view class="item" wx:for="{{goods.activity.enough}}" wx:key="index">
+                <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">满减</view>
+                <text class="text">全场满<text class="price" style="color: {{style.textcolorhigh}}">{{item.enough}}</text>立减<text class="price" style="color: {{style.textcolorhigh}}">¥{{item.money}}</text></text>
+            </view>
+            <view class="item" wx:if="{{goods.activity.postfree.enoughfree}}">
+                <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">包邮</view>
+                <text class="text">{{goods.activity.postfree.scope}}满<text class="price" style="color: {{style.textcolorhigh}}">¥{{goods.activity.postfree.enoughfree}}</text>包邮</text>
+            </view>
+            <view class="item" wx:if="{{goods.activity.credit.give}}">
+                <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">积分</view>
+                <text class="text">购买赠送<text class="price" style="color: {{style.textcolorhigh}}">{{goods.activity.credit.give}}</text>积分</text>
+            </view>
+            <view class="item" wx:if="{{goods.activity.buyagain.discount}}">
+                <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">复购</view>
+                <text class="text">此商品重复购买可享受<text class="price" style="color: {{style.textcolorhigh}}">{{goods.activity.buyagain.discount}}</text>折优惠</text>
+            </view>
+            <view class="item" wx:if="{{goods.activity.fullback.all_enjoy}}">
+                <view class="border-tag" style="border-color: {{style.textcolorhigh}}; color: {{style.textcolorhigh}}">全返</view>
+                <text class="text">此商品享受<text class="price" style="color: {{style.textcolorhigh}}">¥{{goods.activity.fullback.all_enjoy}}</text>的全返</text>
+            </view>
+        </view>
+        <text class="iconfont icon-more2"></text>
+    </view>
+    <view class="sale-item" wx:if="{{goods.gifts.length > 0}}">
+        <view class="title">赠品</view>
+        <view class="desc">
+            <block wx:for="{{goods.gifts}}" wx:key="index">{{item.title}}<block wx:if="{{index != goods.gifts.length - 1}}">、</block></block>
+        </view>
+        <text class="iconfont icon-more2"></text>
+    </view>
+    <view class="service" style="margin: 0 0 {{style.marginbottom * 2}}rpx">
+        <view class="tag" wx:for="{{goods.services}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="sale-item address" bind:tap="cityPicker" wx:if="{{goods.dispatchcitys.length > 0}}">
+        <view class="desc">配送区域 
+            <block wx:for="{{goods.dispatchcitys}}" wx:key="index">
+                <block wx:if="{{index < 8}}">{{item}}<block wx:if="{{index != goods.dispatchcitys.length - 1 && index < 7}}">、</block></block>
+            </block>
+            <block wx:if="{{goods.dispatchcitys.length > 7}}">...</block>
+        </view>
+        <text class="iconfont icon-more2"></text>
+    </view>
+</view>

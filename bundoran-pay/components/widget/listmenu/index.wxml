@@ -1,0 +1,11 @@
+<view class="c-list" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0 0;">
+    <view class="list">
+        <navigator url="{{item.linkurl}}" open-type="{{item.openType}}" class="item" wx:for="{{list}}" wx:key="{{item.text}}">
+            <view class="title">
+                <text class="iconfont icon-{{item.iconclass[1]}}" style="color: {{style.iconcolor}}"></text>
+                <text style="color: {{style.textcolor}}">{{item.text}}</text>
+            </view>
+            <view class="tip" style="color: {{style.remarkcolor}}">{{item.remark}}<text class="iconfont icon-next"></text></view>
+        </navigator>
+    </view>
+</view>

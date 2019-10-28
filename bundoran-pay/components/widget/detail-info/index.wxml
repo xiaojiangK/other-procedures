@@ -1,0 +1,137 @@
+<view class="c-info" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0 {{style.marginbottom * 2}}rpx;">
+    <view class="good-title">
+        <view class="title" style="color: {{style.titlecolor}}">{{goods.title}}</view>
+        <view class="share" wx:if="{{params.hideshare == '0'}}">
+            <text class="iconfont {{params.share_icon}}"></text>
+            <text class="text">{{params.share}}</text>
+            <button open-type="share" class="share-btn"></button>
+        </view>
+    </view>
+    <view class="good-detail">
+        <view class="desc" style="color: {{style.subtitlecolor}}">{{goods.subtitle}}</view>
+        <view class="price" wx:if="{{!goods.seckillinfo}}">
+            <text class="cost" style="color: {{style.pricecolor}}">
+                <block wx:if="{{goods.ispresell > 0 && (goods.preselltimeend == 0 || goods.preselltimeend > now)}}">￥{{goods.presellprice}}</block>
+                <block wx:else>
+                    <block wx:if="{{goods.minprice == goods.maxprice}}">￥{{goods.minprice}}</block>
+                    <block wx:else>￥{{goods.minprice}} ~ ￥{{goods.maxprice}}</block>
+                </block>
+            </text>
+            <text class="old-cost" style="color: {{style.textcolor}}">
+                <block wx:if="{{goods.isdiscount && goods.isdiscount_time >= now}}">￥{{goods.productprice}}</block>
+                <block wx:if="{{goods.productprice > goods.minprice}}">￥{{goods.productprice}}</block>
+            </text>
+        </view>
+        <view class="count" wx:if="{{goods.isdiscount && goods.isdiscount_time >= now}}" style="background: {{style.timecolor}}; color: {{style.timetextcolor}}">
+            <text class="iconfont icon-clock"></text>
+            <view class="title">{{goods.isdiscount_title ? goods.isdiscount_title : '距离限时购结束'}}</view>
+            <view class="time" style="color: {{style.timetextcolor}}">
+                <text class="num">{{goods.count[0]}}</text>天
+                <text class="num">{{goods.count[1]}}</text>小时
+                <text class="num">{{goods.count[2]}}</text>分
+                <text class="num">{{goods.count[3]}}</text>秒
+            </view>
+        </view>
+        <view class="count" wx:if="{{goods.istime > 0}}" style="background: {{style.timecolor}}; color: {{style.timetextcolor}}">
+            <text class="iconfont icon-clock"></text>
+            <view class="title">{{goods.istimeTitle ? goods.istimeTitle : '距离限时购结束'}}</view>
+            <view class="title" wx:if="{{goods.istimer == 0}}">活动已结束</view>
+            <view class="time" wx:else style="color: {{style.timetextcolor}}">
+                <text class="num">{{goods.count[0]}}</text>天
+                <text class="num">{{goods.count[1]}}</text>小时
+                <text class="num">{{goods.count[2]}}</text>分
+                <text class="num">{{goods.count[3]}}</text>秒
+            </view>
+        </view>
+        <view class="service" style="color: {{style.textcolor}}">
+            <view class="item">
+                <block wx:if="{{goods.dispatchtype == '0'}}">
+                    <block wx:if="{{goods.type == 1}}">快递: {{goods.dispatchprice.min}}.00</block>
+                </block>
+                <block wx:else>
+                    <block>快递: {{goods.dispatchprice == 0 ? '包邮' : goods.dispatchprice}}</block>
+                </block>
+            </view>
+            <view class="item">
+                <block wx:if="{{!goods.seckillinfo || (good.seckillinfo && goods.seckillinfo.status == 1)}}">
+                    <block wx:if="{{goods.showtotal == 1}}">库存: {{goods.total}}</block>
+                    <block>销量: {{goods.sales}} {{goods.unit}}</block>
+                </block>
+            </view>
+            <view class="item" wx:if="{{goods.province != '请选择省份' && goods.city != '请选择城市'}}">{{goods.province}} {{goods.city}}</view>
+        </view>
+        <view class="delivery" style="color: {{style.textcolor}}">
+            <text class="tag">预售</text>
+            <text>
+                <block wx:if="{{goods.preselltimeend > 0}}">
+                    结束时间：{{goods.preselltimeend}}
+                </block>
+                <block wx:if="{{goods.presellsendtype > 0}}">
+                    预计发货： 购买后{{goods.presellsendtime}}天发货
+                </block>
+                <block wx:else>预计发货： {{goods.presellsendstatrttime}}</block>
+            </text>
+        </view>
+        <block wx:if="{{goods.seckillinfo == false}}">
+            <view class="fui-cell-group  fui-sale-group" wx:if="{{goods.buyagain > 0}}">
+                <view class="fui-cell">
+                <view class="fui-cell-text" style="white-space: normal;">此商品二次购买 可享受 <span class="text-danger">{{goods.buyagain}}</span> 折优惠
+                    <view wx:if="{{goods.buyagain_sale == 0}}" class="text">二次购买的时候 不与其他优惠共享</view>
+                </view>
+                </view>
+            </view>
+            <block wx:if="{{goods.isdiscount == 0 || (goods.isdiscount != 0 && goods.isdiscount_time < now)}}">
+                <view style="margin-top:0" class="fui-cell-group  fui-sale-group" wx:if="{{goods.memberprice == '' && goods.memberprice != goods.minprice && goods.levelbuy == 0}}">
+                <view class="fui-cell">
+                    <view class="fui-cell-text" style="white-space: normal;">您的会员等级是 <span class="text-danger">{{goods.memberprice.levelname}}</span> 可享受 <span class="text-danger">￥{{goods.memberprice.price}}</span> 的价格</view>
+                </view>
+                </view>
+            </block>
+        </block>
+        <view class="fui-cell-group fui-sale-group" bindtap="cityPicker" wx:if="{{goods.edareas.length > 0}}">
+            <view class="fui-cell">
+                <view class="fui-cell-text">不配送区域:
+                    <block wx:for="{{goods.edareas}}" wx:key="index" wx:for-index="idx">{{item}}<block wx:if="{{idx != goods.edareas.length - 1}}">、</block></block>
+                </view>
+                <view class="fui-cell-remark"></view>
+            </view>
+        </view>
+        <view class="fui-cell-group fui-option-group" wx:if="{{goods.hasServices || goods.labelname}}">
+            <view class="goods-label-demo">
+                <view class="goods-label-list {{!goods.labelstyle.style ? 'goods-label-style1' : ''}}{{goods.labelstyle.style == 1 ? 'goods-label-style2' : ''}}{{goods.labelstyle.style == 2 ? 'goods-label-style3' : ''}}{{goods.labelstyle.style == 3 ? 'goods-label-style4' : ''}}{{goods.labelstyle.style == 4 ? 'goods-label-style5' : ''}}">
+                    <block wx:if="{{goods.cash == 1}}">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">货到付款</text>
+                    </block>
+                    <block wx:if="{{goods.quality == 1}}">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">正品保证</text>
+                    </block>
+                    <block wx:if="{{goods.repair == 1}}">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">保修</text>
+                    </block>
+                    <block wx:if="{{goods.invoice == 1}}">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">发票</text>
+                    </block>
+                    <block wx:if="{{goods.seven == 1}}">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">7天退换</text>
+                    </block>
+                    <block wx:for="{{goods.labelname}}" wx:key="index" wx:for-index="idx">
+                        <image src="{{icons.labelGreen}}" style="{{goods.labelstyle.style == 0 || goods.labelstyle == false ? 'display:none;' : ''}}width:26rpx;height:26rpx;"></image>
+                        <image src="{{icons.labelRed}}" style="{{goods.labelstyle.style == 1 ? '' : 'display:none;'}}width:26rpx;height:26rpx;"></image>
+                        <text class="{{goods.labelstyle.style < 2 ? 'cl-3 cl-4 cl-2' : ''}}" class="text">{{item}}</text>
+                    </block>
+                    <view style="clear: both;"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

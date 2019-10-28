@@ -1,0 +1,78 @@
+@import '/static/iconfont/iconfont';
+
+.c-comment{
+    background: #fff;
+    border-top: 1rpx solid #f1f1f1;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+.c-comment .title{
+    height: 76rpx;
+    margin: 0 20rpx;
+    line-height: 76rpx;
+    border-bottom: 1rpx solid #eee;
+}
+.c-comment .title .left{
+    float: left;
+    font-size: 28rpx;
+}
+.c-comment .title .right{
+    float: right;
+    font-size: 24rpx;
+}
+.c-comment .title .iconfont{
+    color: #888;
+    font-size: 24rpx;
+}
+.c-comment .title .rate{
+    margin: 0 8rpx 0 0;
+}
+.c-comment .content{
+    margin: 0 20rpx;
+}
+.c-comment .item{
+    padding: 20rpx 0;
+}
+.c-comment .item .info{
+    height: 36rpx;
+    line-height: 36rpx;
+    margin: 0 0 16rpx;
+}
+.c-comment .info .star{
+    float: left;
+    color: #fd5454;
+    vertical-align: middle;
+}
+.c-comment .info .iconfont{
+    font-size: 24rpx;
+}
+.c-comment .info .date{
+    float: right;
+    color: #7C7C7C;
+    font-size: 24rpx;
+}
+.c-comment .item .desc{
+    color: #333;
+    font-size: 26rpx;
+    line-height: 36rpx;
+}
+.c-comment .content .btn{
+    width: 212rpx;
+    color: #ff5555;
+    padding: 12rpx 0;
+    font-size: 24rpx;
+    text-align: center;
+    border-radius: 32rpx;
+    margin: 10rpx auto 30rpx;
+    border: 1rpx solid #ff5555;
+}
+.content-empty {
+    color: #ccc;
+    position: relative;
+    text-align: center;
+    margin: 100rpx 0;
+    font-size: 32rpx;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    text-align: center;
+}

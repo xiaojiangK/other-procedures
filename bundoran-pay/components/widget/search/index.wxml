@@ -1,0 +1,10 @@
+<view class="c-search" style="background: {{style.background}}; padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx;">
+    <view class="main {{style.searchstyle == 'radius' ? 'radius' : ''}} {{style.searchstyle == 'round' ? 'round' : ''}}" style="background: {{style.inputbackground}};">
+        <view class="icon">
+            <view class="iconfont icon-search" style="color: {{style.iconcolor}}"></view>
+        </view>
+        <view class="form">
+            <input class="input" style="color: {{style.color}}; text-align: {{style.textalign}}" placeholder-style="color: {{style.color}}" bindtap="search" placeholder="{{params.placeholder}}" />
+        </view>
+    </view>
+</view>

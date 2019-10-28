@@ -1,0 +1,54 @@
+.c-coupon{
+    overflow: hidden;
+    margin: 10rpx 0;
+}
+.c-coupon .list{
+    overflow: hidden;
+}
+.c-coupon .list .box{
+    width: 33.333%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-coupon .list.col-6 .box{
+    width: 50%;
+}
+.c-coupon .list .item{
+    width: 100%;
+    color: #fff;
+    padding: 16rpx 0 20rpx;
+    text-align: center;
+    position: relative;
+}
+.c-coupon .list .icon .i{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: 28rpx;
+    width: 28rpx;
+    border-radius: 50%;
+    top: 50%;
+    background: #fff;
+    margin-top: -14rpx;
+}
+.c-coupon .list .icon .left{
+    left: -14rpx;
+}
+.c-coupon .list .icon .right{
+    right: -14rpx;
+}
+.c-coupon .list .price{
+    margin: 0 0 8rpx;
+    font-size: 44rpx;
+    line-height: 70rpx;
+}
+.c-coupon .list .btn{
+    width: 132rpx;
+    height: 40rpx;
+    margin: 0 auto;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    border-radius: 40rpx;
+    border: 1rpx solid #fff;
+}

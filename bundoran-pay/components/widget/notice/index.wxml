@@ -1,0 +1,19 @@
+<view class="c-notice" style="background: {{style.background}}; border-color: {{style.bordercolor}}; color: {{style.color}}">
+    <view class="title">
+        <image src="{{params.iconurl}}" mode="aspectFill" class="img" />
+    </view>
+    <view class="content">
+        <view class="icon">
+            <view class="iconfont icon-notification1" style="color: {{style.iconcolor}}"></view>
+        </view>
+        <view class="list">
+            <swiper class="swiper" autoplay="{{true}}" circular="{{true}}" interval="{{3000}}" vertical="{{true}}" duration="{{params.speed * 1000}}">
+                <block wx:for="{{list}}" wx:key="{{item.title}}">
+                    <swiper-item class="item">
+                        <navigator hover-class="none" url="{{item.linkurl}}">{{item.title}}</navigator>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+@import '/static/iconfont/iconfont';
+
+.c-seckill{
+    background: #fff;
+}
+.c-seckill.border{
+    border-top: 1rpx solid #FAFAFA;
+    border-bottom: 1rpx solid #FAFAFA;
+}
+.c-seckill .head{
+    height: 36rpx;
+    padding: 20rpx;
+    overflow: hidden;
+    font-size: 26rpx;
+}
+.c-seckill .head .title{
+    float: left;
+}
+.c-seckill .head .img{
+    width: 114rpx;
+    height: 28rpx;
+    margin: 0 10rpx 0 0;
+    vertical-align: middle;
+}
+.c-seckill .head .text{
+    vertical-align: middle;
+}
+.c-seckill .head .time{
+    height: 32rpx;
+    margin: 0 0 0 12rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.c-seckill .head .num{
+    color: #fff;
+    height: 24rpx;
+    padding: 0 12rpx;
+    line-height: 24rpx;
+    font-weight: bold;
+    border-radius: 20rpx;
+    background: #ff3300;
+}
+.c-seckill .head .dot{
+    margin: 0 8rpx;
+}
+.c-seckill .head .more{
+    float: right;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+.c-seckill .more .iconfont{
+    font-size: 26rpx;
+}
+.c-seckill .content{
+    display: flex;
+    overflow-x: auto;
+    align-content: center;
+    padding: 0 20rpx 20rpx;
+    justify-content: center;
+}
+.c-seckill .content .item{
+    min-width: 160rpx;
+    margin: 0 20rpx 0 0;
+    text-align: center;
+}
+.c-seckill .content .item:last-child{
+    margin: 0;
+}
+.c-seckill .item .img{
+    width: 100%;
+    height: 160rpx;
+}
+.c-seckill .item .cost{
+    color: #ff5555;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 48rpx;
+}
+.c-seckill .item .old-cost{
+    color: #b2b2b2;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    text-decoration: line-through;
+}

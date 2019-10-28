@@ -1,0 +1,5 @@
+<view class="c-rooms" style="background: {{style.background}};">
+    <view class="list">
+        <view class="item {{index == active ? 'active' : ''}}" data-idx="{{index}}" bind:tap="hallSelect" wx:for="{{list}}" wx:key="index">{{item}}</view>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="c-banner">
+    <swiper class="swiper" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}" duration="500" bindchange="swiperChange">
+        <block wx:for="{{list}}" wx:key="{{item.imgurl}}">
+            <swiper-item>
+                <navigator open-type="{{item.openType}}" class="link" hover-class="none" url="{{item.linkurl}}">
+                    <image mode="aspectFill" src="{{item.imgurl}}" class="img" />
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="dots">  
+        <block wx:for="{{list}}" wx:key="{{item.imgurl}}">  
+            <view class="dot {{index == currentSwiper ? ' active' : ''}} {{radius}}" style="background-color: {{style.background}}"></view>  
+        </block>  
+    </view>
+</view>

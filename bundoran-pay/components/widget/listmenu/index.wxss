@@ -1,0 +1,35 @@
+@import '/static/iconfont/iconfont';
+
+.c-list{
+    overflow: hidden;
+    padding: 0 16rpx;
+}
+.c-list .list{
+    overflow: hidden;
+}
+.c-list .item{
+    height: 40rpx;
+    padding: 16rpx 0;
+    overflow: hidden;
+    line-height: 40rpx;
+    border-bottom: 1rpx solid rgba(217,217,217,.3);
+}
+.c-list .item .title{
+    float: left;
+    font-size: 28rpx;
+}
+.c-list .item .tip{
+    float: right;
+    font-size: 24rpx;
+}
+.c-list .item .iconfont{
+    display: inline-block;
+}
+.c-list .item .title .iconfont{
+    font-size: 32rpx;
+    margin: 0 12rpx 0 0;
+}
+.c-list .item .tip .iconfont{
+    color: #C8C8CD;
+    margin: 0 0 0 12rpx;
+}

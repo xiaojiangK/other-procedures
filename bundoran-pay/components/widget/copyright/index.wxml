@@ -1,0 +1,6 @@
+<view class="c-copyright {{style.showtype == '1' ? 'trans' : ''}}" style="background: {{style.background}}">
+    <view class="logo" wx:if="{{params.showimg == '1'}}">
+        <image src="{{params.imgurl}}" mode="aspectFill" class="img" />
+    </view>
+    <view class="title">{{params.copyright}}</view>
+</view>

@@ -1,0 +1,22 @@
+.c-rooms{
+    background: #fff;
+}
+.c-rooms .list{
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+}
+.c-rooms .list .item{
+    color: #333;
+    height: 80rpx;
+    font-size: 24rpx;
+    line-height: 80rpx;
+    min-width: 170rpx;
+    text-align: center;
+    transition: .2s all;
+    border-bottom: 2rpx solid #fff;
+}
+.c-rooms .list .active{
+    color: #ff5555;
+    border-bottom: 2rpx solid #ff5555;
+}

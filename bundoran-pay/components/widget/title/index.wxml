@@ -1,0 +1,4 @@
+<navigator url="{{params.link}}" class="c-title" style="color: {{style.color}}; background: {{style.background}}; text-align: {{style.textalign}}; padding: {{style.paddingtop * 2}}rpx {{style.paddingleft * 2}}rpx;">
+    <text class="iconfont icon-{{iconClass[1]}}"></text>
+    <text class="title" style="font-size: {{style.fontsize * 2}}rpx;">{{params.title ? params.title : '请输入标题内容'}}</text>
+</navigator>

@@ -1,0 +1,14 @@
+<view class="c-swiper">
+    <swiper class="swiper" interval="{{3000}}" circular="{{true}}" duration="500" bindchange="swiperChange">
+        <block wx:for="{{goods.thumbs}}" wx:key="{{index}}">
+            <swiper-item>
+                <image mode="aspectFill" src="{{item}}" class="img" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="dots {{style.dotalign}}" style="padding: {{style.leftright * 2}}rpx {{style.bottom * 2}}rpx; opacity: {{style.opacity}}">  
+        <block wx:for="{{goods.thumbs}}" wx:key="{{item}}">  
+            <view class="dot {{index == currentSwiper ? ' active' : ''}} {{style.dotstyle}}" style="background-color: {{style.background}}"></view>  
+        </block>  
+    </view>
+</view>

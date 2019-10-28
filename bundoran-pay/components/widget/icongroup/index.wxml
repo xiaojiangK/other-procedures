@@ -1,0 +1,11 @@
+<view class="c-icongroup" style="background: {{style.background}};">
+    <view class="list rownum{{params.rownum}}">
+        <navigator open-type="{{item.openType}}" url="{{item.linkurl}}" wx:for="{{list}}" wx:key="{{item.linkurl}}" hover-class="none" class="item">
+            <view class="icon">
+                <view class="iconfont icon-{{item.iconclass[1]}}" style="color: {{style.iconcolor}}"></view>
+                <view class="dot" style="background: {{style.dotcolor}}" wx:if="{{item.dotnum > '0'}}">{{item.dotnum}}</view>
+            </view>
+            <view class="title" style="color: {{style.textcolor}}">{{item.text}}</view>
+        </navigator>
+    </view>
+</view>

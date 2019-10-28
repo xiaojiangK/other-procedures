@@ -1,0 +1,5 @@
+<view class="c-tabbar" style="background: {{style.background}};">
+    <view class="list {{style.showtype == '2' ? 'col-3' : ''}}">
+        <view class="item" bind:tap="tabsChange" data-id="{{item.linkurl}}" data-idx="{{index}}" wx:for="{{list}}" wx:key="{{item.linkurl}}" style="color: {{index == active ? style.activecolor : style.color}}; border-bottom: 2rpx solid {{index == active ? style.activecolor : style.background}}; background: {{index == active ? style.activebackground : ''}}">{{item.text}}</view>
+    </view>
+</view>

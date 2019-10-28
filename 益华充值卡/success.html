@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>充值</title>
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/template/mobile/default/static/css/style.css?v=3.0.0">
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/static/js/dist/foxui/css/foxui.min.css?v=0.2">
+    <style>
+        body,html,ul,li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .fui-header{
+            background: #F54F4F;
+        }
+        .fui-header .title{
+            color: #fff;
+        }
+        .fui-header a.back:before{
+            border-color: #fff;
+        }
+        .success{
+            padding: 2.2rem 0 0;
+        }
+        .success .top{
+            width: 100%;
+            background: #fff;
+            text-align: center;
+            padding: 2.5rem 0 1.3rem;
+        }
+        .success .top img{
+            width: 3.25rem;
+            display: block;
+            margin: 0 auto;
+        }
+        .success .top p{
+            color: #333;
+            font-size: 1rem;
+            margin: 1rem 0 0;
+        }
+        .success .logs{
+            margin: .6rem 0 0;
+        }
+        .success .logs ul{
+            padding: 0 .6rem;
+            background: #fff;
+        }
+        .success .logs ul:last-child{
+            margin: .6rem 0 0;
+        }
+        .success .logs li{
+            height: 2rem;
+            font-size: .7rem;
+            line-height: 2rem;
+            border-bottom: .05rem solid #ccc;
+        }
+        .success .logs ul li:last-child{
+            border: none;
+        }
+        .success .logs li .title{
+            float: left;
+            color: #333;
+        }
+        .success .logs li .desc{
+            float: right;
+            color: #666;
+        }
+        .success .submit{
+            height: 2rem;
+            color: #fff;
+            width: 17.55rem;
+            line-height: 2rem;
+            font-size: .75rem;
+            text-align: center;
+            margin: 5.4rem auto 0;
+            border-radius: .2rem;
+            background: #067DEB;
+        }
+    </style>
+</head>
+<body>
+    <div class="fui-header">
+        <div class="fui-header-left" onclick="window.history.back(-1)">
+            <a class="back"></a>
+        </div>
+        <div class="title">充值</div>
+        <div class="fui-header-right">&nbsp;</div>
+    </div>
+    <div class="success">
+        <div class="top">
+            <img src="success-tip.png" alt="">
+            <p>充值成功!</p>
+        </div>
+        <div class="logs">
+            <ul>
+                <li>
+                    <span class="title">会员姓名:</span>
+                    <span class="desc">张三</span>
+                </li>
+                <li>
+                    <span class="title">充值卡号：</span>
+                    <span class="desc">000000000000</span>
+                </li>
+                <li>
+                    <span class="title">到账时间：</span>
+                    <span class="desc">000000000000</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span class="title">充值金额:</span>
+                    <span class="desc">300.00元</span>
+                </li>
+                <li>
+                    <span class="title">当前余额：</span>
+                    <span class="desc">300.00元</span>
+                </li>
+            </ul>
+        </div>
+        <div class="submit">确认</div>
+    </div>
+    <script src="http://shop.qiuxinpay.com/app/resource/js/lib/jquery-1.11.1.min.js"></script>
+    <script>
+        ;(function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+            recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth === undefined) {return;}
+            if (clientWidth >= 750){clientWidth=750};
+            docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+            };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.c-menu{
+    overflow: hidden;
+}
+.c-menu .list{
+    overflow: hidden;
+    padding: 20rpx 0 0;
+}
+.c-menu .item{
+    width: 25%;
+    float: left;
+    margin: 0 0 20rpx;
+    text-align: center;
+}
+.c-menu .list.line{
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+}
+.c-menu .rownum3 .item{
+    width: 33.33%;
+}
+.c-menu .rownum5 .item{
+    width: 20%;
+}
+.c-menu .list.line .item{
+    min-width: 188rpx;
+}
+.c-menu .line.rownum3 .item{
+    min-width: 250rpx;
+}
+.c-menu .line.rownum5 .item{
+    min-width: 150rpx;
+}
+.c-menu .item .img{
+    width: 100rpx;
+    height: 100rpx;
+}
+.c-menu .item .img.radius{
+    border-radius: 20rpx;
+}
+.c-menu .item .img.circle{
+    border-radius: 50%;
+}
+.c-menu .item .title{
+    color: #666;
+    font-size: 24rpx;
+    margin: 10rpx 0 0;
+}

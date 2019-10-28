@@ -1,0 +1,3 @@
+<view class="c-line" style="background: {{style.background}}; padding: {{style.padding * 2}}rpx 0;">
+    <view class="line" style="border-bottom: {{style.height * 2}}rpx {{style.linestyle}} {{style.bordercolor}};"></view>
+</view>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="images/css/layui.css" />
+    <title>智能发券</title>
+    <style>
+        .coupons .top-title{
+            padding: 20px;
+            color: #333;
+            font-size: 18px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            border-bottom: 1px solid #eee;
+        }
+        .coupons .layui-tab-item{
+            border: 1px solid #eee;
+            border-radius: 10px;
+            position: relative;
+            margin: 25px 0 0;
+            padding: 35px 15px 0 0;
+        }
+        .coupons .layui-tab-item>.title{
+            position: absolute;
+            left: 15px;
+            top: -13px;
+            width: 85px;
+            height: 25px;
+            background: #fff;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .coupons .layui-tab-item .tip{
+            clear: both;
+            color: #666;
+            font-size: 13px;
+            padding: 5px 0 0 110px;
+        }
+        .coupons .range{
+            border-radius: 5px;
+            padding: 6px 10px 15px;
+            border: 1px solid #eee;
+        }
+        .coupons .range .select{
+            padding: 0 0 10px;
+            margin: 0 0 10px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .coupons .range .title{
+            color: #333;
+            padding: 0 20px 0 0;
+            margin: 0 20px 0 0;
+            display: inline-block;
+            vertical-align: middle;
+            border-right: 1px solid #ddd;
+        }
+        .coupons .range .select .title{
+            margin: 6px 20px 0 0;
+        }
+        .coupons .template>.content{
+            margin: 15px 0;
+            overflow: hidden;
+            padding: 15px 0 0;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .coupons .template .form{
+            width: 50%;
+            float: left;
+        }
+        .coupons .item-title{
+            font-size: 16px;
+            margin: 22px;
+        }
+        .perview{
+            max-width: 40%;
+            width: 370px;
+            float: left;
+            margin: 10px 20px;
+            border-radius: 8px;
+            padding: 20px 15px 10px;
+            background: rgb(245,245,245);
+        }
+        .perview .title{
+            margin: 0 0 20px;
+        }
+        .perview .title p{
+            color: #333;
+            font-size: 18px;
+        }
+        .perview .title span{
+            color: #666;
+            font-size: 14px;
+        }
+        .perview .content{
+            padding: 0 0 15px;
+            border-bottom: 1px solid rgb(230,230,230);
+        }
+        .perview .content p{
+            color: #333;
+            line-height: 30px;
+        }
+        .perview .bom{
+            height: 30px;
+            line-height: 30px;
+        }
+        .coupons .senior .layui-form-label{
+            width: 140px;
+        }
+        .coupons .layui-form-item .item{
+            margin: 0 0 15px;
+        }
+        .coupons .layui-form-item .item span{
+            color: #333;
+            font-size: 14px;
+            margin: 6px 6px 0;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="coupons">
+        <div class="top-title">智能发券</div>
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title">
+                <li class="layui-this">生日送券</li>
+                <li>优惠券包</li>
+                <li>沉睡送券</li>
+                <li>注册送券</li>
+                <li>消费送券</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="title">生日送券</div>
+                    <div class="content">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠券类别</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">商城券</option>
+                                    <option value="1">微信券</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">优惠券1</option>
+                                    <option value="1">优惠券2</option>
+                                    <option value="2">优惠券3</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">预赠送时间</label>
+                                <div class="layui-input-block">
+                                    <input type="text" lay-verify="required" class="layui-input" id="give-time">
+                                </div>
+                                <div class="tip">即在会员生日前几日推送优惠券</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" lay-verify="required|number" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用门店</span>
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">通知内容设置</div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block template">
+                                    <select name="city">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                        <option value="2">模板C</option>
+                                    </select>
+                                    <div class="content">
+                                        <div class="form">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">头部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容1</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容2</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容3</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容4</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">尾部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="perview">
+                                            <div class="title">
+                                                <p>模板消息预览</p>
+                                                <span></span>
+                                            </div>
+                                            <div class="content">
+                                                <p class="head"></p>
+                                                <div class="desc">
+                                                    <p></p>
+                                                </div>
+                                                <p class="foot"></p>
+                                            </div>
+                                            <div class="bom">详情</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">高级设置</div>
+
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建物料二维码</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">预赠送设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="启用预赠送时间内注册赠送">
+                                        <input type="radio" name="b" value="" title="关闭预赠送时间内注册赠送">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">创建任务</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置页面</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="title">优惠券包</div>
+                    <div class="content">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠券类别</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">商城券</option>
+                                    <option value="1">微信券</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">添加优惠券</label>
+                                <div class="layui-input-block" id="coupon-list">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                    <label class="layui-form-label"></label>
+                                    <div class="layui-input-block">
+                                        <button type="button" class="layui-btn addCoupon">
+                                            <i class="layui-icon">&#xe608;</i> 添加优惠券
+                                        </button>
+                                    </div>
+                                </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">券包名称</label>
+                                <div class="layui-input-block">
+                                    <input type="text" lay-verify="required" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">券包封面图</label>
+                                <div class="layui-input-block">
+                                    <button type="button" lay-verify="required" class="layui-btn" id="test1">
+                                        <i class="layui-icon">&#xe67c;</i>上传图片
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">券包介绍</label>
+                                <div class="layui-input-block">
+                                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发放总数</label>
+                                <div class="layui-input-block">
+                                    <input type="text" lay-verify="required|number" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">消耗</label>
+                                    <div class="layui-input-inline" style="width: 100px;">
+                                        <input type="text" lay-verify="number" name="price_min" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">积分+花费</div>
+                                    <div class="layui-input-inline" style="width: 100px;">
+                                        <input type="text" lay-verify="number" name="price_max" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">元</div>
+                                </div>
+                                <div class="tip">不填则为无需消耗即可领取</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">每人限领</label>
+                                <div class="layui-input-block">
+                                    <input type="text" lay-verify="number" class="layui-input">
+                                </div>
+                                <div class="tip">不填默认没有领取限制</div>
+                            </div>
+
+                            <div class="item-title">通知内容设置</div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block template">
+                                    <select name="city">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                        <option value="2">模板C</option>
+                                    </select>
+                                    <div class="content">
+                                        <div class="form">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">头部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容1</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容2</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容3</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容4</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">尾部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="perview">
+                                            <div class="title">
+                                                <p>模板消息预览</p>
+                                                <span></span>
+                                            </div>
+                                            <div class="content">
+                                                <p class="head"></p>
+                                                <div class="desc">
+                                                    <p></p>
+                                                </div>
+                                                <p class="foot"></p>
+                                            </div>
+                                            <div class="bom">详情</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">高级设置</div>
+
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建直接领取链接</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">加入领券中心</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="可以">
+                                        <input type="radio" name="b" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="全部渠道可核销">
+                                        <input type="radio" name="c" value="" title="仅线上使用">
+                                        <input type="radio" name="c" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">创建任务</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置页面</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="title">沉睡送券</div>
+                    <div class="content">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠券类别</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">商城券</option>
+                                    <option value="1">微信券</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">添加优惠券</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">优惠券1</option>
+                                    <option value="1">优惠券2</option>
+                                    <option value="2">优惠券3</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">沉睡时长</label>
+                                <div class="layui-input-block">
+                                    <input type="text" lay-verify="required" class="layui-input" id="sleep-time">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发放张数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" lay-verify="required|number" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                        <input type="radio" name="apply" value="store" title="仅非门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用门店</span>
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">通知内容设置</div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block template">
+                                    <select name="city">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                        <option value="2">模板C</option>
+                                    </select>
+                                    <div class="content">
+                                        <div class="form">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">头部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容1</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容2</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容3</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容4</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">尾部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="perview">
+                                            <div class="title">
+                                                <p>模板消息预览</p>
+                                                <span></span>
+                                            </div>
+                                            <div class="content">
+                                                <p class="head"></p>
+                                                <div class="desc">
+                                                    <p></p>
+                                                </div>
+                                                <p class="foot"></p>
+                                            </div>
+                                            <div class="bom">详情</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">高级设置</div>
+
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建直接领取链接</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="全部渠道可核销">
+                                        <input type="radio" name="b" value="" title="仅线上使用">
+                                        <input type="radio" name="b" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">创建任务</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置页面</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="title">注册送券</div>
+                    <div class="content">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠券类别</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">商城券</option>
+                                    <option value="1">微信券</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">优惠券1</option>
+                                    <option value="1">优惠券2</option>
+                                    <option value="2">优惠券3</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" lay-verify="number" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                        <input type="radio" name="apply" value="store" title="仅非门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用门店</span>
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="item-title">通知内容设置</div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block template">
+                                    <select name="city">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                        <option value="2">模板C</option>
+                                    </select>
+                                    <div class="content">
+                                        <div class="form">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">头部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容1</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容2</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容3</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容4</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">尾部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="perview">
+                                            <div class="title">
+                                                <p>模板消息预览</p>
+                                                <span></span>
+                                            </div>
+                                            <div class="content">
+                                                <p class="head"></p>
+                                                <div class="desc">
+                                                    <p></p>
+                                                </div>
+                                                <p class="foot"></p>
+                                            </div>
+                                            <div class="bom">详情</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">高级设置</div>
+
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建直接领取链接</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="a" value="" title="可以">
+                                        <input type="radio" name="a" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="b" value="" title="全部渠道可核销">
+                                        <input type="radio" name="b" value="" title="仅线上使用">
+                                        <input type="radio" name="b" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">创建任务</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置页面</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="title">消费送券</div>
+                    <div class="content">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">优惠券类别</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">商城券</option>
+                                    <option value="1">微信券</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择优惠券</label>
+                                <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">优惠券1</option>
+                                    <option value="1">优惠券2</option>
+                                    <option value="2">优惠券3</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">场景设置</label>
+                                <div class="layui-input-block">
+                                    <div class="item">
+                                        <span>线下：</span>
+                                        <input type="radio" name="a" value="" title="付款介绍后">
+                                    </div>
+                                    <div class="item">
+                                        <span>线上：</span>
+                                        <input type="radio" name="b" value="" title="订单完成后">
+                                        <input type="radio" name="b" value="" title="交易完成后">
+                                        <input type="radio" name="b" value="" title="付款后">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发送张数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" lay-verify="number" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">张</div>
+                                <div class="tip">即一人赠送几张，不填默认赠送1张</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">适用范围</label>
+                                <div class="layui-input-block range">
+                                    <div class="select">
+                                        <span class="title">适用人群</span>
+                                        <input type="radio" name="apply" value="all" title="所有线上会员">
+                                        <input type="radio" name="apply" value="store" title="仅门店会员">
+                                        <input type="radio" name="apply" value="store" title="仅非门店会员">
+                                    </div>
+                                    <div class="list">
+                                        <span class="title">适用门店</span>
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                        <input type="checkbox" name="" title="门店A">
+                                        <input type="checkbox" name="" title="门店B">
+                                        <input type="checkbox" name="" title="门店C">
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="item-title">通知内容设置</div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">选择模板</label>
+                                <div class="layui-input-block template">
+                                    <select name="city">
+                                        <option value=""></option>
+                                        <option value="0">模板A</option>
+                                        <option value="1">模板B</option>
+                                        <option value="2">模板C</option>
+                                    </select>
+                                    <div class="content">
+                                        <div class="form">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">头部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容1</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容2</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容3</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">内容4</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">尾部提示</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="perview">
+                                            <div class="title">
+                                                <p>模板消息预览</p>
+                                                <span></span>
+                                            </div>
+                                            <div class="content">
+                                                <p class="head"></p>
+                                                <div class="desc">
+                                                    <p></p>
+                                                </div>
+                                                <p class="foot"></p>
+                                            </div>
+                                            <div class="bom">详情</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-title">高级设置</div>
+
+                            <div class="senior">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否创建直接领取链接</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="c" value="" title="可以">
+                                        <input type="radio" name="c" value="" title="不可以">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">核销设置</label>
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="d" value="" title="全部渠道可核销">
+                                        <input type="radio" name="d" value="" title="仅线上使用">
+                                        <input type="radio" name="d" value="" title="仅线下使用">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">创建任务</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置页面</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="images/layui.all.js"></script>
+    <!-- <script src="images/lay/modules/laydate.js"></script>  如果项目中已引入可删除 -->
+    <script src="https://pubadmin.qiuxin.tech/static/js/jquery.min.js"></script>
+    <script>
+        // 表单
+        layui.use('form', function(){
+            var form = layui.form;
+            //监听提交
+            form.on('submit(formDemo)', function(data){
+                layer.msg(JSON.stringify(data.field));
+            });
+                
+            // 添加优惠券
+            var iNow = 0;
+            $('.addCoupon').on('click', function (){
+                iNow ++;
+                $('#coupon-list select').append(new Option(`优惠券${iNow}`, `val-${iNow}`));
+                form.render("select");
+                layer.msg('添加成功');
+            });
+        });
+
+        //日期选择器
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            // 预赠送时间
+            laydate.render({ 
+                elem: '#give-time',
+                done: (val)=>{
+                    console.log(val);
+                }
+            });
+            // 沉睡时长
+            laydate.render({ 
+                elem: '#sleep-time',
+                done: (val)=>{
+                    console.log(val);
+                }
+            });
+        });
+
+        // 上传图片
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            
+            //执行实例
+            var uploadInst = upload.render({
+                elem: '#test1' //绑定元素
+                ,url: '/upload/' //上传接口
+                ,done: function(res){
+                //上传完毕回调
+                }
+                ,error: function(){
+                //请求异常回调
+                }
+            });
+        });
+        
+        // 模板预览时间
+        const t = new Date();
+        const m = (t.getMonth() + 1) < 10 ? '0'+(t.getMonth() + 1) : (t.getMonth() + 1);
+        const d = t.getDate() < 10 ? '0'+t.getDate() : t.getDate();
+        $('.perview .title span').text(`${m}月${d}日`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分销中心",
+  "usingComponents": {
+    "custom-tab-bar": "../../custom-tab-bar/index"
+  }
+}

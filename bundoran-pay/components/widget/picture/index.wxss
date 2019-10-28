@@ -1,0 +1,12 @@
+.c-picture{
+    overflow: hidden;
+}
+.c-picture .item{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-picture .item .img{
+    width: 100%;
+    height: 440rpx;
+}

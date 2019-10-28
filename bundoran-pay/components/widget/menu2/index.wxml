@@ -1,0 +1,6 @@
+<view class="c-menus" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0 0;">
+    <navigator url="{{item.linkurl}}" open-type="{{item.openType}}" hover-class="none" class="item" wx:for="{{list}}" wx:key="{{item.text}}">
+        <text class="iconfont icon-{{item.iconclass[1]}}" style="color: {{item.iconcolor}}"></text>
+        <text class="title" style="color: {{item.textcolor}}">{{item.text}}</text>
+    </navigator>
+</view>

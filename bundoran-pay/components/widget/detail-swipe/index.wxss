@@ -1,0 +1,46 @@
+.c-swiper{
+    height: 750rpx;
+    position: relative;
+}
+.c-swiper .swiper{
+    height: 750rpx;
+}
+.c-swiper .swiper .img{
+    width: 100%;
+    height: 100%;
+}
+.c-swiper .dots {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 320rpx;
+    bottom: 0;
+}
+.c-swiper .dots.left{
+    left: 0;
+}
+.c-swiper .dots.right{
+    left: auto;
+    right: 0;
+}
+.c-swiper .dot {
+    opacity: .8;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+    background-color: white;
+}
+.c-swiper .dot:last-child{
+    margin-right: 0;
+}
+.c-swiper .dots .active {
+    opacity: 1;
+}
+.c-swiper .dot.square{
+    border-radius: 0;
+}
+.c-swiper .dot.rectangle{
+    width: 32rpx;
+    border-radius: 0;
+}

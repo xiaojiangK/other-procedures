@@ -1,0 +1,34 @@
+@import '/static/iconfont/iconfont';
+
+.c-bindmobile{
+    padding: 16rpx;
+    background: #fff;
+    border-top: 1rpx solid #D9D9D9;
+    border-bottom: 1rpx solid #D9D9D9;
+}
+.c-bindmobile .title{
+    margin: 0 0 4rpx;
+}
+.c-bindmobile .title .iconfont{
+    color: #999;
+    font-size: 32rpx;
+    margin: 0 4rpx 0 0;
+}
+.c-bindmobile .title .text{
+    color: #ff0011;
+    font-size: 28rpx;
+}
+.c-bindmobile .desc{
+    color: #999;
+    font-size: 24rpx;
+    overflow: hidden;
+}
+.c-bindmobile .desc .text{
+    width: 650rpx;
+    float: left;
+}
+.c-bindmobile .desc .iconfont{
+    float: right;
+    color: #888;
+    font-size: 24rpx;
+}

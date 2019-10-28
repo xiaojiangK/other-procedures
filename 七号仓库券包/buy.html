@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/static/js/dist/foxui/css/foxui.min.css?v=0.2" />
+    <title>详情</title>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        .wrap{
+            padding: 2.2rem 0 0;
+            background: #F3F3F3;
+        }
+        .coupon-list{
+            padding: .5rem .5rem 3rem;
+        }
+        .coupon-list .item{
+            display: block;
+            margin: 0 0 .5rem;
+            position: relative;
+        }
+        .coupon-list .header{
+            width: 100%;
+            height: 6.25rem;
+            padding: .5rem;
+            background: url('images/coupon_icon.png') left top no-repeat;
+            background-size: 100% 100%;
+        }
+        .coupon-list .header .box{
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            border: .05rem dashed #ccc;
+        }
+        .coupon-list .price-box{
+            display: flex;
+            height: 3.6rem;
+            justify-content: center;
+            align-items: baseline;
+        }
+        .coupon-list .price-box .icon{
+            font-size: 1.5rem;
+        }
+        .coupon-list .price-box .price{
+            font-size: 3rem;
+            line-height: 4rem;
+        }
+        .coupon-list .price-box .use{
+            font-size: .6rem;
+            margin: 0 0 0 .5rem;
+        }
+        .coupon-list .content{
+            width: 100%;
+            height: 4.5rem;
+            padding: .75rem;
+            background: url('images/coupon_icon2.png') left top no-repeat;
+            background-size: 100% 100%;
+        }
+        .coupon-list .content .title{
+            color: #222;
+            font-size: .75rem;
+            margin: 0 0 .5rem;
+        }
+        .coupon-list .content .desc{
+            color: #666;
+            font-size: .6rem;
+        }
+        .coupon-list .footer{
+            width: 100%;
+            height: 2.5rem;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: .75rem;
+            text-align: center;
+            line-height: 2.5rem;
+            background: #E52828;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="fui-header">
+            <div class="fui-header-left" onclick="window.history.back(-1)">
+                <a class="back"></a>
+            </div>
+            <div class="title">详情</div>
+        </div>
+        <div class="coupon-list">
+            <a href="./index.php?i=2&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=sale.coupon.detail&amp;id=302" class="item">
+                <div class="header">
+                    <div class="box">
+                        <div class="price-box">
+                            <div class="left">
+                                <span class="icon">￥</span><span class="price">20</span>
+                            </div>
+                            <span class="use">满200可用</span>
+                        </div>
+                        <div class="date">有效期限：2019-05-26</div>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="title">使用说明</p>
+                    <p class="desc">xxxxxxxxxxxxxxx</p>
+                </div>
+            </a>
+            <a href="./index.php?i=2&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=sale.coupon.detail&amp;id=302" class="item">
+                <div class="header">
+                    <div class="box">
+                        <div class="price-box">
+                            <div class="left">
+                                <span class="icon">￥</span><span class="price">20</span>
+                            </div>
+                            <span class="use">满200可用</span>
+                        </div>
+                        <div class="date">有效期限：2019-05-26</div>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="title">使用说明</p>
+                    <p class="desc">xxxxxxxxxxxxxxx</p>
+                </div>
+            </a>
+            <a href="./index.php?i=2&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=sale.coupon.detail&amp;id=302" class="item">
+                <div class="header">
+                    <div class="box">
+                        <div class="price-box">
+                            <div class="left">
+                                <span class="icon">￥</span><span class="price">20</span>
+                            </div>
+                            <span class="use">满200可用</span>
+                        </div>
+                        <div class="date">有效期限：2019-05-26</div>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="title">使用说明</p>
+                    <p class="desc">xxxxxxxxxxxxxxx</p>
+                </div>
+            </a>
+            <div class="footer">立即领取</div>
+        </div>
+    </div>
+    <script>
+        ;(function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in win
+                ? 'orientationchange' : 'resize',
+            recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth === undefined) {return;}
+            if (clientWidth >= 750){clientWidth=750};
+            docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+            };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

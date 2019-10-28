@@ -1,0 +1,77 @@
+<view class="c-list" style="background: {{style.background}};">
+    <view class="head">
+        <view class="left">抢购中 先下单先得哦</view>
+        <view class="right">
+            距结束<text class="num">{{time[0]}}</text>
+            <text class="dot">:</text>
+            <text class="num">{{time[1]}}</text>
+            <text class="dot">:</text>
+            <text class="num">{{time[2]}}</text>
+        </view>
+    </view>
+    <view class="list">
+        <view class="item">
+            <view class="picture">
+                <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-1.jpg" class="img" mode="aspectFill" />
+            </view>
+            <view class="content">
+                <view class="title">秒杀商品的名称秒杀商品的名称秒杀商品的名称秒杀</view>
+                <view class="price-box">
+                    <view class="price">¥1</view>
+                    <navigator url="" hover-class="none" class="btn">去抢购</navigator>
+                </view>
+                <view class="state">
+                    <view class="old-cost">¥88</view>
+                    <view class="status">
+                        <text class="text">已抢<text class="num">50%</text></text>
+                        <view class="progress">
+                            <view class="active"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item await">
+            <view class="picture">
+                <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-2.jpg" class="img" mode="aspectFill" />
+            </view>
+            <view class="content">
+                <view class="title">秒杀商品的名称秒杀商品的名称秒杀商品的名称秒杀</view>
+                <view class="price-box">
+                    <view class="price">¥1</view>
+                    <navigator url="" hover-class="none" class="btn">等待抢购</navigator>
+                </view>
+                <view class="state">
+                    <view class="old-cost">¥88</view>
+                    <view class="status">
+                        <text class="text">已抢<text class="num">0%</text></text>
+                        <view class="progress">
+                            <view class="active"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item success">
+            <view class="picture">
+                <image src="http://shop.opencode.cc/addons/ewei_shopv2/plugin/diypage/static/images/default/goods-3.jpg" class="img" mode="aspectFill" />
+            </view>
+            <view class="content">
+                <view class="title">秒杀商品的名称秒杀商品的名称秒杀商品的名称秒杀</view>
+                <view class="price-box">
+                    <view class="price">¥1</view>
+                    <navigator url="" hover-class="none" class="btn">已抢完</navigator>
+                </view>
+                <view class="state">
+                    <view class="old-cost">¥88</view>
+                    <view class="status">
+                        <text class="text">已抢<text class="num">100%</text></text>
+                        <view class="progress">
+                            <view class="active"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

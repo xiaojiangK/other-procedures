@@ -1,0 +1,3 @@
+<view class="c-video ratio{{style.ratio}}">
+    <video class="video" poster="{{params.poster}}" src="{{params.videourl}}" controls />
+</view>

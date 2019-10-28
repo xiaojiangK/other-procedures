@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>充值</title>
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/template/mobile/default/static/css/style.css?v=3.0.0">
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/static/js/dist/foxui/css/foxui.min.css?v=0.2">
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+        }
+        .recharge{
+            padding: 2.2rem 0 0;
+        }
+        .fui-header{
+            background: #F54F4F;
+        }
+        .fui-header .title{
+            color: #fff;
+        }
+        .fui-header a.back:before{
+            border-color: #fff;
+        }
+        .recharge .top{
+            width: 100%;
+            color: #333;
+            height: 4.8rem;
+            font-size: 1rem;
+            background: #fff;
+            margin: 0 0 0.6rem;
+            text-align: center;
+            line-height: 4.8rem;
+        }
+        .recharge .select{
+            width: 100%;
+            text-align: center;
+            padding: 1.25rem 0;
+            background: #fff;
+        }
+        .recharge .select a{
+            height: 2rem;
+            color: #fff;
+            display: block;
+            width: 10.65rem;
+            line-height: 2rem;
+            font-size: .75rem;
+            margin: 0 auto 1rem;
+            border-radius: .2rem;
+            text-decoration: none;
+            background: #067DEB;
+        }
+        .recharge .select a:last-child{
+            margin: 0 auto;
+            color: #067DEB;
+            background: none;
+            border: 0.05rem solid #067DEB;
+        }
+    </style>
+</head>
+<body>
+    <div class="fui-header">
+        <div class="fui-header-left" onclick="window.history.back(-1)">
+            <a class="back"></a>
+        </div>
+        <div class="title">充值</div>
+        <div class="fui-header-right">&nbsp;</div>
+    </div>
+    <div class="recharge">
+        <div class="top">请选择充值方式</div>
+        <div class="select">
+            <a href="">充值卡充值</a>
+            <a href="">在线充值</a>
+        </div>
+    </div>
+    <script src="http://shop.qiuxinpay.com/app/resource/js/lib/jquery-1.11.1.min.js"></script>
+    <script>
+        ;(function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+            recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth === undefined) {return;}
+            if (clientWidth >= 750){clientWidth=750};
+            docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+            };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

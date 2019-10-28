@@ -1,0 +1,17 @@
+{
+  "extEnable": true,
+  "extAppid": "wx2dc9849570e5c186",
+  "directCommit": false,
+  "ext": {
+    "name": "wechat",
+    "_appids": [
+      "wx2dc9849570e5c186"
+    ],
+    "api": "http://hxds.hxtide.com/app/ewei_shopv2_api.php?i=2",
+    "approot": "http://hxds.hxtide.com/addons/ewei_shopv2/",
+    "extAppid": "wx2dc9849570e5c186",
+    "isCorporation": true,
+    "isCircle": false,
+    "extAppName": ""
+  }
+}

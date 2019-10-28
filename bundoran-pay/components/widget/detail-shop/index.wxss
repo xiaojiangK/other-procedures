@@ -1,0 +1,53 @@
+.c-shop{
+    padding: 16rpx;
+    background: #fff;
+    border-top: 1rpx solid #f1f1f1;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+.c-shop .logo{
+    width: 100rpx;
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-shop .logo .img{
+    width: 100%;
+    height: 100rpx;
+}
+.c-shop .radius .img{
+    border-radius: 8rpx;
+}
+.c-shop .circle .img{
+    border-radius: 50%;
+}
+.c-shop .desc{
+    min-width: 460rpx;
+    max-width: 460rpx;
+    display: table-cell;
+    padding: 0 0 0 16rpx;
+    vertical-align: middle;
+}
+.c-shop .desc .name{
+    color: #333;
+    font-size: 28rpx;
+}
+.c-shop .desc .sub{
+    color: #666;
+    font-size: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.c-shop .right{
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-shop .btn{
+    width: 140rpx;
+    height: 52rpx;
+    color: #ff5555;
+    font-size: 24rpx;
+    border-radius: 4rpx;
+    line-height: 52rpx;
+    text-align: center;
+    border: 1rpx solid #ff5555;
+}

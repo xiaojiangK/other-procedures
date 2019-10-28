@@ -1,0 +1,16 @@
+@import '/static/iconfont/iconfont';
+
+.c-title{
+    overflow: hidden;
+    padding: 10rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+.c-title .iconfont{
+    font-size: 32rpx;
+    margin: 0 10rpx 0 0;
+    display: inline-block;
+}
+.c-title .title{
+    font-size: 24rpx;
+}

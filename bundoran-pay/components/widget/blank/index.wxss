@@ -1,0 +1,4 @@
+.c-blank{
+    height: 40rpx;
+    background: #fff;
+}

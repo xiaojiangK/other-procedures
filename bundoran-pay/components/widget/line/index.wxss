@@ -1,0 +1,7 @@
+.c-line{
+    padding: 20rpx 0;
+    background: #fff;
+}
+.c-line .line{
+    border-bottom: 2rpx solid #000;
+}

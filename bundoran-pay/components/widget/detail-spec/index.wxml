@@ -1,0 +1,7 @@
+<view class="c-spec" wx:if="{{goods.canbuy}}" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx {{style.marginbottom * 2}}rpx;" bindtap="selectPicker">
+    <view class="title" style="color: {{style.textcolor}}">
+        <block wx:if="{{goods.spec_titles}}">请选择 {{goods.spec_titles}}等</block>
+        <block wx:else>请选择数量</block>
+    </view>
+    <text class="iconfont icon-more2"></text>
+</view>

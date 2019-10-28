@@ -1,0 +1,64 @@
+@import '/static/iconfont/iconfont';
+
+.c-audio{
+    width: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10rpx 30rpx;
+    background: #f1f1f1;
+}
+.c-audio .audio{
+    height: 100rpx;
+    overflow: hidden;
+    font-size: 24rpx;
+}
+.c-audio .poster{
+    float: left;
+    height: 100rpx;
+}
+.c-audio .poster .headImg{
+    width: 80rpx;
+    padding: 0 10rpx 0 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-audio .poster .img{
+    width: 100%;
+    height: 80rpx;
+}
+.c-audio .poster .desc{
+    line-height: 48rpx;
+    display: table-cell;
+    vertical-align: middle;
+}
+.c-audio .poster .desc .title{
+    color: #333;
+}
+.c-audio .poster .desc .subtitle{
+    color: #666;
+}
+.c-audio .time{
+    color: #666;
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.c-audio .trans{
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 20rpx 0 0;
+}
+.c-audio .trans .desc{
+    float: left;
+}
+.c-audio .trans .desc .text{
+    margin: 0 20rpx 0 0;
+}
+.c-audio .trans .icon{
+    float: right;
+}
+.c-audio .trans .iconfont{
+    color: #000;
+    font-size: 32rpx;
+}

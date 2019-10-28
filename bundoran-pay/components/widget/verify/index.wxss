@@ -1,0 +1,115 @@
+@import '/static/iconfont/iconfont';
+
+.c-verify{
+    background: #fff;
+}
+.c-verify>.title{
+    height: 78rpx;
+    line-height: 78rpx;
+    padding: 0 16rpx;
+    margin: 20rpx 0 0;
+    border-top: 2rpx solid #D9D9D9;
+    border-bottom: 2rpx solid #D9D9D9;
+}
+.c-verify>.title .left{
+    color: #333;
+    float: left;
+    font-size: 28rpx;
+    vertical-align: middle;
+}
+.c-verify>.title .text{
+    vertical-align: middle;
+}
+.c-verify>.title .left .iconfont{
+    font-size: 32rpx;
+    color: #999;
+    margin: 0 8rpx 0 0;
+    vertical-align: middle;
+}
+.c-verify>.title .right{
+    float: right;
+    color: #888;
+    font-size: 24rpx;
+}
+.c-verify>.title .tip{
+    float: left;
+    margin: 0 8rpx 0 0;
+}
+.c-verify>.title .right .iconfont{
+    float: left;
+    color: #C8C8CD;
+    font-size: 24rpx;
+}
+.c-verify .list{
+    width: 100%;
+    padding: 0 20rpx;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-verify .list .item{
+    width: 50%;
+    float: left;
+    margin: 28rpx 0;
+    padding: 0 10rpx;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-verify .list .box{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    border-radius: 8rpx;
+    border: 4rpx solid #77cd44;
+}
+.c-verify .list .box2{
+    border: 4rpx solid #68bfe7;
+}
+.c-verify .list .square{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200rpx;
+    height: 66rpx;
+    background: #77cd44;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+.c-verify .list .box2 .square{
+    background: #68bfe7;
+} 
+.c-verify .list .tip{
+    position: absolute;
+    top: 4rpx;
+    left: 4rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
+.c-verify .list .content{
+    padding: 16rpx 0 20rpx;
+}
+.c-verify .list .img{
+    width: 44rpx;
+    height: 44rpx;
+    margin: 0 0 8rpx;
+    border-radius: 50%;
+}
+.c-verify .list .title{
+    color: #333;
+    font-size: 28rpx;
+}
+.style2 .list .box{
+    background: #77cd44;
+}
+.style2 .list .box2{
+    background: #68bfe7;
+}
+.style2 .list .square{
+    width: 80rpx;
+    height: 36rpx;
+    left: 0;
+    transform: rotate(0deg);
+    background: rgba(0, 0, 0, 0.3) !important;
+}

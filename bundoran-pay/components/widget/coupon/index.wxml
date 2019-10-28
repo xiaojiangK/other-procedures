@@ -1,0 +1,14 @@
+<view class="c-coupon" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0;">
+    <view class="list {{params.couponstyle == '2' ? 'col-6' : ''}}">
+        <view class="box" wx:for="{{list}}" style="padding: {{style.margintop * 2}}rpx {{style.marginleft * 2}}rpx" wx:key="{{item.price}}">
+            <view class="item" style="background: {{item.couponcolor}}">
+                <view class="price">{{item.price}}</view>
+                <view class="btn" bindtap="goCoupon" data-id="{{item.couponid}}">立即领取</view>
+                <view class="icon">
+                    <view class="i left" style="background: {{style.background}}"></view>
+                    <view class="i right" style="background: {{style.background}}"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

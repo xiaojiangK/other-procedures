@@ -1,0 +1,97 @@
+@import '/static/iconfont/iconfont';
+
+.c-member{
+    color: #fff;
+    display: flex;
+    position: relative;
+    text-align: center;
+    background: #fe5455;
+    padding: 40rpx 0 70rpx;
+}
+.c-member.radius{
+    border-bottom-left-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+}
+.c-member .avatar .img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.c-member .avatar .radius{
+    border-radius: 20rpx;
+}
+.c-member .balance{
+    flex: 1;
+}
+.c-member .user{
+    flex: 2;
+}
+.c-member .integral{
+    flex: 1;
+}
+.c-member>.item .title{
+    margin: 48rpx 0 0;
+    font-size: 28rpx;
+}
+.c-member>.item .num{
+    width: 184rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.c-member>.item .btn{
+    width: 104rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    text-align: center;
+    margin: 8rpx auto 0;
+    border-radius: 40rpx;
+    border: 1rpx solid #fff;
+}
+.c-member .avatar{
+    width: 104rpx;
+    height: 104rpx;
+    margin: 0 auto;
+    border-radius: 2rpx solid #fff;
+}
+.c-member .user .name{
+    width: 372rpx;
+    margin: 8rpx auto 0;
+}
+.c-member .user .name .text{
+    font-size: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.c-member .user .name .iconfont{
+    font-size: 24rpx;
+    margin: 0 0 0 2rpx;
+    vertical-align: middle;
+    display: inline-block;
+}
+.user-2 .avatar{
+    width: 120rpx;
+    padding: 0 28rpx;
+    display: table-cell;
+    vertical-align: middle;
+}
+.user-2 .avatar .img{
+    height: 120rpx;
+}
+.user-2 .content{
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+}
+.user-2 .content .name{
+    line-height: 36rpx;
+}
+.user-2 .content .item{
+    height: 40rpx;
+    display: flex;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}

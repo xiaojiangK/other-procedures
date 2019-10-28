@@ -1,0 +1,11 @@
+<view class="c-pictures" style="background: {{style.background}}; padding: {{style.paddingtop * 2}}rpx 0;">
+    <view class="list {{params.showtype == '1' ? 'line' : ''}} rownum{{params.rownum}}">
+        <navigator url="{{item.linkurl}}" hover-class="none" class="item" wx:for="{{list}}" wx:key="{{item.imgurl}}" style="padding: 0 {{style.paddingleft * 2}}rpx">
+            <view class="picture">
+                <image src="{{item.imgurl}}" mode="aspectFill" class="img" />
+                <view class="caption" style="color: {{style.titlecolor}}; text-align: {{style.titlealign}}">{{item.title}}</view>
+            </view>
+            <view class="title" style="color: {{style.textcolor}}; text-align: {{style.titlealign}}">{{item.text}}</view>
+        </navigator>
+    </view>
+</view>

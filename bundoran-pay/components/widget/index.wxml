@@ -1,0 +1,126 @@
+<view class="widget">
+    <view class="widget-container">
+        <block wx:for="{{widgetsData}}" wx:key="{{item.type}}">
+            <block wx:if="{{item.type == 'notice'}}">
+                <notice data="{{item}}"></notice>
+            </block>
+            <block wx:if="{{item.type == 'goods'}}">
+                <goods data="{{item}}"></goods>
+            </block>
+            <block wx:if="{{item.type == 'search'}}">
+                <search data="{{item}}"></search>
+            </block>
+            <block wx:if="{{item.type == 'banner'}}">
+                <banner data="{{item}}"></banner>
+            </block>
+            <block wx:if="{{item.type == 'menu'}}">
+                <menu data="{{item}}"></menu>
+            </block>
+            <block wx:if="{{item.type == 'fixedsearch'}}">
+                <fixedsearch data="{{item}}"></fixedsearch>
+            </block>
+            <block wx:if="{{item.type == 'pictures'}}">
+                <pictures data="{{item}}"></pictures>
+            </block>
+            <block wx:if="{{item.type == 'icongroup'}}">
+                <icongroup data="{{item}}"></icongroup>
+            </block>
+            <block wx:if="{{item.type == 'audio'}}">
+                <audios data="{{item}}"></audios>
+            </block>
+            <block wx:if="{{item.type == 'copyright'}}">
+                <copyright data="{{item}}"></copyright>
+            </block>
+            <block wx:if="{{item.type == 'video'}}">
+                <videos data="{{item}}"></videos>
+            </block>
+            <block wx:if="{{item.type == 'listmenu'}}">
+                <listmenu data="{{item}}"></listmenu>
+            </block>
+            <block wx:if="{{item.type == 'richtext'}}">
+                <richtext data="{{item}}"></richtext>
+            </block>
+            <block wx:if="{{item.type == 'title'}}">
+                <title data="{{item}}"></title>
+            </block>
+            <block wx:if="{{item.type == 'line'}}">
+                <line data="{{item}}"></line>
+            </block>
+            <block wx:if="{{item.type == 'blank'}}">
+                <blank data="{{item}}"></blank>
+            </block>
+            <block wx:if="{{item.type == 'menu2'}}">
+                <menu2 data="{{item}}"></menu2>
+            </block>
+            <block wx:if="{{item.type == 'picturew'}}">
+                <picturew data="{{item}}"></picturew>
+            </block>
+            <block wx:if="{{item.type == 'picture'}}">
+                <picture data="{{item}}"></picture>
+            </block>
+            <block wx:if="{{item.type == 'coupon'}}">
+                <coupon data="{{item}}"></coupon>
+            </block>
+            <block wx:if="{{item.type == 'tabbar'}}">
+                <tabbar data="{{item}}" bind:tabs="tabsChange"></tabbar>
+            </block>
+            <block wx:if="{{item.type == 'topmenu'}}">
+                <topmenu data="{{item}}" bind:tabs="menuChange"></topmenu>
+            </block>
+            <block wx:if="{{item.type == 'detail_swipe'}}">
+                <detail-swipe data="{{item}}" goods="{{goods}}"></detail-swipe>
+            </block>
+            <block wx:if="{{item.type == 'detail_seckill'}}">
+                <detail-seckill data="{{item}}"></detail-seckill>
+            </block>
+            <block wx:if="{{item.type == 'detail_info'}}">
+                <detail-info data="{{item}}" goods="{{goods}}"></detail-info>
+            </block>
+            <block wx:if="{{item.type == 'detail_sale'}}">
+                <detail-sale data="{{item}}" goods="{{goods}}"></detail-sale>
+            </block>
+            <block wx:if="{{item.type == 'detail_spec'}}">
+                <detail-spec data="{{item}}" goods="{{goods}}" bind:selectPicker="selectPicker"></detail-spec>
+            </block>
+            <block wx:if="{{item.type == 'detail_package'}}">
+                <detail-package data="{{item}}" goods="{{goods}}"></detail-package>
+            </block>
+            <block wx:if="{{item.type == 'detail_shop'}}">
+                <detail-shop data="{{item}}" goods="{{goods}}"></detail-shop>
+            </block>
+            <block wx:if="{{item.type == 'detail_buyshow'}}">
+                <detail-buyshow data="{{item}}" goods="{{goods}}"></detail-buyshow>
+            </block>
+            <block wx:if="{{item.type == 'detail_comment'}}">
+                <detail-comment data="{{item}}" comment="{{comment}}" goods="{{goods}}"></detail-comment>
+            </block>
+            <block wx:if="{{item.type == 'detail_navbar'}}">
+                <detail-navbar data="{{item}}" bind:goBuy="goBuy" goods="{{goods}}"></detail-navbar>
+            </block>
+            <block wx:if="{{item.type == 'bindmobile'}}">
+                <bindmobile data="{{item}}"></bindmobile>
+            </block>
+            <block wx:if="{{item.type == 'member'}}">
+                <member data="{{item}}" member="{{member}}"></member>
+            </block>
+            <block wx:if="{{item.type == 'verify'}}">
+                <verify data="{{item}}"></verify>
+            </block>
+            <block wx:if="{{item.type == 'seckillgroup'}}">
+                <seckillgroup data="{{item}}"></seckillgroup>
+            </block>
+            <block wx:if="{{item.type == 'seckill_times'}}">
+                <seckill-times data="{{item}}" bind:timerSelect="timerSelect"></seckill-times>
+            </block>
+            <block wx:if="{{item.type == 'seckill_rooms'}}">
+                <seckill-rooms data="{{item}}" bind:hallSelect="hallSelect"></seckill-rooms>
+            </block>
+            <block wx:if="{{item.type == 'seckill_advs'}}">
+                <seckill-advs data="{{item}}"></seckill-advs>
+            </block>
+            <block wx:if="{{item.type == 'seckill_list'}}">
+                <seckill-list data="{{item}}"></seckill-list>
+            </block>
+        </block>
+    </view>
+</view>

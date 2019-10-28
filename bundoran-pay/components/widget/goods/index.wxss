@@ -1,0 +1,204 @@
+@import '/static/iconfont/iconfont';
+
+.c-goods{
+    padding: 10rpx;
+    overflow: hidden;
+    margin: 10rpx 0;
+    background: #f3f3f3;
+}
+.c-goods .list{
+    overflow: hidden;
+}
+.c-goods .list.three .item{
+    width: 223rpx;
+}
+.c-goods .list.three .picture .img{
+    height: 223rpx;
+}
+.c-goods .list.one .item{
+    width: 100%;
+}
+.c-goods .list.one .picture .img{
+    height: 730rpx;
+}
+.c-goods .list.line{
+    display: flex;
+    overflow-x: auto;
+    align-content: center;
+}
+.c-goods .list.line .item{
+    min-width: 344rpx;
+}
+.c-goods .line.one .item{
+    min-width: 710rpx;
+}
+.c-goods .line.three .item{
+    min-width: 224rpx;
+}
+.c-goods .item{
+    float: left;
+    width: 344rpx;
+    margin: 0 10rpx 20rpx;
+}
+.c-goods .item .picture{
+    width: 100%;
+    position: relative;
+}
+.c-goods .picture .reco{
+    left: 0;
+    top: 0;
+    color: #fff;
+    z-index: 9;
+    position: absolute;
+    font-size: 26rpx;
+    background-size: 100% 100% !important;
+}
+.c-goods .picture .circle{
+    border-radius: 50%;
+    background: #ffb805;
+}
+.c-goods .picture .square{
+    background: #19dbab;
+}
+.c-goods .picture .bgColor{
+    width: 75rpx;
+    height: 75rpx;
+    color: #fff;
+    line-height: 75rpx;
+    text-align: center;
+}
+.c-goods .picture .rectangle{
+    width: 90rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #04a6f8;
+}
+.c-goods .picture .echelon{
+    width: 120rpx;
+    height: 120rpx;
+    line-height: 43rpx;
+    text-align: left;
+    background: url('https://pbwci.qun.hk/Fn3T2X-QOEAfNWXVnYe8xwMbWYC-') left top no-repeat;
+}
+.c-goods .picture .triangle{
+    width: 110rpx;
+    height: 110rpx;
+    line-height: 38rpx;
+    text-align: left;
+    background: url('https://pbwci.qun.hk/FtXYugoS4OEdbemdGW5xCeQvmYrD') left top no-repeat;
+}
+.c-goods .picture .echelon .t, .c-goods .picture .triangle .t{
+    display: block;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.c-goods .picture .img{
+    width: 100%;
+    height: 344rpx;
+}
+.c-goods .picture .custom{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.c-goods .picture .saleout1{
+    background: url('https://pbwci.qun.hk/FkBGRydkkO0HqUNwX1DkrG0Ao6G3') center center no-repeat;
+}
+.c-goods .picture .saleout2{
+    background: url('https://pbwci.qun.hk/FtIZ9N3MHZNu8AenfwqiMfsP2o1F') center center no-repeat;
+}
+.c-goods .picture .saleout3{
+    background: url('https://pbwci.qun.hk/Fo-6f3aWGEiEKV66rvuCliQeHX5e') center center no-repeat;
+}
+.c-goods .picture .saleout{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background-size: cover;
+}
+.c-goods .desc{
+    padding: 10rpx;
+    background: #fff;
+}
+.c-goods .desc .title{
+    color: #333;
+    height: 72rpx;
+    line-height: 36rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+.c-goods .desc .cost-price{
+    color: #999;
+    height: 50rpx;
+    font-size: 24rpx;
+    margin: 0 10rpx 0 0;
+    line-height: 50rpx;
+    text-decoration: line-through;
+}
+.c-goods .desc .sales{
+    color: #999;
+    font-size: 24rpx;
+}
+.c-goods .desc .noLine{
+    text-decoration: none;
+}
+.c-goods .desc .price-btn{
+    overflow: hidden;
+    font-size: 28rpx;
+    line-height: 50rpx;
+}
+.c-goods .price-btn .iconfont{
+    font-size: 26rpx;
+    color: #fff;
+}
+.c-goods .desc .price{
+    float: left;
+    color: #FF5555;
+}
+.c-goods .desc .buy{
+    float: right;
+    width: 84rpx;
+    height: 44rpx;
+    color: #FF5555;
+    text-align: center;
+    line-height: 44rpx;
+    border-radius: 6rpx;
+    border: 1rpx solid #FF5555;
+}
+.c-goods .price-btn .icon{
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 50%;
+}
+.c-goods .price-btn .icon1{
+    border-radius: 6rpx;
+    border: none;
+}
+.c-goods .price-btn .noBor{
+    border: none;
+}
+.c-goods .list-2 .item{
+    width: 100%;
+}
+.c-goods .list-2 .picture{
+    display: table-cell;
+    vertical-align: top;
+    width: 230rpx;
+}
+.c-goods .list-2 .desc{
+    width: 470rpx;
+    padding: 20rpx;
+    display: table-cell;
+}
+.c-goods .list-2 .cost-sales{
+    height: 80rpx;
+}
+.c-goods .list-2 .picture .img{
+    height: 230rpx;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>充值</title>
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/template/mobile/default/static/css/style.css?v=3.0.0">
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/static/js/dist/foxui/css/foxui.min.css?v=0.2">
+    <style>
+        body,html,ul,li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .fui-header{
+            background: #F54F4F;
+        }
+        .fui-header .title{
+            color: #fff;
+        }
+        .fui-header a.back:before{
+            border-color: #fff;
+        }
+        .form{
+            padding: 2.2rem 0 0;
+        }
+        .form .top{
+            width: 100%;
+            color: #333;
+            height: 4.8rem;
+            font-size: 1rem;
+            background: #fff;
+            margin: 0 0 0.6rem;
+            text-align: center;
+            line-height: 4.8rem;
+        }
+        .form ul{
+            padding: 0 .6rem;
+            background: #fff;
+        }
+        .form ul:first-child{
+            border-bottom: .6rem solid #f3f3f3;
+        }
+        .form ul li{
+            padding: .7rem 0;
+            border-bottom: .05rem solid #ccc;
+        }
+        .form ul li:last-child{
+            border: none;
+        }
+        .form li label{
+            width: 6.3rem;
+            margin: 0 .5rem 0 0;
+            line-height: 1.6rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .form li input{
+            width: 10.5rem;
+            height: 1.6rem;
+            color: #999;
+            outline: none;
+            -webkit-outline: none;
+            font-size: .6rem;
+            background: #fff;
+            text-indent: .6rem;
+            vertical-align: middle;
+            -webkit-transition: .2s all;
+            transition: .2s all;
+            border: .05rem solid #ccc;
+        }
+        .form li input:focus{
+            border-color: #409eff;
+        }
+        .form li .price{
+            float: right;
+            color: #333;
+            font-size: .7rem;
+        }
+        .form li .info{
+            color: #666;
+            margin: 1rem 1rem 0;
+        }
+        .form li .info p{
+            margin: .2rem 0;
+        }
+        .form .btn-group{
+            padding: 4.45rem .6rem 0;
+        }
+        .form .btn-group div{
+            width: 100%;
+            height: 2rem;
+            color: #fff;
+            margin: 0 0 1rem;
+            line-height: 2rem;
+            text-align: center;
+            background: #067DEB;
+            border-radius: .2rem;
+        }
+        .form .btn-group .cancel{
+            color: #333;
+            background: #fff;
+            border: .05rem solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="fui-header">
+        <div class="fui-header-left" onclick="window.history.back(-1)">
+            <a class="back"></a>
+        </div>
+        <div class="title">充值</div>
+        <div class="fui-header-right">&nbsp;</div>
+    </div>
+    <div class="form">
+        <div class="top">充值卡充值</div>
+        <div class="conntent">
+            <ul>
+                <li>
+                    <label for="phone">请输入会员手机号：</label>
+                    <input type="text" id="phone" placeholder="请输入11位手机号" />
+                    <div class="info">
+                        <p>会员名字：张三</p>
+                        <p>会员卡面号：xxxxxxxxxxx</p>
+                    </div>
+                </li>
+                <li>
+                    <label for="cardNum">请输入充值卡号：</label>
+                    <input type="text" id="cardNum" placeholder="请输入卡号" />
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="pass">请输入充值卡密码：</label>
+                    <input type="text" id="pass" placeholder="请输入密码" />
+                </li>
+                <li>
+                    <label>该充值卡可用余额：</label>
+                    <span class="price">300.00元</span>
+                </li>
+            </ul>
+            <div class="btn-group">
+                <div class="submit">确认</div>
+                <div class="cancel">取消</div>
+            </div>
+        </div>
+    </div>
+    <script src="http://shop.qiuxinpay.com/app/resource/js/lib/jquery-1.11.1.min.js"></script>
+    <script>
+        ;(function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+            recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth === undefined) {return;}
+            if (clientWidth >= 750){clientWidth=750};
+            docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+            };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

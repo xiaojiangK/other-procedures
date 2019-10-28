@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#fafafa",
+  "navigationBarBackgroundColor": "#0290c0",
+  "navigationBarTextStyle": "white",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "widget": "../../components/widget/index",
+    "custom-tab-bar": "../../custom-tab-bar/index"
+  }
+}

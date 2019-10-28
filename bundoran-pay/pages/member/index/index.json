@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "会员中心",
+  "navigationBarBackgroundColor": "#fd5454",
+  "usingComponents": {
+    "widget": "../../../components/widget/index",
+    "custom-tab-bar": "../../../custom-tab-bar/index"
+  }
+}

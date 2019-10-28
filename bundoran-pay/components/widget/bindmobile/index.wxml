@@ -1,0 +1,10 @@
+<view class="c-bindmobile" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx 0 0">
+    <view class="title">
+        <text class="iconfont {{params.iconclass}}" style="color: {{style.iconcolor}}"></text>
+        <text class="text" style="color: {{style.titlecolor}}">{{params.title}}</text>
+    </view>
+    <navigator url="/pages/member/bind/index" hover-class="none" class="desc" style="color: {{style.textcolor}}">
+        <text class="text">{{params.text}}</text>
+        <text class="iconfont icon-more2"></text>
+    </navigator>
+</view>

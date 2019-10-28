@@ -1,0 +1,93 @@
+<view class="goods-detail-comment">
+    <view class="fui-icon-group col-5 ">
+    <view data-type="1" bindtap="comentTap" class="fui-icon-col" data-level="{{all}}">
+        <view class="{{commentObjTab == 1 ? 'text-danger' : ''}}">全部
+        <view class="count {{commentObjTab == 1 ? 'text-danger' : ''}}">{{commentObj.count.all}}</view>
+        </view>
+    </view>
+    <view data-type="2" bindtap="comentTap" class="fui-icon-col" data-level="{{good}}">
+        <view class="{{commentObjTab == 2 ? 'text-danger' : ''}}">好评
+        <view class="count {{commentObjTab == 2 ? 'text-danger' : ''}}">{{commentObj.count.good}}</view>
+        </view>
+    </view>
+    <view data-type="3" bindtap="comentTap" class="fui-icon-col" data-level="{{normal}}">
+        <view class="{{commentObjTab == 3 ? 'text-danger' : ''}}">中评
+        <view class="count {{commentObjTab == 3 ? 'text-danger' : ''}}">{{commentObj.count.normal}}</view>
+        </view>
+    </view>
+    <view data-type="4" bindtap="comentTap" class="fui-icon-col" data-level="{{bad}}">
+        <view class="{{commentObjTab == 4 ? 'text-danger' : ''}}">差评
+        <view class="count {{commentObjTab == 4 ? 'text-danger' : ''}}">{{commentObj.count.bad}}</view>
+        </view>
+    </view>
+    <view bindtap="comentTap" class="fui-icon-col" data-level="{{pic}}" data-type="5">
+        <view class="{{commentObjTab == 5 ? 'text-danger' : ''}}">晒图
+        <view class="count {{commentObjTab == 5 ? 'text-danger' : ''}}">{{commentObj.count.pic}}</view>
+        </view>
+    </view>
+    </view>
+    <view class="fui-loading" wx:if="{{loading}}">
+    <view class="icon"></view>
+    <view class="text">正在加载</view>
+    </view>
+    <view class="container" id="comments-all">
+    <view class="fui-cell-group fui-comment-group">
+        <block wx:for="{{commentList}}" wx:key="index" wx:for-index="idx">
+        <view class="fui-cell">
+            <view class="fui-cell-text comment ">
+            <view class="info head">
+                <view class="img">
+                <image src="{{item.headimgurl}}"></image>
+                </view>
+                <view class="nickname">{{item.nickname}}</view>
+                <view class="date">{{item.createtime}}</view>
+                <view class="star star1">
+                <text class="{{item.level >= 1 ? 'shine' : ''}}">★</text>
+                <text class="{{item.level >= 2 ? 'shine' : ''}}">★</text>
+                <text class="{{item.level >= 3 ? 'shine' : ''}}">★</text>
+                <text class="{{item.level >= 4 ? 'shine' : ''}}">★</text>
+                <text class="{{item.level >= 5 ? 'shine' : ''}}">★</text>
+                </view>
+            </view>
+            <view class="remark">{{item.content}}</view>
+            <view class="remark img">
+                <block wx:for="{{item.images}}" wx:key="index" wx:for-index="idx" wx:for-item="image">
+                <view class="img">
+                    <image src="{{image}}"></image>
+                </view>
+                </block>
+            </view>
+            <view class="reply-content" style="background:#EDEDED;" wx:if="{{item.reply_content}}">
+                掌柜回复：{{item.reply_content}}
+                <view class="remark img">
+                <block wx:for="{{item.reply_images}}" wx:key="index" wx:for-index="idx" wx:for-item="replyImage">
+                    <view class="img">
+                    <image src="{{replyImage}}"></image>
+                    </view>
+                </block>
+                </view>
+            </view>
+            <block wx:if="{{item.append_content && item.replychecked == 0}}">
+                <view class="remark reply-title">用户追加评价</view>
+                <view class="remark">{{item.append_content}}</view>
+            </block>
+            <view class="reply-content" style="background:#EDEDED;" wx:if="{{item.append_reply_content}}">
+                掌柜回复：{{item.append_reply_content}}
+                <view class="remark img">
+                <block wx:for="{{item.append_reply_images}}" wx:key="index" wx:for-index="idx" wx:for-item="appendReplyImage">
+                    <view class="img">
+                    <image src="{{appendReplyImage}}"></image>
+                    </view>
+                </block>
+                </view>
+            </view>
+            </view>
+        </view>
+        </block>
+    </view>
+    <view class="fui-cell-group fui-comment-group"></view>
+    </view>
+    <view class="content-empty" style="{{commentEmpty ? 'display:block' : 'display:none'}}">
+        暂时没有任何评价
+    </view>
+</view>

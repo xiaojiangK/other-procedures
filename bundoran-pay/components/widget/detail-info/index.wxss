@@ -1,0 +1,147 @@
+@import '/static/iconfont/iconfont';
+@import "../../../app.wxss";
+
+.c-info{
+    background: #fff;
+    padding: 16rpx 20rpx 8rpx;
+}
+.c-info .good-title{
+    display: flex;
+}
+.c-info .good-title .title{
+    flex: 10;
+    float: left;
+    line-height: 44rpx;
+    font-size: 30rpx;
+}
+.c-info .good-title .share{
+    flex: 2;
+    float: right;
+    color: #ff5555;
+    text-align: center;
+    position: relative;
+}
+.c-info .good-title .share .share-btn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+.c-info .good-title .text{
+    font-size: 24rpx;
+    display: block;
+}
+.good-detail .desc{
+    color: #999;
+    font-size: 28rpx;
+    margin: 8rpx 0;
+}
+.good-detail .price{
+    margin: 0 0 8rpx;
+}
+.good-detail .price .cost{
+    color: #ff5555;
+    font-size: 40rpx;
+    margin: 0 8rpx 0 0;
+}
+.good-detail .price .old-cost{
+    color: #ccc;
+    font-size: 24rpx;
+    text-decoration: line-through;
+}
+.good-detail .count{
+    height: 66rpx;
+    margin: 0 0 16rpx;
+    font-size: 32rpx;
+    line-height: 66rpx;
+    background: #fff2e2;
+    border-radius: 4rpx;
+}
+.good-detail .count .title{
+    float: left;
+    font-size: 28rpx;
+}
+.good-detail .count .time{
+    color: #ef4f4f;
+    float: left;
+}
+.good-detail .count .iconfont{
+    margin: 0 10rpx;
+    float: left;
+}
+.good-detail .count .title{
+    font-weight: bold;
+    margin: 0 16rpx 0 0;
+}
+.good-detail .service{
+    display: flex;
+    color: #ccc;
+    margin: 0 0 16rpx;
+}
+.good-detail .service .item{
+    flex: 1;
+    font-size: 24rpx;
+}
+.good-detail .service .item:nth-of-type(2){
+    text-align: center;
+}
+.good-detail .service .item:last-child{
+    text-align: right;
+}
+.good-detail .delivery{
+    color: #ccc;
+    font-size: 28rpx;
+}
+.good-detail .delivery .tag{
+    font-size: 24rpx;
+    color: #fff;
+    margin: 0 6rpx 0 0;
+    padding: 6rpx 16rpx;
+    font-weight: 600;
+    background: #ccc;
+    border-radius: 4rpx;
+    text-align: center;
+}
+.good-detail .delivery .num{
+    color: #eb6060;
+    margin: 0 4rpx;
+}
+.fui-sale-group .fui-cell .fui-cell-text,
+.fui-sale-group .fui-according-header .text {
+  font-size: 26rpx;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.fui-sale-group .fui-according-header .text .title {
+  font-weight: bold;
+}
+.fui-option-group .fui-cell {
+    background: #f7f8fa;
+    border-bottom: 1px solid #ececec;
+    padding: 16rpx;
+}
+.fui-option-group .fui-cell .fui-cell-text {
+    font-size: 24rpx;
+    color: #666;
+}
+.fui-option-group .fui-cell .fui-cell-text .text {
+    margin-left: 200rpx;
+}
+.fui-option-group .fui-cell .fui-cell-text .text:first-child {
+    margin-left: 0;
+}
+.goods-label-list {
+    padding: 16rpx 20rpx;
+    background: #fff;
+}
+.goods-label-list .text {
+    font-size: 24rpx;
+    padding: 0 6rpx;
+    width: 129rpx;
+    display: inline-block;
+}

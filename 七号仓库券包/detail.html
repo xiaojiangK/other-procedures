@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/static/js/dist/foxui/css/foxui.min.css?v=0.2" />
+    <link rel="stylesheet" type="text/css" href="http://shop.qiuxinpay.com/addons/ewei_shopv2/template/mobile/default/static/css/coupon-new.css?v=2017030310125">
+    <title>详情</title>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        .wrap{
+            padding: 2.2rem 0 2.5rem;
+            background: #F3F3F3;
+        }
+        .detail .header .top{
+            width: 100%;
+            height: 1.7rem;
+            color: #FEEEEE;
+            margin: 0 0 .6rem;
+            line-height: 1.7rem;
+            text-align: center;
+            background: -webkit-linear-gradient(103deg,rgba(255,60,0,1) 0%,rgba(236,23,47,1) 100%);
+            background: linear-gradient(103deg,rgba(255,60,0,1) 0%,rgba(236,23,47,1) 100%);
+        }
+        .detail .header .picture{
+            background: #fff;
+            margin: 0 0 .6rem;
+            padding: .3rem 0;
+            text-align: center;
+        }
+        .detail .header img{
+            width: 14.6rem;
+        }
+        .detail .top span{
+            color: #fff;
+        }
+        .detail .content .item{
+            margin: 0 0 .6rem;
+            background: #fff;
+            padding: .5rem .5rem .6rem;
+        }
+        .detail .item .title{
+            color: #666;
+            font-size: .7rem;
+            margin: 0 0 .5rem;
+        }
+        .detail .item .desc{
+            color: #222;
+            font-size: .6rem;
+        }
+        .detail .item .desc:before{
+            display: inline-block;
+            content: '';
+            width: .2rem;
+            height: .2rem;
+            border-radius: 50%;
+            margin: 0 .4rem 0 0;
+            background: #E52828;
+            vertical-align: middle;
+        }
+        .detail .footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2.5rem;
+            color: #fff;
+            font-size: .75rem;
+            text-align: center;
+            line-height: 2.5rem;
+            background: #E52828;
+        }
+        .coupon-item.card .coupon-left{
+            background: url('images/card-icon.png') left center no-repeat;
+            background-size: 100% 100%;
+            padding: 1.8rem 0 0;
+        }
+        .coupon-item .coupon-left .subtitle{
+            font-size: .7rem;
+        }
+        .coupon-item.card .coupon-right .usetime .usebtn{
+            color: #F15444;
+            border-color: #F15444;
+        }
+        .coupon-item.card .coupon-type{
+            background: #FBAA0F;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="fui-header">
+            <div class="fui-header-left" onclick="window.history.back(-1)">
+                <a class="back"></a>
+            </div>
+            <div class="title">详情</div>
+        </div>
+        <div class="detail">
+            <div class="header">
+                <div class="top">5.1社群营销券包 <span>(内含3张优惠劵)</span></div>
+                <div class="picture">
+                    <img src="images/card-pic.png" alt="" />
+                </div>
+            </div>
+            <a href="./index.php?i=2&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=sale.coupon.detail&amp;id=42" class="coupon-item card">
+                <div class="coupon-type">劵包</div>
+                <div class="coupon-left">
+                    <div class="subtitle">内含x张劵</div>
+                </div>
+                <div class="coupon-right">
+                    <div class="title">劵包名称xxxxx</div>
+                    <div class="subtitle">价格：xx元</div>
+                    <div class="subtitle light"></div>
+                    <div class="usetime">
+                        <div class="text">每人限领x份</div>
+                        <div class="usebtn">立即领取</div>
+                    </div>
+                </div>
+            </a>
+            <div class="content">
+                <div class="item">
+                    <p class="title">领取限制</p>
+                    <p class="desc">每人限领一份</p>
+                </div>
+                <div class="item">
+                    <p class="title">使用说明</p>
+                    <p class="desc">每人限领一份</p>
+                </div>
+                <div class="item">
+                    <p class="title">价格</p>
+                    <p class="desc">5.1元</p>
+                </div>
+            </div>
+            <a href="" class="footer">立即打开</a>
+        </div>
+    </div>
+    <script>
+        ;(function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in win
+                ? 'orientationchange' : 'resize',
+            recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth === undefined) {return;}
+            if (clientWidth >= 750){clientWidth=750};
+            docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+            };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>

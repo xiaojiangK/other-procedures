@@ -1,0 +1,63 @@
+@import '/static/iconfont/iconfont';
+
+.page {
+  padding: 160rpx 0 0;
+}
+.register .fui-list-group .fui-list .image-32 {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.fui-list-group .fui-list-inner {
+  font-size: 30rpx;
+}
+
+.register .fui-content image {
+  width: 100%;
+  height: 242rpx;
+}
+
+.remind {
+  margin-top: 12rpx;
+}
+
+.wait {
+  text-align: center;
+}
+
+.wait image {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 50rpx 0;
+}
+
+.wait view {
+  margin: 20rpx;
+  color: #666;
+}
+.navigator{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78rpx;
+  position: fixed;
+  padding: 82rpx 0 0;
+  background: #0290c0;
+}
+.navigator .title{
+  position: absolute;
+  width: 100%;
+  left: 80rpx;
+  top: 85rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+.navigator .nav{
+  display: inline-block;
+}
+.navigator .iconfont{
+  color: #fff;
+  font-size: 40rpx;
+  margin: 10rpx 20rpx 0;
+  display: inline-block;
+}

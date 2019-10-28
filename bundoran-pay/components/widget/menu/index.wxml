@@ -1,0 +1,8 @@
+<view class="c-menu">
+    <view class="list {{style.showtype == '1' ? 'line' : ''}} rownum{{style.rownum}}" style="background: {{style.background}}">
+        <navigator url="{{item.linkurl}}" open-type="{{item.openType}}" hover-class="none" class="item" wx:for="{{list}}" wx:key="{{item.imgurl}}">
+            <image src="{{item.imgurl}}" class="img {{style.navstyle}}" />
+            <view style="color: {{item.color}}" class="title">{{item.text}}</view>
+        </navigator>
+    </view>
+</view>

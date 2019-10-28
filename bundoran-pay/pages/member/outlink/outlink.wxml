@@ -1,0 +1,2 @@
+<!--pages/member/outlink/outlink.wxml-->
+<web-view src='https://mp.weixin.qq.com/bizmall/activatemembercard?action=preshow&&encrypt_card_id=%2Bsk5zBQIGaMCez%2FGU2sZtiD6IYVWwzafs2xSKNlgUzTOelKo8t02KDiEJaFwM7hy&outer_str=selfcreate&biz=MzI0MzAzMTI3MA%3D%3D#wechat_redirect'></web-view>

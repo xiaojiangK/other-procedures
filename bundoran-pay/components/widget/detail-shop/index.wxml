@@ -1,0 +1,12 @@
+<navigator open-type="switchTab" url="/pages/index/index" class="c-shop" style="background: {{style.background}}; margin: {{style.margintop * 2}}rpx {{style.marginbottom * 2}}rpx;">
+    <view class="logo {{params.logostyle}}">
+        <image src="{{goods.shopdetail.logo}}" class="img" mode="aspectFill" />
+    </view>
+    <view class="desc">
+        <view class="name" style="color: {{style.shopnamecolor}}">{{goods.shopdetail.shopname}}</view>
+        <view class="sub" style="color: {{style.shopdesccolor}}">{{goods.shopdetail.description}}</view>
+    </view>
+    <view class="right">
+        <view hover-class="none" class="btn" style="border-color: {{style.rightnavcolor}}; color: {{style.rightnavcolor}}">进店逛逛</view>
+    </view>
+</navigator>

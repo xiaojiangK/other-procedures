@@ -1,0 +1,15 @@
+<view class="c-fixedS" style="background: {{style.background}}; opacity: {{style.opacity}}">
+    <view class="main">
+        <navigator url="{{params.leftnavlink}}" open-type="{{params.openType}}" hover-class="none" class="left" wx:if="{{params.leftnav > '0'}}">
+            <view class="iconfont icon-{{lefticon[1]}}" style="color: {{style.rightnavcolor}}" wx:if="{{params.leftnav == '1'}}"></view>
+            <image src="{{params.leftnavimg}}" class="img" mode="aspectFill" wx:if="{{params.leftnav == '2'}}" />
+        </navigator>
+        <view class="center">
+            <input placeholder="{{params.placeholder}}" bindtap="search" class="input {{params.searchstyle}}" style="background: {{style.searchbackground}}; color: {{style.searchtextcolor}}" placeholder-style="color: {{style.searchtextcolor}}" />
+        </view>
+        <navigator url="{{params.rightnavlink}}" open-type="{{params.openType}}" hover-class="none" class="right" wx:if="{{params.rightnav > '0'}}">
+            <view class="iconfont icon-{{righticon[1]}}" style="color: {{style.rightnavcolor}}" wx:if="{{params.rightnav == '1'}}"></view>
+            <image src="{{params.rightnavimg}}" class="img" mode="aspectFill" wx:if="{{params.rightnav == '2'}}" />
+        </navigator>
+    </view>
+</view>

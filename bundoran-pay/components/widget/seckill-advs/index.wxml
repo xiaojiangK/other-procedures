@@ -1,0 +1,7 @@
+<view class="c-advs" style="background: {{style.background}};">
+    <view class="list">
+        <navigator wx:for="{{list}}" wx:key="index" url="{{item.linkurl}}" hover-class="none" class="item">
+            <image src="{{item.imgurl}}" class="img" mode="aspectFill" />
+        </navigator>
+    </view>
+</view>

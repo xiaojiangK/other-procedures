@@ -1,0 +1,21 @@
+.c-advs{
+    background: #fff;
+}
+.c-advs .list{
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+}
+.c-advs .list .item{
+    min-width: 250rpx;
+    padding: 0 10rpx 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.c-advs .list .item:last-child{
+    padding: 0;
+}
+.c-advs .list .item .img{
+    width: 100%;
+    height: 240rpx;
+}
